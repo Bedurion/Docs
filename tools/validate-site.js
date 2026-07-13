@@ -98,22 +98,47 @@ if (fs.existsSync(path.join(botDirectory, 'utils', 'commandLoader.js'))) {
     const { loadCommands } = require('./utils/commandLoader');
     (async () => {
       const commands = await loadCommands({ info() {}, warn() {}, error() {} });
-      console.log(JSON.stringify([...commands].filter(([, command]) => command.register !== false).map(([name]) => name)));
+      const registered = [...commands].filter(([, command]) => command.register !== false);
+      const commandNames = registered.map(([name]) => name);
+      const commandPaths = [];
+
+      const collectPaths = (name, options = [], prefix = []) => {
+        const structuralOptions = options.filter((option) => option.type === 1 || option.type === 2);
+        if (structuralOptions.length === 0) {
+          commandPaths.push([name, ...prefix].join(' '));
+          return;
+        }
+
+        structuralOptions.forEach((option) => {
+          if (option.type === 2) collectPaths(name, option.options || [], [...prefix, option.name]);
+          if (option.type === 1) commandPaths.push([name, ...prefix, option.name].join(' '));
+        });
+      };
+
+      registered.forEach(([name, command]) => {
+        if (name === 'Convert time') {
+          commandPaths.push(name);
+          return;
+        }
+        collectPaths(name, command.data?.toJSON?.().options || []);
+      });
+
+      console.log(JSON.stringify({ commandNames, commandPaths }));
     })();
   `;
-  const commandNames = JSON.parse(execFileSync(process.execPath, ['-e', loaderScript], {
+  const { commandNames, commandPaths } = JSON.parse(execFileSync(process.execPath, ['-e', loaderScript], {
     cwd: botDirectory,
     encoding: 'utf8'
   }).trim());
   const commandPage = fs.readFileSync(path.join(root, 'commands.html'), 'utf8');
-  for (const commandName of commandNames) {
-    if (commandName === 'Convert time') {
+  for (const commandPath of commandPaths) {
+    if (commandPath === 'Convert time') {
       if (!commandPage.includes('Convert time')) report('commands.html', 'missing Convert time context command');
       continue;
     }
-    if (!commandPage.includes(`/${commandName}`)) report('commands.html', `missing registered /${commandName} command`);
+    if (!commandPage.includes(`/${commandPath}`)) report('commands.html', `missing registered /${commandPath} command path`);
   }
-  console.log(`Verified ${commandNames.length} registered bot commands against commands.html.`);
+  console.log(`Verified ${commandNames.length} registered commands and ${commandPaths.length} executable paths against commands.html.`);
 } else {
   warnings.push('Bot repository not found; skipped live command-registration comparison');
 }

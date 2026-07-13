@@ -72,15 +72,32 @@ const navigationSections = {
 
 const sectionContainsPage = (section) => section.pages.some(([href]) => href === currentPage);
 const renderDropdownLinks = (section) => {
-  let currentGroup = null;
+  const hasGroups = section.pages.some(([, , group]) => group);
+  if (!hasGroups) {
+    return section.pages.map(([href, label]) =>
+      `<a class="${href === currentPage ? 'active' : ''}" href="${href}">${label}</a>`
+    ).join('');
+  }
 
-  return section.pages.map(([href, label, group]) => {
-    const groupLabel = group && group !== currentGroup
-      ? `<span class="nav-dropdown-label">${group}</span>`
-      : '';
-    currentGroup = group || currentGroup;
-    return `${groupLabel}<a class="${href === currentPage ? 'active' : ''}" href="${href}">${label}</a>`;
-  }).join('');
+  const groups = [];
+  section.pages.forEach(([href, label, group = 'More']) => {
+    let targetGroup = groups.find((item) => item.label === group);
+    if (!targetGroup) {
+      targetGroup = { label: group, pages: [] };
+      groups.push(targetGroup);
+    }
+    targetGroup.pages.push([href, label]);
+  });
+
+  return groups.map((group) => `
+    <section class="nav-dropdown-group">
+      <button class="nav-dropdown-label nav-group-button" type="button" aria-expanded="false">${group.label}</button>
+      <div class="nav-dropdown-group-links">
+        ${group.pages.map(([href, label]) =>
+          `<a class="${href === currentPage ? 'active' : ''}" href="${href}">${label}</a>`
+        ).join('')}
+      </div>
+    </section>`).join('');
 };
 const renderNavMenu = (section, wide = false) => `
   <div class="nav-menu">
@@ -98,6 +115,10 @@ if (navLinks) {
     ${renderNavMenu(navigationSections.docs, true)}
     ${renderNavMenu(navigationSections.pricing)}
     <a class="nav-cta ${currentPage === 'contact.html' ? 'active' : ''}" href="contact.html"><img class="nav-icon" src="assets/icons/support.svg" alt="" aria-hidden="true"><span>Questions?</span></a>`;
+}
+
+if (navToggle) {
+  navToggle.innerHTML = '<span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>';
 }
 
 const documentationCatalog = [
@@ -142,6 +163,8 @@ if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    document.body.classList.toggle('nav-open', isOpen && window.matchMedia('(max-width: 1040px)').matches);
   });
 }
 
@@ -159,20 +182,48 @@ const setMenuOpen = (menu, isOpen) => {
   if (!menu) return;
   menu.classList.toggle('open', isOpen);
   menu.querySelector('.nav-menu-button')?.setAttribute('aria-expanded', String(isOpen));
+
+  if (isOpen && window.matchMedia('(max-width: 1040px)').matches) {
+    const firstGroup = menu.querySelector('.nav-dropdown-group');
+    if (firstGroup && !menu.querySelector('.nav-dropdown-group.open')) {
+      firstGroup.classList.add('open');
+      firstGroup.querySelector('.nav-group-button')?.setAttribute('aria-expanded', 'true');
+    }
+  }
 };
+
+document.querySelectorAll('.nav-group-button').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    if (!window.matchMedia('(max-width: 1040px)').matches) return;
+    event.stopPropagation();
+    const group = button.closest('.nav-dropdown-group');
+    const menu = button.closest('.nav-menu');
+    const willOpen = !group?.classList.contains('open');
+
+    menu?.querySelectorAll('.nav-dropdown-group.open').forEach((item) => {
+      if (item !== group) {
+        item.classList.remove('open');
+        item.querySelector('.nav-group-button')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    group?.classList.toggle('open', willOpen);
+    button.setAttribute('aria-expanded', String(willOpen));
+  });
+});
 
 document.querySelectorAll('.nav-menu').forEach((menu) => {
   const button = menu.querySelector('.nav-menu-button');
 
   menu.addEventListener('mouseenter', () => {
-    if (window.matchMedia('(min-width: 901px)').matches) {
+    if (window.matchMedia('(min-width: 1041px)').matches) {
       closeOtherMenus(menu);
       setMenuOpen(menu, true);
     }
   });
 
   menu.addEventListener('mouseleave', () => {
-    if (window.matchMedia('(min-width: 901px)').matches) {
+    if (window.matchMedia('(min-width: 1041px)').matches) {
       setMenuOpen(menu, false);
     }
   });
@@ -198,6 +249,13 @@ document.addEventListener('click', (event) => {
   if (!event.target.closest('.nav-menu')) {
     closeOtherMenus();
   }
+
+  if (window.matchMedia('(max-width: 1040px)').matches && event.target.closest('.nav-links a')) {
+    navLinks?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navToggle?.setAttribute('aria-label', 'Open navigation');
+    document.body.classList.remove('nav-open');
+  }
 });
 
 document.addEventListener('keydown', (event) => {
@@ -205,6 +263,17 @@ document.addEventListener('keydown', (event) => {
   closeOtherMenus();
   navLinks?.classList.remove('open');
   navToggle?.setAttribute('aria-expanded', 'false');
+  navToggle?.setAttribute('aria-label', 'Open navigation');
+  document.body.classList.remove('nav-open');
+});
+
+window.addEventListener('resize', () => {
+  if (window.matchMedia('(min-width: 1041px)').matches) {
+    navLinks?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navToggle?.setAttribute('aria-label', 'Open navigation');
+    document.body.classList.remove('nav-open');
+  }
 });
 
 document.querySelectorAll('[data-tab]').forEach((button) => {

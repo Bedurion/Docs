@@ -95,6 +95,10 @@ p {
   margin-top: 0;
 }
 
+p {
+  margin-bottom: 1.05rem;
+}
+
 h1,
 h2,
 h3 {
@@ -303,10 +307,15 @@ pre {
 }
 
 .nav-dropdown-wide {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  width: 500px;
-  max-height: min(72vh, 620px);
-  overflow-y: auto;
+  position: fixed;
+  top: 78px;
+  left: 50%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+  width: min(1120px, calc(100vw - 3rem));
+  padding: 0.95rem;
+  overflow: visible;
+  transform: translate(-50%, -8px);
 }
 
 .nav-dropdown a {
@@ -324,31 +333,64 @@ pre {
   background: rgba(139, 92, 246, 0.14);
 }
 
+.nav-dropdown-group {
+  min-width: 0;
+  padding: 0.35rem 0.45rem 0.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.nav-dropdown-group:last-child {
+  border-right: 0;
+}
+
+.nav-dropdown-group-links {
+  display: grid;
+  gap: 0.14rem;
+}
+
 .nav-dropdown-label {
-  grid-column: 1 / -1;
-  margin: 0.5rem 0.65rem 0.15rem;
+  display: block;
+  width: 100%;
+  margin: 0 0.55rem 0.42rem;
+  padding: 0;
+  border: 0;
   color: var(--gold);
+  background: transparent;
   font-size: 0.67rem;
   font-weight: 950;
   letter-spacing: 0.14em;
+  text-align: left;
   text-transform: uppercase;
 }
 
-.nav-dropdown-label:first-child {
-  margin-top: 0.1rem;
+.nav-group-button {
+  pointer-events: none;
 }
 
 .nav-cta {
-  margin-left: 0.3rem;
-  border: 1px solid rgba(243, 204, 99, 0.32);
+  min-height: 44px;
+  margin-left: 0.45rem;
+  padding-inline: 0.9rem;
+  border: 1px solid rgba(243, 204, 99, 0.38);
+  border-radius: 999px;
   color: var(--text);
-  background: rgba(243, 204, 99, 0.08);
+  background: linear-gradient(135deg, rgba(243, 204, 99, 0.14), rgba(139, 92, 246, 0.1));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.nav-cta::after {
+  margin-left: 0.1rem;
+  color: var(--gold);
+  content: "↗";
+  font-size: 0.82rem;
 }
 
 .nav-cta:hover,
 .nav-cta.active {
   color: #fff7d6;
-  background: rgba(243, 204, 99, 0.16);
+  border-color: rgba(243, 204, 99, 0.6);
+  background: linear-gradient(135deg, rgba(243, 204, 99, 0.22), rgba(139, 92, 246, 0.16));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.12), 0 12px 30px rgba(0, 0, 0, 0.22);
   transform: translateY(-1px);
 }
 
@@ -361,6 +403,33 @@ pre {
   color: var(--text);
   background: rgba(255, 255, 255, 0.055);
   cursor: pointer;
+}
+
+.nav-toggle-icon {
+  display: grid;
+  width: 19px;
+  gap: 4px;
+}
+
+.nav-toggle-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .hero,
@@ -888,6 +957,24 @@ pre {
   color: var(--muted);
 }
 
+.doc-section p:not(.eyebrow),
+.doc-callout p,
+.callout p,
+.card p,
+.panel p,
+.price-card p,
+.command-item p {
+  line-height: 1.76;
+}
+
+.doc-section > p + p,
+.card p + p,
+.panel p + p,
+.price-card p + p,
+.command-item p + p {
+  margin-top: 1.05rem;
+}
+
 .doc-section strong {
   color: var(--text);
 }
@@ -1319,6 +1406,10 @@ pre {
     visibility: visible;
     transform: translate(-50%, 0);
   }
+
+  .nav-menu:hover > .nav-dropdown-wide {
+    transform: translate(-50%, 0);
+  }
 }
 
 @media (max-width: 1040px) {
@@ -1334,7 +1425,7 @@ pre {
     display: none;
     width: min(420px, calc(100vw - 2rem));
     max-height: calc(100vh - 92px);
-    padding: 0.75rem;
+    padding: 0.7rem;
     overflow-y: auto;
     border: 1px solid var(--line-strong);
     border-radius: 16px;
@@ -1344,6 +1435,7 @@ pre {
 
   .nav-links.open {
     display: grid;
+    gap: 0.2rem;
   }
 
   .nav-link,
@@ -1354,12 +1446,25 @@ pre {
   }
 
   .nav-cta {
-    margin: 0.35rem 0 0;
+    margin: 0.4rem 0 0;
+    border-radius: 12px;
+  }
+
+  .nav-cta::after {
+    margin-left: auto;
   }
 
   .nav-menu {
     margin: 0;
     padding: 0;
+    border: 1px solid transparent;
+    border-radius: 13px;
+  }
+
+  .nav-menu.open {
+    padding: 0.18rem;
+    border-color: rgba(139, 92, 246, 0.22);
+    background: rgba(139, 92, 246, 0.055);
   }
 
   .nav-menu-button::after {
@@ -1372,13 +1477,75 @@ pre {
     display: none;
     width: auto;
     max-height: none;
-    margin: 0.25rem 0 0.35rem 1.05rem;
-    padding: 0.4rem;
+    margin: 0.2rem 0 0.35rem;
+    padding: 0.45rem;
+    overflow: visible;
+    border: 0;
     border-radius: 11px;
+    background: rgba(4, 7, 17, 0.38);
     opacity: 1;
     visibility: visible;
     transform: none;
     box-shadow: none;
+  }
+
+  .nav-dropdown:not(.nav-dropdown-wide) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.12rem;
+  }
+
+  .nav-dropdown-wide {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .nav-dropdown-group {
+    padding: 0.52rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  .nav-dropdown-group-links {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.12rem;
+  }
+
+  .nav-dropdown-label {
+    min-height: 38px;
+    margin: 0;
+    padding: 0.42rem 0.5rem;
+    border-radius: 8px;
+  }
+
+  .nav-group-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .nav-group-button::after {
+    color: var(--muted);
+    content: "+";
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .nav-dropdown-group.open > .nav-group-button {
+    color: #fff1b8;
+    background: rgba(243, 204, 99, 0.08);
+  }
+
+  .nav-dropdown-group.open > .nav-group-button::after {
+    content: "−";
+  }
+
+  .nav-dropdown-group.open > .nav-dropdown-group-links {
+    display: grid;
+    padding-top: 0.3rem;
   }
 
   .nav-menu.open > .nav-dropdown,
@@ -1412,6 +1579,10 @@ pre {
 }
 
 @media (max-width: 760px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+
   .page-shell,
   .nav,
   .footer {
@@ -1495,6 +1666,11 @@ pre {
 }
 
 @media (max-width: 460px) {
+  .nav-links {
+    right: -0.3rem;
+    width: calc(100vw - 1.2rem);
+  }
+
   .toc-card {
     grid-template-columns: 1fr;
   }
