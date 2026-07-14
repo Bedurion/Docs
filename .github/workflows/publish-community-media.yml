@@ -1,0 +1,144 @@
+name: Publish approved community media
+
+run-name: Website submission ${{ inputs.submission_id }} · ${{ inputs.dispatch_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      submission_id:
+        description: Public-safe Luminox submission reference
+        required: true
+        type: string
+      payload:
+        description: AES-256-GCM encrypted publication payload
+        required: true
+        type: string
+      dispatch_id:
+        description: Unique non-secret dispatch correlation reference
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the documentation repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked image tooling without package scripts
+        run: npm ci --ignore-scripts
+
+      - name: Validate, sanitize and stage approved media
+        env:
+          SUBMISSION_ID: ${{ inputs.submission_id }}
+          ENCRYPTED_PAYLOAD: ${{ inputs.payload }}
+          PUBLISH_PAYLOAD_SECRET: ${{ secrets.WEBSITE_PUBLISH_PAYLOAD_SECRET }}
+          PUBLICATION_OUTPUT_DIR: publication
+        run: node tools/publish-community-media.mjs
+
+      - name: Upload isolated publication artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: publication-${{ inputs.submission_id }}
+          path: publication
+          if-no-files-found: error
+          include-hidden-files: false
+          retention-days: 1
+
+  publish:
+    needs: sanitize
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: luminox-community-media-publisher
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the documentation repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+
+      - name: Download isolated publication artifact
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53
+        with:
+          name: publication-${{ inputs.submission_id }}
+          path: publication
+
+      - name: Verify artifact and apply only generated files
+        env:
+          SUBMISSION_ID: ${{ inputs.submission_id }}
+        run: node tools/verify-community-artifact.mjs publication "$SUBMISSION_ID"
+
+      - name: Validate the complete static website
+        run: npm test
+
+      - name: Commit sanitized website files
+        run: |
+          git config user.name "Luminox Website Publisher"
+          git config user.email "luminox-publisher@users.noreply.github.com"
+          git add -- assets/community data/community-media.json
+          if git diff --cached --quiet; then
+            echo "No publishable changes were produced."
+            exit 1
+          fi
+          git commit -m "Publish approved community media"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: luminox-pages-deploy
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the newly published website
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+
+      - name: Prepare static Pages artifact
+        run: |
+          mkdir site
+          git archive HEAD | tar -x -C site
+          rm -rf site/.github site/tools site/package.json site/package-lock.json site/README.md site/.gitignore
+          touch site/.nojekyll
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128

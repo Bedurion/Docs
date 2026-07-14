@@ -6,5 +6,8 @@
   "scripts": {
     "test": "node tools/validate-site.js",
     "validate": "node tools/validate-site.js"
+  },
+  "dependencies": {
+    "sharp": "0.35.3"
   }
 }

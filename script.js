@@ -9,6 +9,7 @@ const navigationSections = {
     pages: [
       ['guild.html', 'Overview'],
       ['guild-community.html', 'Community'],
+      ['gallery.html', 'Gallery'],
       ['guild-join.html', 'Join Lumina'],
       ['guild-rules.html', 'Rules']
     ]
@@ -54,6 +55,7 @@ const navigationSections = {
       ['docs-staff.html', 'Staff Systems', 'Staff & moderation'],
       ['docs-admin.html', 'Admin Guide', 'Administration'],
       ['docs-automation.html', 'Automation & Retention', 'Administration'],
+      ['docs-website.html', 'Website Publishing', 'Administration'],
       ['docs-troubleshooting.html', 'Troubleshooting', 'Administration'],
       ['systems.html', 'Architecture', 'Administration'],
       ['docs-faq.html', 'FAQ', 'Administration']
@@ -145,6 +147,7 @@ const documentationCatalog = [
   ['docs-staff.html', 'Staff Systems', 'Moderator roles, private voting and public applications.', 'staff moderator voting applications'],
   ['docs-admin.html', 'Administrator Guide', 'Role hierarchy, refresh strategy, backups and safe maintenance.', 'admin roles refresh backup'],
   ['docs-automation.html', 'Automation & Retention', 'Autodelete, panel refresh, private response lifecycle and local backups.', 'automation autodelete retention backups ephemeral'],
+  ['docs-website.html', 'Website Publishing', 'Private Discord proposals, staff review and isolated GitHub image publication.', 'website gallery github media publish security'],
   ['docs-troubleshooting.html', 'Troubleshooting', 'Permissions, missing panels, failed interactions and sync issues.', 'errors permissions missing interaction'],
   ['docs-faq.html', 'FAQ', 'Short answers to common member and staff questions.', 'faq questions help']
 ];
