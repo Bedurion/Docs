@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bedurion.github.io/Docs/</loc><lastmod>2026-07-13</lastmod><priority>1.0</priority></url>
-  <url><loc>https://bedurion.github.io/Docs/features.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/</loc><lastmod>2026-07-15</lastmod><priority>1.0</priority></url>
+  <url><loc>https://bedurion.github.io/Docs/features.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/use-cases.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/features-identity.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/features-economy.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/features-events.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/features-economy.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/features-events.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/features-intelligence.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/features-finder.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/features-support.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-getting-started.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/setup.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/commands.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/features-finder.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/features-support.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/security.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-getting-started.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/setup.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/commands.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-panels.html</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-registration.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-loyalty.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-streaming.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-events.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-loyalty.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-streaming.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-events.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-loot.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-finder.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-timezones.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-guildbank.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-leaderboards.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-watchlists.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-progression.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-finder.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-timezones.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-guildbank.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-leaderboards.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-watchlists.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-progression.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-tracker.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-guards.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-guards.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-recruitment.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-support.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-guildhall.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-support.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-moderation.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-staff.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-admin.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-automation.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-website.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-staff.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-admin.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-automation.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-website.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/docs-troubleshooting.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/systems.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/docs-faq.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/systems.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/docs-faq.html</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/guild.html</loc><lastmod>2026-07-13</lastmod></url>
   <url><loc>https://bedurion.github.io/Docs/guild-community.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/gallery.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/guild-join.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/guild-rules.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/pricing.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/roadmap.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/changelog.html</loc><lastmod>2026-07-13</lastmod></url>
-  <url><loc>https://bedurion.github.io/Docs/contact.html</loc><lastmod>2026-07-13</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/gallery.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/guild-join.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/guild-rules.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/pricing.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/roadmap.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/changelog.html</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://bedurion.github.io/Docs/contact.html</loc><lastmod>2026-07-15</lastmod></url>
 </urlset>

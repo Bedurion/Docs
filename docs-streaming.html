@@ -15,7 +15,7 @@
     <section class="page-hero">
       <p class="eyebrow">Documentation · Stream Loyalty</p>
       <h1>Reward real screen-share activity without polling Discord every minute.</h1>
-      <p class="lead">Luminox follows Discord voice-state changes, checkpoints active sessions safely and calculates every valid minute when the stream ends.</p>
+      <p class="lead">Luminox notices when screen sharing starts or stops, saves progress during long sessions and calculates every valid minute when the stream ends.</p>
     </section>
 
     <section class="section doc-layout">
@@ -86,8 +86,8 @@
 
         <section id="reliability" class="doc-section">
           <p class="eyebrow">Reliability</p>
-          <h2>Event-driven tracking with periodic safety checkpoints</h2>
-          <p>Luminox reacts when Discord reports a member starting, stopping, joining, leaving or moving a stream. Active sessions are checkpointed every ten minutes so a restart does not discard a long session. Rewards use deterministic session identifiers, which prevents the same closed stream from being credited twice.</p>
+          <h2>Discord events plus regular safety saves</h2>
+          <p>Luminox reacts when Discord reports a member starting, stopping, joining, leaving or moving a stream. It saves active progress every ten minutes so a restart does not discard a long session. Each finished stream has one stable record, which prevents it from being rewarded twice.</p>
           <ul class="check-list">
             <li>No additional Tibia requests are required.</li>
             <li>No per-second database writes are performed.</li>

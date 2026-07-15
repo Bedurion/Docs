@@ -2101,6 +2101,160 @@ pre {
 .page-variant-intelligence .opening-aside { clip-path: polygon(0 0, 88% 0, 100% 12%, 100% 100%, 12% 100%, 0 88%); border-radius: 0; }
 .page-variant-finder .opening-aside { border-radius: 50% 50% 30px 30px / 22% 22% 30px 30px; }
 .page-variant-support .opening-aside { transform: rotate(-2deg); border-radius: 38px 8px 38px 8px; }
+.page-variant-usecases .opening-aside {
+  border-radius: 34px 7px 34px 7px;
+  background:
+    linear-gradient(135deg, rgba(var(--page-accent), 0.2), transparent 44%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 18px),
+    #0b1020;
+  transform: rotate(-1deg);
+}
+
+.page-variant-trust .opening-aside {
+  min-height: 430px;
+  padding: 2.5rem 2.2rem;
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(var(--page-accent), 0.18), rgba(9, 14, 28, 0.96));
+  clip-path: polygon(50% 0, 94% 15%, 94% 68%, 50% 100%, 6% 68%, 6% 15%);
+  transform: none;
+}
+
+.page-variant-trust .opening-aside::after {
+  right: 50%;
+  bottom: -88px;
+  transform: translateX(50%);
+}
+
+.pain-outcome-grid,
+.role-value-grid,
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pain-outcome-card,
+.role-value-grid article,
+.trust-grid article,
+.decision-panel,
+.buyer-checklist {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(11, 16, 32, 0.86));
+  box-shadow: var(--shadow-soft);
+}
+
+.pain-outcome-card {
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+}
+
+.case-number,
+.trust-mark {
+  color: rgba(var(--page-accent), 0.68);
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  font-weight: 950;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.case-label,
+.role-value-grid article > span {
+  margin: 1.4rem 0 0.45rem;
+  color: var(--page-accent-solid);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pain-outcome-card h3 {
+  max-width: 420px;
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
+}
+
+.case-outcome {
+  display: grid;
+  gap: 0.28rem;
+  margin: auto 0 1.3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.case-outcome strong { color: var(--green); }
+.case-outcome span { color: var(--muted); }
+.buyer-scenario { align-items: stretch; }
+
+.decision-panel ol {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.4rem 0 1.8rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: rollout;
+}
+
+.decision-panel li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 0 0.7rem;
+  counter-increment: rollout;
+}
+
+.decision-panel li::before {
+  display: grid;
+  grid-row: span 2;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  color: #09101b;
+  background: var(--gold);
+  content: counter(rollout);
+  font-weight: 950;
+}
+
+.decision-panel li span,
+.role-value-grid p,
+.trust-grid p { color: var(--muted); }
+
+.role-value-grid article:nth-child(2),
+.trust-grid article:nth-child(2) { transform: translateY(1rem); }
+.role-value-grid article:nth-child(3),
+.trust-grid article:nth-child(3) { transform: translateY(-0.4rem); }
+
+.trust-grid article {
+  min-height: 270px;
+  border-color: rgba(var(--page-accent), 0.2);
+}
+
+.trust-mark {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+.buyer-checklist {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  border-color: rgba(var(--page-accent), 0.24);
+}
+
+.buyer-checklist ol {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.35rem;
+  color: var(--muted);
+}
+
+.contextual-conversion { padding-top: 1.6rem; }
 
 .page-family-guild .page-opening {
   grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.5fr);
@@ -2279,5 +2433,23 @@ pre {
 
   .page-variant-library .docs-search-shell {
     overflow: visible;
+  }
+
+  .pain-outcome-grid,
+  .role-value-grid,
+  .trust-grid,
+  .buyer-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .pain-outcome-card { min-height: 0; }
+  .case-outcome { margin-top: 1.6rem; }
+  .role-value-grid article,
+  .trust-grid article { transform: none; }
+  .page-variant-trust .opening-aside {
+    min-height: 0;
+    padding: 1.5rem;
+    border-radius: 24px;
+    clip-path: none;
   }
 }
