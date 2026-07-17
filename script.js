@@ -209,12 +209,88 @@ const pagePresentations = {
   'roadmap.html': { family: 'editorial', variant: 'route', accent: 'violet', code: 'Now → later', icon: 'pricing.svg', label: 'Development route', summary: 'Depth, reliability and packaging happen in that order — never the reverse.', tags: ['Harden', 'Package', 'Scale'] }
 };
 
-const renderOpeningAside = (presentation) => {
+const openingLayoutGroups = {
+  minimal: [
+    '404.html',
+    'changelog.html',
+    'docs.html',
+    'docs-getting-started.html',
+    'docs-troubleshooting.html',
+    'docs-faq.html',
+    'use-cases.html',
+    'guild.html',
+    'guild-rules.html',
+    'roadmap.html'
+  ],
+  band: [
+    'setup.html',
+    'docs-events.html',
+    'docs-timezones.html',
+    'docs-automation.html',
+    'features-intelligence.html',
+    'guild-community.html',
+    'guild-join.html',
+    'pricing.html'
+  ],
+  chapter: [
+    'docs-registration.html',
+    'docs-loyalty.html',
+    'docs-loot.html',
+    'docs-guildbank.html',
+    'docs-tracker.html',
+    'docs-guildhall.html',
+    'docs-moderation.html',
+    'docs-staff.html',
+    'docs-admin.html'
+  ],
+  centered: [
+    'docs-panels.html',
+    'docs-streaming.html',
+    'docs-finder.html',
+    'docs-leaderboards.html',
+    'docs-guards.html',
+    'docs-website.html'
+  ],
+  brief: [
+    'docs-watchlists.html',
+    'docs-progression.html',
+    'docs-recruitment.html',
+    'docs-support.html',
+    'systems.html'
+  ],
+  rail: [
+    'contact.html',
+    'features-economy.html',
+    'features-support.html'
+  ],
+  spotlight: [
+    'features-identity.html',
+    'features-finder.html',
+    'gallery.html'
+  ],
+  split: [
+    'commands.html',
+    'features.html',
+    'features-events.html',
+    'security.html'
+  ]
+};
+
+const openingLayoutByPage = new Map(
+  Object.entries(openingLayoutGroups).flatMap(([layout, pages]) =>
+    pages.map((page) => [page, layout])
+  )
+);
+
+const renderOpeningAside = (presentation, layout) => {
   const aside = document.createElement('aside');
-  aside.className = 'opening-aside';
+  aside.className = `opening-aside opening-aside-${layout}`;
   aside.setAttribute('aria-label', `${presentation.label} page summary`);
 
   const tags = presentation.tags.map((tag) => `<span>${tag}</span>`).join('');
+  const summary = layout === 'spotlight'
+    ? ''
+    : `<p class="opening-summary">${presentation.summary}</p>`;
   aside.innerHTML = `
     <div class="opening-aside-top">
       <span class="opening-code">${presentation.code}</span>
@@ -222,10 +298,42 @@ const renderOpeningAside = (presentation) => {
     </div>
     <div class="opening-aside-body">
       <p class="opening-label">${presentation.label}</p>
-      <p class="opening-summary">${presentation.summary}</p>
+      ${summary}
       <div class="opening-tags">${tags}</div>
     </div>`;
   return aside;
+};
+
+const renderOpeningBand = (presentation) => {
+  const band = document.createElement('div');
+  band.className = 'opening-band';
+  band.innerHTML = `
+    <span class="opening-band-icon"><img src="assets/icons/${presentation.icon}" alt="" aria-hidden="true"></span>
+    <span class="opening-band-code">${presentation.code}</span>
+    <span class="opening-band-label">${presentation.label}</span>
+    <span class="opening-band-tags">${presentation.tags.map((tag) => `<span>${tag}</span>`).join('')}</span>`;
+  return band;
+};
+
+const renderOpeningMark = (presentation, layout) => {
+  const mark = document.createElement('div');
+  mark.className = `opening-mark opening-mark-${layout}`;
+  mark.innerHTML = `
+    <span class="opening-mark-icon"><img src="assets/icons/${presentation.icon}" alt="" aria-hidden="true"></span>
+    <span class="opening-mark-code">${presentation.code}</span>
+    <span class="opening-mark-label">${presentation.label}</span>
+    <span class="opening-mark-tags">${presentation.tags.map((tag) => `<span>${tag}</span>`).join('')}</span>`;
+  return mark;
+};
+
+const renderOpeningBrief = (presentation) => {
+  const brief = document.createElement('div');
+  brief.className = 'opening-brief';
+  brief.innerHTML = `
+    <span class="opening-brief-code">${presentation.code}</span>
+    <p>${presentation.summary}</p>
+    <span class="opening-brief-tags">${presentation.tags.map((tag) => `<span>${tag}</span>`).join('')}</span>`;
+  return brief;
 };
 
 const applyPagePresentation = () => {
@@ -239,12 +347,14 @@ const applyPagePresentation = () => {
   const presentation = pagePresentations[currentPage];
   const opening = document.querySelector('.page-hero');
   if (!presentation || !opening) return;
+  const layout = openingLayoutByPage.get(currentPage) || 'minimal';
 
   document.body.classList.add(
     'page-interior',
     `page-family-${presentation.family}`,
     `page-accent-${presentation.accent}`,
-    `page-variant-${presentation.variant}`
+    `page-variant-${presentation.variant}`,
+    `page-layout-${layout}`
   );
   opening.classList.add('page-opening');
 
@@ -252,7 +362,34 @@ const applyPagePresentation = () => {
   copy.className = 'opening-copy';
   while (opening.firstChild) copy.append(opening.firstChild);
 
-  opening.append(copy, renderOpeningAside(presentation));
+  if (layout === 'band') {
+    copy.append(renderOpeningBand(presentation));
+    opening.append(copy);
+    return;
+  }
+
+  if (layout === 'minimal') {
+    opening.append(copy);
+    return;
+  }
+
+  if (layout === 'chapter') {
+    opening.append(renderOpeningMark(presentation, layout), copy);
+    return;
+  }
+
+  if (layout === 'centered') {
+    copy.prepend(renderOpeningMark(presentation, layout));
+    opening.append(copy);
+    return;
+  }
+
+  if (layout === 'brief') {
+    opening.append(copy, renderOpeningBrief(presentation));
+    return;
+  }
+
+  opening.append(copy, renderOpeningAside(presentation, layout));
 };
 
 applyPagePresentation();

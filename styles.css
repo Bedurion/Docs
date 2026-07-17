@@ -41,6 +41,7 @@ html {
 body {
   min-width: 320px;
   margin: 0;
+  overflow-x: clip;
   color: var(--text);
   font-family: var(--font);
   line-height: 1.65;
@@ -2451,5 +2452,617 @@ pre {
     padding: 1.5rem;
     border-radius: 24px;
     clip-path: none;
+  }
+}
+
+/* Interior page openings: varied layouts without clipped decorative shapes. */
+.page-interior .page-opening {
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  gap: clamp(2.5rem, 6vw, 6.5rem);
+  padding: clamp(4.4rem, 8vw, 7rem) 0 clamp(3.6rem, 6vw, 5.4rem);
+}
+
+.page-interior .page-opening h1 {
+  width: 100%;
+  max-width: 940px;
+  margin-bottom: 1.55rem;
+  font-size: clamp(2.7rem, 5.8vw, 5.05rem);
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.page-interior .page-opening .lead {
+  max-width: 760px;
+  margin-bottom: 0;
+  text-wrap: pretty;
+}
+
+.page-interior .opening-copy {
+  min-width: 0;
+  padding-left: 0;
+}
+
+.page-interior .opening-copy::before,
+.page-interior .opening-aside::before,
+.page-interior .opening-aside::after {
+  display: none;
+}
+
+.page-interior .opening-aside {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border-radius: 0;
+  clip-path: none;
+  transform: none;
+}
+
+.page-interior .opening-aside-top {
+  margin-bottom: 2.4rem;
+}
+
+.page-interior .opening-summary {
+  margin-bottom: 1.25rem;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.page-interior .opening-tags span {
+  white-space: normal;
+}
+
+.page-layout-minimal .page-opening {
+  display: block;
+  max-width: 1080px;
+  padding-bottom: clamp(3.1rem, 5vw, 4.6rem);
+}
+
+.page-layout-minimal .opening-copy {
+  max-width: 980px;
+}
+
+.page-layout-minimal .page-opening::before {
+  top: 6%;
+  right: -4%;
+  width: min(34vw, 430px);
+  opacity: 0.7;
+}
+
+.page-layout-band .page-opening {
+  display: block;
+  max-width: 1100px;
+}
+
+.page-layout-band .opening-copy {
+  max-width: 1040px;
+}
+
+.opening-band {
+  display: grid;
+  grid-template-columns: auto auto minmax(140px, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem 1.15rem;
+  margin-top: 2.35rem;
+  padding: 1.05rem 0;
+  border-top: 1px solid rgba(var(--page-accent), 0.34);
+  border-bottom: 1px solid rgba(var(--page-accent), 0.16);
+}
+
+.opening-band-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(var(--page-accent), 0.28);
+  border-radius: 11px;
+  background: rgba(var(--page-accent), 0.08);
+}
+
+.opening-band-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.opening-band-code {
+  color: var(--page-accent-solid);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.opening-band-label {
+  color: var(--muted);
+  font-weight: 820;
+}
+
+.opening-band-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.42rem;
+}
+
+.opening-band-tags span {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid rgba(var(--page-accent), 0.2);
+  border-radius: 999px;
+  color: rgb(var(--page-accent));
+  background: rgba(var(--page-accent), 0.06);
+  font-size: 0.7rem;
+  font-weight: 850;
+}
+
+.page-layout-rail .page-opening {
+  grid-template-columns: minmax(0, 1.55fr) minmax(230px, 0.45fr);
+  align-items: center;
+}
+
+.page-interior.page-layout-rail .opening-aside {
+  padding: 0.35rem 0 0.35rem 1.55rem;
+  border: 0;
+  border-left: 1px solid rgba(var(--page-accent), 0.45);
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-layout-rail .opening-aside-top {
+  margin-bottom: 3.4rem;
+}
+
+.page-layout-rail .opening-icon {
+  border-radius: 50%;
+  background: rgba(var(--page-accent), 0.07);
+}
+
+.page-layout-spotlight .page-opening {
+  grid-template-columns: minmax(0, 1.55fr) minmax(220px, 0.45fr);
+  align-items: center;
+}
+
+.page-interior.page-layout-spotlight .opening-aside {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.page-layout-spotlight .opening-aside-top {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.page-layout-spotlight .opening-code {
+  order: 2;
+  color: var(--page-accent-solid);
+}
+
+.page-layout-spotlight .opening-icon {
+  width: 116px;
+  height: 116px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(var(--page-accent), 0.24), rgba(var(--page-accent), 0.07) 62%),
+    rgba(9, 14, 28, 0.72);
+  box-shadow: 0 26px 70px rgba(var(--page-accent), 0.14);
+}
+
+.page-layout-spotlight .opening-icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.page-layout-spotlight .opening-label {
+  font-size: 1.05rem;
+}
+
+.page-layout-spotlight .opening-tags {
+  justify-content: center;
+}
+
+.page-layout-split .page-opening {
+  grid-template-columns: minmax(0, 1.35fr) minmax(270px, 0.65fr);
+  align-items: center;
+}
+
+.page-interior.page-layout-split .opening-aside {
+  padding: 1.45rem;
+  overflow: hidden;
+  border: 1px solid rgba(var(--page-accent), 0.28);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(var(--page-accent), 0.12), rgba(10, 15, 30, 0.92) 62%),
+    rgba(10, 15, 30, 0.9);
+  box-shadow: 0 24px 68px rgba(0, 0, 0, 0.25);
+}
+
+.page-layout-split .opening-aside-top {
+  margin-bottom: 2.8rem;
+}
+
+.page-layout-split.page-variant-terminal .opening-aside {
+  border-radius: 10px;
+  background:
+    linear-gradient(rgba(var(--page-accent), 0.04) 1px, transparent 1px),
+    #080d19;
+  background-size: 100% 28px;
+}
+
+.page-layout-split.page-variant-trust .opening-aside {
+  padding: 1.8rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(var(--page-accent), 0.14), rgba(9, 14, 28, 0.95));
+}
+
+/* Documentation openings: chapter, centered and editorial brief formats. */
+.page-layout-chapter .page-opening {
+  grid-template-columns: minmax(130px, 0.28fr) minmax(0, 1.72fr);
+  align-items: start;
+  max-width: 1120px;
+  gap: clamp(2.4rem, 6vw, 5.6rem);
+}
+
+.page-layout-chapter .opening-copy {
+  max-width: 890px;
+}
+
+.opening-mark {
+  min-width: 0;
+}
+
+.opening-mark-chapter {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(var(--page-accent), 0.62);
+}
+
+.opening-mark-icon {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  border: 1px solid rgba(var(--page-accent), 0.25);
+  border-radius: 15px;
+  background: rgba(var(--page-accent), 0.08);
+}
+
+.opening-mark-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.opening-mark-code,
+.opening-brief-code {
+  color: var(--page-accent-solid);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.opening-mark-label {
+  color: var(--text);
+  font-weight: 880;
+}
+
+.opening-mark-tags,
+.opening-brief-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.opening-mark-tags span,
+.opening-brief-tags span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 780;
+}
+
+.opening-mark-tags span:not(:last-child)::after,
+.opening-brief-tags span:not(:last-child)::after {
+  margin-left: 0.42rem;
+  color: rgba(var(--page-accent), 0.65);
+  content: "•";
+}
+
+.page-layout-centered .page-opening {
+  display: block;
+  max-width: 1060px;
+  text-align: center;
+}
+
+.page-layout-centered .opening-copy,
+.page-layout-centered .page-opening h1,
+.page-layout-centered .page-opening .lead {
+  margin-inline: auto;
+}
+
+.page-layout-centered .opening-copy {
+  max-width: 940px;
+}
+
+.opening-mark-centered {
+  display: grid;
+  justify-items: center;
+  gap: 0.72rem;
+  margin-bottom: 1.85rem;
+}
+
+.opening-mark-centered .opening-mark-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(var(--page-accent), 0.2), rgba(var(--page-accent), 0.05) 68%),
+    rgba(9, 14, 28, 0.7);
+}
+
+.opening-mark-centered .opening-mark-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.opening-mark-centered .opening-mark-label {
+  font-size: 1.05rem;
+}
+
+.opening-mark-centered .opening-mark-tags {
+  justify-content: center;
+}
+
+.page-layout-brief .page-opening {
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+  align-items: end;
+  max-width: 1120px;
+}
+
+.page-layout-brief .opening-copy {
+  max-width: 780px;
+}
+
+.opening-brief {
+  min-width: 0;
+  padding: 1.1rem 0 0 1.5rem;
+  border-top: 1px solid rgba(var(--page-accent), 0.5);
+  border-left: 1px solid rgba(var(--page-accent), 0.2);
+}
+
+.opening-brief p {
+  margin: 0.8rem 0 1.2rem;
+  color: var(--muted);
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+/* Content boxes: predictable wrapping and breathing room. */
+:is(
+  .card,
+  .panel,
+  .command-item,
+  .contact-card,
+  .price-card,
+  .showcase-card,
+  .stat-card,
+  .update-card,
+  .panel-directory-card,
+  .doc-topic-card,
+  .doc-section,
+  .doc-callout,
+  .conversion-cta,
+  .product-preview,
+  .pain-outcome-card,
+  .decision-panel,
+  .buyer-checklist
+) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:is(
+  .card,
+  .panel,
+  .command-item,
+  .contact-card,
+  .price-card,
+  .showcase-card,
+  .stat-card,
+  .update-card,
+  .panel-directory-card,
+  .doc-topic-card,
+  .doc-section,
+  .doc-callout,
+  .conversion-cta
+) > :last-child {
+  margin-bottom: 0;
+}
+
+:is(.feature-top, .price-head, .spotlight-card, .hero-asset-card, .preview-toolbar) {
+  flex-wrap: wrap;
+}
+
+:is(.doc-section, .card, .panel, .contact-card, .price-card, .command-item, .update-card) > p + :is(ul, ol, .info-table, .doc-table-wrap, .doc-callout, .callout, .flow-strip, .hero-actions, .button) {
+  margin-top: 1.35rem;
+}
+
+:is(.doc-section, .card, .panel, .contact-card, .price-card, .command-item, .update-card) > :is(ul, ol, .info-table, .doc-table-wrap, .doc-callout, .callout, .flow-strip) + p {
+  margin-top: 1.35rem;
+}
+
+:is(.doc-section, .card, .panel, .contact-card, .price-card, .command-item, .update-card) > h3 + p {
+  margin-top: 0.75rem;
+}
+
+.doc-section > h2 + :is(p, ul, ol, .info-table, .doc-table-wrap, .command-signature) {
+  margin-top: 1rem;
+}
+
+.doc-section code:not(.command-signature),
+.info-table code,
+.command-item code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.button,
+.badge,
+.mini-badge {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+.card h2,
+.card h3,
+.doc-section h2,
+.doc-section h3,
+.contact-card h2,
+.price-card h2,
+.update-card h3 {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  .page-layout-chapter .page-opening,
+  .page-layout-brief .page-opening,
+  .page-layout-rail .page-opening,
+  .page-layout-spotlight .page-opening,
+  .page-layout-split .page-opening {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .opening-mark-chapter {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem 1rem;
+  }
+
+  .opening-mark-chapter .opening-mark-tags {
+    grid-column: 1 / -1;
+  }
+
+  .opening-brief {
+    max-width: 720px;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .page-interior.page-layout-rail .opening-aside {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.2rem 1.5rem;
+    padding: 1.35rem 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(var(--page-accent), 0.38);
+  }
+
+  .page-layout-rail .opening-aside-top {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: 0.8rem;
+    margin: 0;
+  }
+
+  .page-layout-spotlight .opening-aside {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .page-layout-spotlight .opening-aside-top,
+  .page-layout-spotlight .opening-tags {
+    justify-items: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-interior .page-opening {
+    padding-top: 3.35rem;
+    padding-bottom: 3rem;
+  }
+
+  .page-interior .page-opening h1 {
+    font-size: clamp(2.2rem, 11vw, 3.45rem);
+    overflow-wrap: anywhere;
+  }
+
+  .opening-mark-chapter {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .opening-mark-chapter .opening-mark-label,
+  .opening-mark-chapter .opening-mark-tags {
+    grid-column: 1 / -1;
+  }
+
+  .page-layout-centered .page-opening {
+    text-align: left;
+  }
+
+  .opening-mark-centered {
+    justify-items: start;
+  }
+
+  .opening-mark-centered .opening-mark-tags {
+    justify-content: flex-start;
+  }
+
+  .opening-band {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .opening-band-label,
+  .opening-band-tags {
+    grid-column: 1 / -1;
+  }
+
+  .opening-band-tags {
+    justify-content: flex-start;
+  }
+
+  .page-interior.page-layout-rail .opening-aside {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .page-interior.page-layout-split .opening-aside {
+    padding: 1.15rem;
+    border-radius: 18px;
+  }
+
+  .page-layout-spotlight .opening-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 26px;
+  }
+
+  .page-layout-spotlight .opening-icon img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .doc-section,
+  .card,
+  .panel,
+  .contact-card,
+  .price-card,
+  .update-card,
+  .command-item {
+    padding: 1.15rem;
   }
 }
