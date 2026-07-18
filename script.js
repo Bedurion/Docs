@@ -115,6 +115,12 @@ const renderNavMenu = (section, wide = false) => `
 
 if (navLinks) {
   navLinks.innerHTML = `
+    <div class="mobile-nav-heading">
+      <button class="mobile-nav-back" type="button" aria-label="Back to main navigation">
+        <span class="mobile-nav-back-icon" aria-hidden="true">←</span>
+        <span><small>Back to menu</small><strong data-mobile-nav-title>Navigation</strong></span>
+      </button>
+    </div>
     <a class="nav-link ${currentPage === 'index.html' ? 'active' : ''}" href="index.html">${renderNavIcon('home.svg')}<span>Home</span></a>
     ${renderNavMenu(navigationSections.guild)}
     ${renderNavMenu(navigationSections.features)}
@@ -258,7 +264,7 @@ const pageOpeningTitles = {
   'docs-troubleshooting.html': 'Fix It Fast',
   'docs-watchlists.html': 'Live Watchlists',
   'docs-website.html': 'Website Publishing',
-  'features.html': 'Your Guild OS',
+  'features.html': 'Run Your Guild',
   'features-economy.html': 'Guild Economy',
   'features-events.html': 'Better Events',
   'features-finder.html': 'Find Your Team',
@@ -831,10 +837,7 @@ if (navToggle && navLinks) {
     document.body.classList.toggle('nav-open', isOpen && isMobile);
 
     if (isOpen && isMobile) {
-      const activeMenu = navLinks.querySelector('.nav-menu-button.active')?.closest('.nav-menu');
-      const defaultMenu = activeMenu || navLinks.querySelector('[data-nav-section="docs"]');
-      closeOtherMenus(defaultMenu);
-      setMenuOpen(defaultMenu, true);
+      resetMobileNavigation();
       navLinks.scrollTop = 0;
     }
   });
@@ -863,6 +866,39 @@ const setMenuOpen = (menu, isOpen) => {
     }
   }
 };
+
+const resetMobileNavigation = () => {
+  if (!navLinks) return;
+  navLinks.classList.remove('mobile-submenu');
+  navLinks.querySelectorAll('.nav-menu').forEach((menu) => {
+    menu.classList.remove('mobile-active', 'open');
+    menu.querySelector('.nav-menu-button')?.setAttribute('aria-expanded', 'false');
+  });
+  navLinks.querySelectorAll('.nav-dropdown-group.open').forEach((group) => {
+    group.classList.remove('open');
+    group.querySelector('.nav-group-button')?.setAttribute('aria-expanded', 'false');
+  });
+  const title = navLinks.querySelector('[data-mobile-nav-title]');
+  if (title) title.textContent = 'Navigation';
+};
+
+const enterMobileNavigation = (menu) => {
+  if (!navLinks || !menu) return;
+  resetMobileNavigation();
+  navLinks.classList.add('mobile-submenu');
+  menu.classList.add('mobile-active');
+  setMenuOpen(menu, true);
+  const title = navLinks.querySelector('[data-mobile-nav-title]');
+  const label = menu.querySelector('.nav-menu-button span:nth-of-type(2)')?.textContent?.trim();
+  if (title) title.textContent = label || 'Navigation';
+  navLinks.scrollTop = 0;
+};
+
+navLinks?.querySelector('.mobile-nav-back')?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  resetMobileNavigation();
+  navLinks.scrollTop = 0;
+});
 
 document.querySelectorAll('.nav-group-button').forEach((button) => {
   button.addEventListener('click', (event) => {
@@ -903,10 +939,7 @@ document.querySelectorAll('.nav-menu').forEach((menu) => {
   button?.addEventListener('click', (event) => {
     event.stopPropagation();
     if (window.matchMedia('(max-width: 1040px)').matches) {
-      if (!menu.classList.contains('open')) {
-        closeOtherMenus(menu);
-        setMenuOpen(menu, true);
-      }
+      enterMobileNavigation(menu);
       return;
     }
 
@@ -940,6 +973,7 @@ document.addEventListener('click', (event) => {
     navToggle?.setAttribute('aria-expanded', 'false');
     navToggle?.setAttribute('aria-label', 'Open navigation');
     document.body.classList.remove('nav-open');
+    resetMobileNavigation();
   }
 
   if (window.matchMedia('(max-width: 1040px)').matches && event.target.closest('.nav-links a')) {
@@ -947,6 +981,7 @@ document.addEventListener('click', (event) => {
     navToggle?.setAttribute('aria-expanded', 'false');
     navToggle?.setAttribute('aria-label', 'Open navigation');
     document.body.classList.remove('nav-open');
+    resetMobileNavigation();
   }
 });
 
@@ -957,6 +992,7 @@ document.addEventListener('keydown', (event) => {
   navToggle?.setAttribute('aria-expanded', 'false');
   navToggle?.setAttribute('aria-label', 'Open navigation');
   document.body.classList.remove('nav-open');
+  resetMobileNavigation();
 });
 
 window.addEventListener('resize', () => {
@@ -965,6 +1001,7 @@ window.addEventListener('resize', () => {
     navToggle?.setAttribute('aria-expanded', 'false');
     navToggle?.setAttribute('aria-label', 'Open navigation');
     document.body.classList.remove('nav-open');
+    resetMobileNavigation();
   }
 });
 
