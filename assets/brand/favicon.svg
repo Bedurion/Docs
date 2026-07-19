@@ -1,18 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lumina">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Lumina guild crest">
   <defs>
-    <radialGradient id="background" cx="34%" cy="28%" r="78%">
-      <stop offset="0" stop-color="#18213d"/>
-      <stop offset="1" stop-color="#050812"/>
+    <radialGradient id="field" cx="38%" cy="28%" r="82%">
+      <stop offset="0" stop-color="#202747"/>
+      <stop offset="0.52" stop-color="#0d1125"/>
+      <stop offset="1" stop-color="#04060d"/>
     </radialGradient>
-    <linearGradient id="gold" x1="16" y1="12" x2="49" y2="52" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fff0a8"/>
-      <stop offset="0.48" stop-color="#f6c94c"/>
-      <stop offset="1" stop-color="#d18a12"/>
+    <linearGradient id="ring" x1="25" y1="16" x2="103" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff2a8"/>
+      <stop offset="0.24" stop-color="#ffd45e"/>
+      <stop offset="0.62" stop-color="#e6a52a"/>
+      <stop offset="1" stop-color="#8f4b08"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="38" y1="24" x2="93" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff7c8"/>
+      <stop offset="0.2" stop-color="#ffd85d"/>
+      <stop offset="0.58" stop-color="#e9aa27"/>
+      <stop offset="1" stop-color="#8f4a08"/>
+    </linearGradient>
+    <linearGradient id="aurora" x1="24" y1="96" x2="105" y2="73" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9b5cff"/>
+      <stop offset="0.48" stop-color="#4dbdf4"/>
+      <stop offset="1" stop-color="#f6cf58"/>
+    </linearGradient>
+    <linearGradient id="ruby" x1="57" y1="93" x2="71" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff7c58"/>
+      <stop offset="0.45" stop-color="#e92938"/>
+      <stop offset="1" stop-color="#7d071d"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="30" fill="url(#background)"/>
-  <circle cx="32" cy="32" r="28.5" fill="none" stroke="url(#gold)" stroke-width="3"/>
-  <circle cx="32" cy="32" r="23.5" fill="none" stroke="#9d6716" stroke-width="1" opacity="0.9"/>
-  <path d="M21 14h10v27h16v9H21z" fill="url(#gold)"/>
-  <path d="M25 18h2v27h17v2H25z" fill="#fff7c7" opacity="0.38"/>
+
+  <circle cx="64" cy="64" r="61" fill="#03050b"/>
+  <circle cx="64" cy="64" r="58" fill="url(#field)" stroke="#513316" stroke-width="7"/>
+  <circle cx="64" cy="64" r="57.5" fill="none" stroke="url(#ring)" stroke-width="4.5"/>
+  <circle cx="64" cy="64" r="51.5" fill="none" stroke="#f4c95d" stroke-width="1.5" opacity="0.42"/>
+
+  <path d="M24 74a43 43 0 0 0 80 0" fill="none" stroke="url(#aurora)" stroke-width="3" stroke-linecap="round" opacity="0.82"/>
+  <path d="M29 47a43 43 0 0 1 70-9" fill="none" stroke="#f4c95d" stroke-width="1.5" stroke-linecap="round" opacity="0.32"/>
+
+  <path d="M64 12l3.1 7.9L75 23l-7.9 3.1L64 34l-3.1-7.9L53 23l7.9-3.1z" fill="url(#ring)"/>
+  <path d="M64 17.2l1.3 4.5 4.5 1.3-4.5 1.3-1.3 4.5-1.3-4.5-4.5-1.3 4.5-1.3z" fill="#fff8d2"/>
+
+  <path d="M38 27h34l5 7-7 7h-5v38h17l10-15h8l-5 30H38l-6-8 8-7h4V41h-6l-5-7z" fill="#301b08" stroke="#02030a" stroke-width="4" stroke-linejoin="round" opacity="0.88"/>
+  <path d="M38 24h34l5 7-7 7h-5v38h17l10-15h8l-5 30H38l-6-8 8-7h4V38h-6l-5-7z" fill="url(#gold)" stroke="#f7cf59" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M41 29h27l1.8 2.3-5.5 2.2H59v48h25l3.7-5.5-1.8 10H43l3-4V33h-4.5z" fill="#fff8cb" opacity="0.34"/>
+  <path d="M47 40h4v38h-4z" fill="#7e430a" opacity="0.42"/>
+
+  <path d="M64 87l17 16-17 19-17-19z" fill="#3b1f08" stroke="#12050a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 89l15 14-15 17-15-17z" fill="url(#ring)" stroke="#ffe278" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M64 94l10 9-10 12-10-12z" fill="url(#ruby)" stroke="#ff8164" stroke-width="1.4"/>
+  <path d="M64 94v21l-10-12zm0 0l10 9-10 2.8z" fill="#ffbd84" opacity="0.45"/>
+  <path d="M64 105.8l10-2.8-10 12-10-12z" fill="#77071b" opacity="0.55"/>
+  <circle cx="64" cy="103" r="2.4" fill="#fff6c7"/>
+
+  <circle cx="23" cy="69" r="2.2" fill="#a96aff"/>
+  <circle cx="105" cy="69" r="2.2" fill="#56c9f5"/>
 </svg>
