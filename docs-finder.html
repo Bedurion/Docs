@@ -2,14 +2,14 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Configure Luminox Finder, understand team matching and Looking for team. Learn setup, permissions and safe daily use in Discord."><title>Luminox Finder Guide | Online Team Matching</title>
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://bedurion.github.io/Docs-Lumina/docs-finder.html">
+  <link rel="canonical" href="https://guildlumina.com/docs-finder.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina · Luminox">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Luminox Finder Guide | Online Team Matching">
   <meta property="og:description" content="Configure Luminox Finder, understand team matching and Looking for team. Learn setup, permissions and safe daily use in Discord.">
-  <meta property="og:url" content="https://bedurion.github.io/Docs-Lumina/docs-finder.html">
-  <meta property="og:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta property="og:url" content="https://guildlumina.com/docs-finder.html">
+  <meta property="og:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
@@ -17,14 +17,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Luminox Finder Guide | Online Team Matching">
   <meta name="twitter:description" content="Configure Luminox Finder, understand team matching and Looking for team. Learn setup, permissions and safe daily use in Discord.">
-  <meta name="twitter:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta name="twitter:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta name="twitter:image:alt" content="Lumina guild and Luminox Discord bot">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://bedurion.github.io/Docs-Lumina/docs-finder.html#webpage","url":"https://bedurion.github.io/Docs-Lumina/docs-finder.html","name":"Luminox Finder Guide | Online Team Matching","description":"Configure Luminox Finder, understand team matching and Looking for team. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://bedurion.github.io/Docs-Lumina/#website","url":"https://bedurion.github.io/Docs-Lumina/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://guildlumina.com/docs-finder.html#webpage","url":"https://guildlumina.com/docs-finder.html","name":"Luminox Finder Guide | Online Team Matching","description":"Configure Luminox Finder, understand team matching and Looking for team. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://guildlumina.com/#website","url":"https://guildlumina.com/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
   <link rel="stylesheet" href="styles.css?v=20260719-23"><link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg"></head>
 <body>
   <header class="site-header compact-header" id="top"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/brand/lumina-seal-256.png" alt="" aria-hidden="true"></span><img class="brand-wordmark" src="assets/brand/lumina-wordmark.svg?v=20260718-3" alt="Lumina" width="128" height="39"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links" data-nav-links></div></nav></header>
   <main class="page-shell">
-    <section class="page-hero"><p class="eyebrow">Documentation · Finder</p><h1>Turn current online data into useful team suggestions.</h1><p class="lead">Finder suggests compatible groups, lets members say they are Looking for team and automatically cleans old match history.</p></section>
+    <section class="page-hero"><p class="eyebrow">Documentation · Finder</p><h1>Turn current online members into playable teams.</h1><p class="lead">This guide explains how Finder uses recent Community online data, player preferences and Looking for team status to suggest compatible groups without making another Tibia request for every match.</p></section>
     <section class="section doc-layout"><aside class="toc-card"><p class="eyebrow">On this page</p><a href="#setup">Setup</a><a href="#panel">Read the panel</a><a href="#matching">Matching</a><a href="#groups">Group rules</a><a href="#looking">Looking for team</a><a href="#history">History</a><a href="#performance">Performance</a><a href="#troubleshooting">Troubleshooting</a></aside><article class="doc-article">
       <section id="setup" class="doc-section"><p class="eyebrow">Panel setup</p><h2>Publish Finder after online data exists</h2><code class="command-signature">/finder set channel:#finder</code><p>The command stores one text channel and publishes the persistent Finder panel. Luminox needs View Channel, Send Messages, Embed Links, Read Message History and Manage Channels if the channel-name counter should update.</p><div class="doc-callout info"><strong>Recommended order</strong><p>Configure the guild, world, Registration and Guild Members Online first. Finder can then reuse verified characters and current online snapshots instead of starting a second collection path.</p></div></section>
       <section id="panel" class="doc-section"><p class="eyebrow">Public presentation</p><h2>Three numbers explain the current state</h2><div class="info-table"><div><strong>Online</strong><span>Eligible characters in the most recent online check already collected by Luminox.</span></div><div><strong>Looking for team</strong><span>Accounts that intentionally published a temporary team-search message.</span></div><div><strong>Matches</strong><span>Compatible groups generated from the currently eligible characters.</span></div><div><strong>Last update</strong><span>The exact refresh time plus Discord's relative time display.</span></div></div><p>Looking for team appears at both the beginning and end of a long Finder result so members can find the action without scrolling through every match. Long match lists split before Discord truncates them and retain navigation back to the first page.</p></section>
@@ -36,5 +36,5 @@
       <section id="troubleshooting" class="doc-section"><p class="eyebrow">Troubleshooting</p><h2>Why a character or expected group may be missing</h2><div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>Symptom</th><th>Check</th></tr></thead><tbody><tr><td>Registered character is absent</td><td>The character may be offline, outside the configured guild/world or missing from the latest online snapshot.</td></tr><tr><td>No trio with three DPS</td><td>Only duos permit any compatible vocation pair; groups of three or more require an Elite Knight and a Druid.</td></tr><tr><td>Looking for team did not appear</td><td>Check the account cooldown and refresh timestamp; the action updates the panel immediately after success.</td></tr><tr><td>Channel counter is old</td><td>Verify Manage Channels and that Luminox's role can edit the configured Finder channel.</td></tr></tbody></table></div></section>
     </article></section>
   </main>
-  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-2"></script><script src="script.js?v=20260719-9"></script>
+  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-3"></script><script src="script.js?v=20260719-11"></script>
 </body></html>

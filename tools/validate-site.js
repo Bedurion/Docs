@@ -4,7 +4,8 @@ const { execFileSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '..');
 const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith('.html')).sort();
-const publicBaseUrl = 'https://bedurion.github.io/Docs-Lumina/';
+const publicHost = fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim();
+const publicBaseUrl = `https://${publicHost}/`;
 const errors = [];
 const warnings = [];
 const pageTitles = new Map();
@@ -65,7 +66,16 @@ for (const file of htmlFiles) {
       report(file, 'missing JSON-LD structured data');
     } else {
       try {
-        JSON.parse(structuredData);
+        const parsedStructuredData = JSON.parse(structuredData);
+        if (file === 'index.html') {
+          const graph = Array.isArray(parsedStructuredData['@graph']) ? parsedStructuredData['@graph'] : [];
+          const softwareApplication = graph.find((entry) => entry['@type'] === 'SoftwareApplication');
+          if (!softwareApplication) report(file, 'missing SoftwareApplication structured data');
+          if (softwareApplication && softwareApplication.offers?.price !== '0') report(file, 'SoftwareApplication must expose its free offer');
+          if (softwareApplication && softwareApplication.offers?.priceCurrency !== 'EUR') report(file, 'SoftwareApplication offer must declare EUR');
+          if (softwareApplication && !softwareApplication.installUrl) report(file, 'SoftwareApplication must expose its install URL');
+          if (softwareApplication && softwareApplication.runtimePlatform !== 'Discord') report(file, 'SoftwareApplication must declare Discord as its runtime platform');
+        }
       } catch {
         report(file, 'invalid JSON-LD structured data');
       }

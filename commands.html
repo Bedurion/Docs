@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Complete reference for every active Luminox slash command and context command. Find syntax, permissions and the panel workflow replacing each retired command.">
+  <meta name="description" content="Complete reference for every active Luminox slash and context command. Find syntax, permissions and the panel that replaces each retired command.">
   <title>Lumina · Luminox Command Reference</title>
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://bedurion.github.io/Docs-Lumina/commands.html">
+  <link rel="canonical" href="https://guildlumina.com/commands.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina · Luminox">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Lumina · Luminox Command Reference">
-  <meta property="og:description" content="Complete reference for every active Luminox slash command and context command. Find syntax, permissions and the panel workflow replacing each retired command.">
-  <meta property="og:url" content="https://bedurion.github.io/Docs-Lumina/commands.html">
-  <meta property="og:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta property="og:description" content="Complete reference for every active Luminox slash and context command. Find syntax, permissions and the panel that replaces each retired command.">
+  <meta property="og:url" content="https://guildlumina.com/commands.html">
+  <meta property="og:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
   <meta property="og:image:alt" content="Lumina guild and Luminox Discord bot">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Lumina · Luminox Command Reference">
-  <meta name="twitter:description" content="Complete reference for every active Luminox slash command and context command. Find syntax, permissions and the panel workflow replacing each retired command.">
-  <meta name="twitter:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta name="twitter:description" content="Complete reference for every active Luminox slash and context command. Find syntax, permissions and the panel that replaces each retired command.">
+  <meta name="twitter:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta name="twitter:image:alt" content="Lumina guild and Luminox Discord bot">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://bedurion.github.io/Docs-Lumina/commands.html#webpage","url":"https://bedurion.github.io/Docs-Lumina/commands.html","name":"Lumina · Luminox Command Reference","description":"Complete reference for every active Luminox slash command and context command. Find syntax, permissions and the panel workflow replacing each retired command.","isPartOf":{"@type":"WebSite","@id":"https://bedurion.github.io/Docs-Lumina/#website","url":"https://bedurion.github.io/Docs-Lumina/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://guildlumina.com/commands.html#webpage","url":"https://guildlumina.com/commands.html","name":"Lumina · Luminox Command Reference","description":"Complete reference for every active Luminox slash and context command. Find syntax, permissions and the panel that replaces each retired command.","isPartOf":{"@type":"WebSite","@id":"https://guildlumina.com/#website","url":"https://guildlumina.com/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
   <link rel="stylesheet" href="styles.css?v=20260719-23">
   <link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg">
 </head>
@@ -46,11 +46,11 @@
       <article class="command-item" data-command-item><h3><code>/install overview</code><span class="badge admin">Administrator</span></h3><p>Shows the complete current server profile in private paginated responses. Use it to audit the selected edition, configured channels, roles, guild identity and remaining setup work.</p></article>
       <article class="command-item" data-command-item><h3><code>/install refresh</code><span class="badge admin">Administrator</span></h3><p>Refreshes configured public panels without launching the heavier Tibia character scan. It is the safe maintenance action when panels need to be redrawn after a configuration change.</p></article>
       <article class="command-item" data-command-item><h3><code>/guild set</code><span class="badge admin">Administrator</span></h3><p>Registers, verifies, updates or removes the Tibia guild used by this Discord server. The verified guild also establishes the allowed world and becomes the source for rank, membership and registration checks.</p></article>
-      <article class="command-item" data-command-item><h3><code>/guild chat</code><span class="badge admin">Administrator</span></h3><p>Assigns the Guild Chat channel used for Luminox's most important operational alerts, including significant enemy and blacklist outcomes. It does not replace the dedicated moderation or tracker logs.</p></article>
+      <article class="command-item" data-command-item><h3><code>/guild chat</code><span class="badge admin">Administrator</span></h3><p>Assigns the Guild Chat channel used for Luminox's most important alerts, including significant enemy and blacklist outcomes. It does not replace the dedicated moderation or tracker logs.</p></article>
       <article class="command-item" data-command-item><h3><code>/ranks map</code><span class="badge admin">Administrator</span></h3><p>Connects one Tibia guild rank to one Discord role. During synchronization, Luminox applies the mapped role that matches the member's verified main character.</p></article>
       <article class="command-item" data-command-item><h3><code>/ranks guest</code><span class="badge admin">Administrator</span></h3><p>Sets the Discord role used for registered characters who belong to the configured world but not the configured guild. This keeps legitimate guests separate from verified guild members.</p></article>
       <article class="command-item" data-command-item><h3><code>/ranks overview</code><span class="badge admin">Administrator</span></h3><p>Displays every Tibia-rank mapping and the current Guest-role configuration. Run it before changing roles to verify which mappings are active or missing.</p></article>
-      <article class="command-item" data-command-item><h3><code>/moderators roles add</code><span class="badge admin">Administrator</span></h3><p>Adds one Discord role to Luminox's global moderator-role list. Members with any configured moderator role gain the shared moderator access used by supported panels and workflows.</p></article>
+      <article class="command-item" data-command-item><h3><code>/moderators roles add</code><span class="badge admin">Administrator</span></h3><p>Adds one Discord role to Luminox's global moderator-role list. Members with any configured moderator role gain the shared moderator access used by supported panels and staff features.</p></article>
       <article class="command-item" data-command-item><h3><code>/moderators roles remove</code><span class="badge admin">Administrator</span></h3><p>Removes one role from the global moderator-role list without deleting the Discord role itself. Specialist roles remain independent and may still be required by GuildBank, Support or Recruitment.</p></article>
       <article class="command-item" data-command-item><h3><code>/moderators roles overview</code><span class="badge admin">Administrator</span></h3><p>Shows all roles currently recognized as global moderators. Use this private overview when checking why a staff member can or cannot access a moderation action.</p></article>
       <article class="command-item" data-command-item><h3><code>/transfer account</code><span class="badge admin">Administrator</span></h3><p>Moves Luminox account data from one Discord account to another when a member changes accounts. Registrations and linked progress are transferred as one administrative operation rather than recreated manually.</p></article>
@@ -72,12 +72,12 @@
       <article class="command-item" data-command-item><h3><code>/guildhall refresh</code><span class="badge admin">Administrator</span></h3><p>Redraws the existing Guildhall panel. Permanent audit embeds remain above it while the live controls return to the final channel position.</p></article>
       <article class="command-item" data-command-item><h3><code>/events set hunts</code><span class="badge admin">Administrator</span></h3><p>Assigns the Hunt Board channel. Hunt creation, vocation composition, shared-experience restrictions, signups and threads are then managed through the board buttons.</p></article>
       <article class="command-item" data-command-item><h3><code>/events set bosses</code><span class="badge admin">Administrator</span></h3><p>Assigns the Boss Board channel. Boss events prioritize tanks, healers and damage roles while preserving signup order and minimum-participant rules.</p></article>
-      <article class="command-item" data-command-item><h3><code>/events set quests</code><span class="badge admin">Administrator</span></h3><p>Assigns the Quest Board channel. Quest events accept any vocation, support recruiting without an initial date and can schedule later through the event workflow.</p></article>
+      <article class="command-item" data-command-item><h3><code>/events set quests</code><span class="badge admin">Administrator</span></h3><p>Assigns the Quest Board channel. Quest events accept any vocation, support recruiting without an initial date and can schedule later through the event process.</p></article>
       <article class="command-item" data-command-item><h3><code>/events set general</code><span class="badge admin">Administrator</span></h3><p>Assigns the general Event Board channel for unrestricted guild activities. The creator chooses the minimum attendance and whether scheduling begins immediately or after recruitment.</p></article>
       <article class="command-item" data-command-item><h3><code>/loot set</code><span class="badge admin">Administrator</span></h3><p>Publishes the Loot Split panel in the selected channel. Members paste Tibia session data and complete the guided split flow without using the retired member-facing loot command.</p></article>
       <article class="command-item" data-command-item><h3><code>/autodelete set</code><span class="badge admin">Administrator</span></h3><p>Creates or edits cleanup for one text channel. <strong>Always</strong> deletes every new unpinned message immediately; <strong>Timed</strong> uses a retention period from ten minutes up to thirty days.</p></article>
       <article class="command-item" data-command-item><h3><code>/autodelete disable</code><span class="badge admin">Administrator</span></h3><p>Explicitly disables Autodelete in the selected channel. It removes either an <strong>Always</strong> or <strong>Timed</strong> rule without requiring its previous mode or duration, and safely reports when the channel was already disabled.</p></article>
-      <article class="command-item" data-command-item><h3><code>/moderation set</code><span class="badge admin">Administrator</span></h3><p>Assigns the operational moderation-log channel. Character registrations, role changes, member departures and Blacklist or Ban List actions are recorded there as Discord embeds.</p></article>
+      <article class="command-item" data-command-item><h3><code>/moderation set</code><span class="badge admin">Administrator</span></h3><p>Assigns the moderation-log channel. Character registrations, role changes, member departures and Blacklist or Ban List actions are recorded there as Discord embeds.</p></article>
       <article class="command-item" data-command-item><h3><code>/moderators set voting</code><span class="badge admin">Administrator</span></h3><p>Publishes the private Staff Voting panel in the selected channel. Only eligible staff can open or vote on internal candidates, while administrators conclude each vote.</p></article>
       <article class="command-item" data-command-item><h3><code>/moderators set applications</code><span class="badge admin">Administrator</span></h3><p>Publishes the public Staff Applications panel. Eligible guild members can submit structured applications and the resulting candidacies remain visible for community voting.</p></article>
     </div></section>
@@ -95,7 +95,7 @@
       <article class="command-item" data-command-item><h3><code>/recruitment set</code><span class="badge admin">Administrator</span></h3><p>Publishes Recruitment Rewards and assigns its specialist review role. Claims, disputes, retention protection and Loyalty rewards are handled through the resulting panel.</p></article>
     </div></section>
 
-    <section class="section command-panel active"><p class="eyebrow">Safety and staff workflows</p><h2>Moderation, support and maintenance</h2><div class="command-list">
+    <section class="section command-panel active"><p class="eyebrow">Safety and staff tools</p><h2>Moderation, support and maintenance</h2><div class="command-list">
       <article class="command-item" data-command-item><h3><code>/automod enable</code><span class="badge admin">Administrator</span></h3><p>Enables Luminox link and restricted-word protection in one selected text channel. The setting applies only to that channel and does not rewrite its Discord permission overwrites.</p></article>
       <article class="command-item" data-command-item><h3><code>/automod disable</code><span class="badge admin">Administrator</span></h3><p>Removes one selected channel from Luminox Automod protection. Other protected channels and their configured rules remain active.</p></article>
       <article class="command-item" data-command-item><h3><code>/automod overview</code><span class="badge admin">Administrator</span></h3><p>Shows every channel protected by Luminox Automod, the current restricted-word policy and the configured temporary isolation duration.</p></article>
@@ -124,7 +124,7 @@
     <section class="section"><div class="doc-callout warning"><strong>Panel handlers are intentionally absent from Discord's command list</strong><p><code>/register</code>, member-facing <code>/loot</code>, direct event creation and Blacklist or Ban List CRUD commands were replaced by guided panels. Internal modules still process their buttons, selectors and modals, but members see one clear entry point instead of duplicated slash commands.</p></div></section>
   </main>
   <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer>
-  <script src="docs-guide.js?v=20260719-2"></script>
-  <script src="script.js?v=20260719-9"></script>
+  <script src="docs-guide.js?v=20260719-3"></script>
+  <script src="script.js?v=20260719-11"></script>
 </body>
 </html>

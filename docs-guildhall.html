@@ -2,14 +2,14 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Configure and operate the Luminox Guildhall panel, rooms, claims and permanent Discord logs. Learn setup, permissions and safe daily use in Discord."><title>Luminox Guildhall Guide | Rooms, Claims &amp; Logs</title>
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://bedurion.github.io/Docs-Lumina/docs-guildhall.html">
+  <link rel="canonical" href="https://guildlumina.com/docs-guildhall.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina · Luminox">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Luminox Guildhall Guide | Rooms, Claims &amp; Logs">
   <meta property="og:description" content="Configure and operate the Luminox Guildhall panel, rooms, claims and permanent Discord logs. Learn setup, permissions and safe daily use in Discord.">
-  <meta property="og:url" content="https://bedurion.github.io/Docs-Lumina/docs-guildhall.html">
-  <meta property="og:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta property="og:url" content="https://guildlumina.com/docs-guildhall.html">
+  <meta property="og:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
@@ -17,14 +17,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Luminox Guildhall Guide | Rooms, Claims &amp; Logs">
   <meta name="twitter:description" content="Configure and operate the Luminox Guildhall panel, rooms, claims and permanent Discord logs. Learn setup, permissions and safe daily use in Discord.">
-  <meta name="twitter:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta name="twitter:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta name="twitter:image:alt" content="Lumina guild and Luminox Discord bot">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://bedurion.github.io/Docs-Lumina/docs-guildhall.html#webpage","url":"https://bedurion.github.io/Docs-Lumina/docs-guildhall.html","name":"Luminox Guildhall Guide | Rooms, Claims & Logs","description":"Configure and operate the Luminox Guildhall panel, rooms, claims and permanent Discord logs. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://bedurion.github.io/Docs-Lumina/#website","url":"https://bedurion.github.io/Docs-Lumina/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://guildlumina.com/docs-guildhall.html#webpage","url":"https://guildlumina.com/docs-guildhall.html","name":"Luminox Guildhall Guide | Rooms, Claims & Logs","description":"Configure and operate the Luminox Guildhall panel, rooms, claims and permanent Discord logs. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://guildlumina.com/#website","url":"https://guildlumina.com/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
   <link rel="stylesheet" href="styles.css?v=20260719-23"><link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg"></head>
 <body>
   <header class="site-header compact-header" id="top"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/brand/lumina-seal-256.png" alt="" aria-hidden="true"></span><img class="brand-wordmark" src="assets/brand/lumina-wordmark.svg?v=20260718-3" alt="Lumina" width="128" height="39"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links" data-nav-links></div></nav></header>
   <main class="page-shell">
-    <section class="page-hero"><p class="eyebrow">Documentation · Guildhall</p><h1>Turn guildhall rooms into a visible, reviewed member service.</h1><p class="lead">One persistent panel tracks the current guildhall, ordered rooms, registered occupants, sale reports and member claims without additional Tibia requests.</p></section>
+    <section class="page-hero"><p class="eyebrow">Documentation · Guildhall</p><h1>Manage Guildhall rooms from one Discord panel.</h1><p class="lead">This guide explains how staff publish the current Guildhall and its rooms, how members request available space and how every assignment, rejection or eviction is recorded.</p></section>
     <section class="section doc-layout"><aside class="toc-card"><p class="eyebrow">On this page</p><a href="#setup">Setup</a><a href="#access">Access</a><a href="#reports">Sale reports</a><a href="#status">Guildhall status</a><a href="#rooms">Rooms</a><a href="#claims">Claims</a><a href="#logs">Logs</a><a href="#maintenance">Maintenance</a></aside><article class="doc-article">
       <section id="setup" class="doc-section"><p class="eyebrow">Panel setup</p><h2>Channel and specialist role are required</h2><code class="command-signature">/guildhall set channel:#guildhall staff-role:@Guildhall Staff</code><p>Run <code>/moderators roles add</code> first so at least one global Moderator role exists. The setup command publishes the live panel in the selected text channel and stores the additional specialist role used for Guildhall administration.</p><div class="doc-callout info"><strong>Recommended channel permissions</strong><p>Luminox needs View Channel, Send Messages, Embed Links, Read Message History and Manage Messages. Members only need access to view and use the panel components.</p></div></section>
       <section id="access" class="doc-section"><p class="eyebrow">Access model</p><h2>Registered members, specialist moderators and administrators</h2><div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>Action</th><th>Requirement</th></tr></thead><tbody><tr><td>Report a guildhall for sale</td><td>At least one registered character and a valid selected main.</td></tr><tr><td>Claim a room</td><td>A registered main or alter that currently belongs to the configured guild and world.</td></tr><tr><td>Manage status, rooms and reviews</td><td>Discord Administrator, or any global Moderator role plus the configured Guildhall specialist role.</td></tr><tr><td>Configure the panel</td><td>Discord Administrator.</td></tr></tbody></table></div><p>Administrative actions are also tied to the staff member's registered main character so permanent logs retain a consistent in-game identity.</p></section>
@@ -36,5 +36,5 @@
       <section id="maintenance" class="doc-section"><p class="eyebrow">Maintenance</p><h2>Light refreshes and automatic cleanup</h2><code class="command-signature">/guildhall overview</code><code class="command-signature">/guildhall refresh</code><p><code>/guildhall overview</code> shows the private configuration, room totals and pending lists. <code>/guildhall refresh</code> redraws the live panel, and <code>/install refresh</code> includes Guildhall with other lightweight panels.</p><ul class="check-list"><li>Active rooms and occupants remain until staff changes them.</li><li>Pending requests remain until reviewed.</li><li>Completed request details are kept for 30 days with a maximum count, while the readable history remains in Discord.</li><li>The module reads the existing character registry and guild configuration; it makes no additional Tibia requests.</li></ul></section>
     </article></section>
   </main>
-  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-1"></script><script src="script.js?v=20260719-9"></script>
+  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-3"></script><script src="script.js?v=20260719-11"></script>
 </body></html>

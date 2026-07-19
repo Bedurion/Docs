@@ -2,14 +2,14 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A plain-language explanation of how Luminox reuses data, refreshes panels and keeps storage under control. Learn setup, permissions and safe daily use in Discord."><title>Lumina · How Luminox Works</title>
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://bedurion.github.io/Docs-Lumina/systems.html">
+  <link rel="canonical" href="https://guildlumina.com/systems.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina · Luminox">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Lumina · How Luminox Works">
   <meta property="og:description" content="A plain-language explanation of how Luminox reuses data, refreshes panels and keeps storage under control. Learn setup, permissions and safe daily use in Discord.">
-  <meta property="og:url" content="https://bedurion.github.io/Docs-Lumina/systems.html">
-  <meta property="og:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta property="og:url" content="https://guildlumina.com/systems.html">
+  <meta property="og:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
@@ -17,14 +17,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Lumina · How Luminox Works">
   <meta name="twitter:description" content="A plain-language explanation of how Luminox reuses data, refreshes panels and keeps storage under control. Learn setup, permissions and safe daily use in Discord.">
-  <meta name="twitter:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta name="twitter:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta name="twitter:image:alt" content="Lumina guild and Luminox Discord bot">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://bedurion.github.io/Docs-Lumina/systems.html#webpage","url":"https://bedurion.github.io/Docs-Lumina/systems.html","name":"Lumina · How Luminox Works","description":"A plain-language explanation of how Luminox reuses data, refreshes panels and keeps storage under control. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://bedurion.github.io/Docs-Lumina/#website","url":"https://bedurion.github.io/Docs-Lumina/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://guildlumina.com/systems.html#webpage","url":"https://guildlumina.com/systems.html","name":"Lumina · How Luminox Works","description":"A plain-language explanation of how Luminox reuses data, refreshes panels and keeps storage under control. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://guildlumina.com/#website","url":"https://guildlumina.com/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
   <link rel="stylesheet" href="styles.css?v=20260719-23"><link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg"></head>
 <body>
   <header class="site-header compact-header" id="top"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/brand/lumina-seal-256.png" alt="" aria-hidden="true"></span><img class="brand-wordmark" src="assets/brand/lumina-wordmark.svg?v=20260718-3" alt="Lumina" width="128" height="39"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links" data-nav-links></div></nav></header>
   <main class="page-shell">
-    <section class="page-hero"><p class="eyebrow">Documentation · How it works</p><h1>Collect useful information once. Reuse it across the guild.</h1><p class="lead">Luminox separates immediate Discord actions from scheduled external checks and shares current data between compatible panels. One useful result can update several views without repeating the same request for each one.</p></section>
+    <section class="page-hero"><p class="eyebrow">Documentation · How it works</p><h1>Collect useful information once. Reuse it across the guild.</h1><p class="lead">Buttons and forms are handled immediately inside Discord. External game information is checked on a schedule and safely reused by every panel that needs it, avoiding unnecessary repeated requests.</p></section>
     <section class="section doc-layout"><aside class="toc-card"><p class="eyebrow">On this page</p><a href="#layers">Layers</a><a href="#cache">Shared cache</a><a href="#storage">Storage</a><a href="#schedules">Schedules</a><a href="#editions">Editions</a></aside><article class="doc-article">
       <section id="layers" class="doc-section"><p class="eyebrow">Simple flow</p><h2>Member action, system check, useful Discord result</h2><div class="flow-strip"><div><strong>1. A person acts</strong><p>They use a command, panel, button, selector or form.</p></div><div><strong>2. Luminox applies the rules</strong><p>The relevant character, event, Loyalty, bank or staff system checks the request.</p></div><div><strong>3. Shared information is reused</strong><p>Guild settings, registered identities and current online data are read once where possible.</p></div><div><strong>4. Discord shows the result</strong><p>The bot updates a panel, counter, thread, log or private response.</p></div></div></section>
       <section id="cache" class="doc-section"><p class="eyebrow">Shared data</p><h2>One online snapshot powers multiple Community features</h2><p>In Community and Founder editions, Members Online, Enemies Online, Finder, playtime, event attendance and session statistics reuse compatible cached Tibia data. A panel refresh does not imply a new request for every displayed character.</p><div class="doc-callout success"><strong>Result</strong><p>Fast live panels without multiplying Tibia requests as new visualizations are added.</p></div></section>
@@ -33,5 +33,5 @@
       <section id="editions" class="doc-section"><p class="eyebrow">Editions</p><h2>One foundation, three different purposes</h2><div class="info-table"><div><strong>Universal Edition</strong><span>Game-independent Discord operations such as Support, general Events, moderation automation, Loyalty and staff workflows.</span></div><div><strong>Community Edition</strong><span>Adds verified Tibia guild identity, characters, progression, specialized events, economy and live intelligence.</span></div><div><strong>Founder Edition</strong><span>Lumina's private complete edition with every feature enabled, no commercial caps and the shortest safe service schedules.</span></div></div><p>Changing a public edition or plan changes capability and service policy without deleting the server's existing configuration. Founder activation remains restricted to the authorized Lumina server.</p></section>
     </article></section>
   </main>
-  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="script.js?v=20260719-9"></script>
+  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="script.js?v=20260719-11"></script>
 </body></html>

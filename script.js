@@ -83,7 +83,7 @@ const navigationSections = {
       ['docs-automation.html', 'Automation & Retention', 'Administration'],
       ['docs-website.html', 'Website Publishing', 'Administration'],
       ['docs-troubleshooting.html', 'Troubleshooting', 'Administration'],
-      ['systems.html', 'Architecture', 'Administration'],
+      ['systems.html', 'How Luminox Works', 'Administration'],
       ['docs-faq.html', 'FAQ', 'Administration'],
       ['roadmap.html', 'Roadmap', 'Administration'],
       ['changelog.html', 'Changelog', 'Administration']
@@ -202,13 +202,13 @@ const documentationCatalog = [
   ['docs-moderation.html', 'Moderation Lists', 'Blacklist, Ban List, moderation log and Guild Chat alerts.', 'blacklist banlist moderation log'],
   ['docs-staff.html', 'Staff Systems', 'Moderator roles, private voting and public applications.', 'staff moderator voting applications'],
   ['docs-admin.html', 'Administrator Guide', 'Role hierarchy, refresh strategy, backups and safe maintenance.', 'admin roles refresh backup'],
-  ['docs-automation.html', 'Automation & Retention', 'Autodelete, panel refresh, private response lifecycle and local backups.', 'automation autodelete retention backups ephemeral'],
+  ['docs-automation.html', 'Automation & Retention', 'Autodelete, panel refresh, private response expiry and local backups.', 'automation autodelete retention backups ephemeral'],
   ['docs-website.html', 'Website Publishing', 'Private Discord proposals, staff review and safe publication of approved media.', 'website gallery media publish review security'],
   ['docs-troubleshooting.html', 'Troubleshooting', 'Permissions, missing panels, failed interactions and sync issues.', 'errors permissions missing interaction'],
   ['docs-faq.html', 'FAQ', 'Short answers to common member and staff questions.', 'faq questions help'],
   ['roadmap.html', 'Product Roadmap', 'The public delivery path, release principles and priorities shaping future Luminox work.', 'roadmap development future releases'],
   ['changelog.html', 'Changelog', 'A curated history of meaningful Luminox releases and documentation milestones.', 'changelog updates releases history'],
-  ['use-cases.html', 'Use Cases', 'Choose a Luminox rollout from the operational problem your guild needs to solve.', 'use cases buying evaluation rollout guild problems'],
+  ['use-cases.html', 'Use Cases', 'Choose the smallest Luminox setup for the problem your guild needs to solve.', 'use cases buying evaluation setup guild problems'],
   ['security.html', 'Trust & Safety', 'Permissions, data boundaries, retention and honest platform limits.', 'security trust privacy permissions retention']
 ];
 
@@ -228,7 +228,7 @@ const pagePresentations = {
   'docs-loot.html': { family: 'reference', variant: 'calculator', accent: 'gold', code: 'Guide 08', icon: 'content-loot.svg', label: 'Loot Split', summary: 'A guided analyzer flow from pasted session data to fair transfers and contributions.', tags: ['Paste', 'Calculate', 'Confirm'] },
   'docs-finder.html': { family: 'reference', variant: 'radar', accent: 'blue', code: 'Guide 09', icon: 'content-finder.svg', label: 'Finder', summary: 'Current online information becomes compatible teams and voluntary Looking for team messages.', tags: ['Online', 'Match', 'Connect'] },
   'docs-timezones.html': { family: 'reference', variant: 'clock', accent: 'violet', code: 'Guide 10', icon: 'content-timezones.svg', label: 'Timezones', summary: 'Local input becomes a Discord timestamp every participant can read correctly.', tags: ['Local', 'Convert', 'Display'] },
-  'docs-guildbank.html': { family: 'reference', variant: 'ledger', accent: 'gold', code: 'Guide 11', icon: 'content-economy.svg', label: 'GuildBank', summary: 'Pending accumulation, specialist review and an auditable confirmed balance.', tags: ['Deposit', 'Review', 'Ledger'] },
+  'docs-guildbank.html': { family: 'reference', variant: 'ledger', accent: 'gold', code: 'Guide 11', icon: 'content-economy.svg', label: 'GuildBank', summary: 'Pending accumulation, specialist review and a confirmed balance built only from approved entries.', tags: ['Deposit', 'Review', 'Ledger'] },
   'docs-leaderboards.html': { family: 'reference', variant: 'ranking', accent: 'green', code: 'Guide 12', icon: 'content-leaderboards.svg', label: 'Leaderboards', summary: 'Compact rankings for progress, contribution, activity and account Loyalty.', tags: ['Rank', 'Compare', 'Navigate'] },
   'docs-watchlists.html': { family: 'reference', variant: 'pulse', accent: 'red', code: 'Guide 13', icon: 'content-watchlists.svg', label: 'Watchlists', summary: 'Live guild and enemy awareness from the latest online information Luminox already collected.', tags: ['Online', 'Session', 'Risk'] },
   'docs-progression.html': { family: 'reference', variant: 'timeline', accent: 'green', code: 'Guide 14', icon: 'content-progression.svg', label: 'Progress', summary: 'Rolling level and death records alongside a living, ranked guild roster.', tags: ['Daily', 'Monthly', 'Yearly'] },
@@ -239,18 +239,18 @@ const pagePresentations = {
   'docs-support.html': { family: 'reference', variant: 'inbox', accent: 'blue', code: 'Guide 18', icon: 'content-support.svg', label: 'Support', summary: 'Private role-aware tickets with required questions, optional media intake and archived Discord history.', tags: ['Open', 'Claim', 'Archive'] },
   'docs-moderation.html': { family: 'reference', variant: 'shield', accent: 'red', code: 'Guide 19', icon: 'content-moderation.svg', label: 'Moderation', summary: 'Automod and permanent logs for both editions, with Tibia-linked sanctions in Community.', tags: ['Restrict', 'Protect', 'Audit'] },
   'docs-staff.html': { family: 'reference', variant: 'roles', accent: 'violet', code: 'Guide 20', icon: 'content-guild.svg', label: 'Staff systems', summary: 'Global moderators, specialist roles, private voting and public applications.', tags: ['Roles', 'Access', 'Decisions'] },
-  'docs-admin.html': { family: 'reference', variant: 'control', accent: 'gold', code: 'Guide 21', icon: 'content-setup.svg', label: 'Administration', summary: 'Configuration boundaries, maintenance tools and safe operational decisions.', tags: ['Configure', 'Inspect', 'Maintain'] },
+  'docs-admin.html': { family: 'reference', variant: 'control', accent: 'gold', code: 'Guide 21', icon: 'content-setup.svg', label: 'Administration', summary: 'Configuration boundaries, maintenance tools and safe administrator decisions.', tags: ['Configure', 'Inspect', 'Maintain'] },
   'docs-automation.html': { family: 'reference', variant: 'cycle', accent: 'green', code: 'Guide 22', icon: 'content-automation.svg', label: 'Automation', summary: 'Refresh panels, clean temporary messages, expire private responses and keep backups.', tags: ['Refresh', 'Clean', 'Back up'] },
   'docs-website.html': { family: 'reference', variant: 'publish', accent: 'blue', code: 'Guide 23', icon: 'content-website.svg', label: 'Website publishing', summary: 'A reviewed path from a private Discord proposal to approved public media.', tags: ['Submit', 'Review', 'Publish'] },
   'docs-troubleshooting.html': { family: 'reference', variant: 'diagnostic', accent: 'red', code: 'Guide 24', icon: 'content-troubleshooting.svg', label: 'Troubleshooting', summary: 'Diagnose permissions and configuration before forcing expensive synchronization.', tags: ['Observe', 'Isolate', 'Recover'] },
   'systems.html': { family: 'reference', variant: 'architecture', accent: 'violet', code: 'Guide 25', icon: 'content-systems.svg', label: 'How it works', summary: 'Luminox reuses current information, refreshes panels by need and cleans temporary detail.', tags: ['Collect once', 'Reuse', 'Clean'] },
-  'docs-faq.html': { family: 'reference', variant: 'questions', accent: 'blue', code: 'Guide 26', icon: 'content-support.svg', label: 'FAQ', summary: 'Fast answers with direct routes to the complete operational guides.', tags: ['Ask', 'Answer', 'Continue'] },
+  'docs-faq.html': { family: 'reference', variant: 'questions', accent: 'blue', code: 'Guide 26', icon: 'content-support.svg', label: 'FAQ', summary: 'Fast answers with direct routes to the complete setup guides.', tags: ['Ask', 'Answer', 'Continue'] },
   'features.html': { family: 'product', variant: 'constellation', accent: 'violet', code: 'Discord guild bot', icon: 'content-systems.svg', label: 'Choose a function', summary: 'Administrators configure and publish each function; members use guided controls while Luminox keeps current information and history organized.', tags: ['Configure', 'Publish', 'Operate'] },
-  'use-cases.html': { family: 'product', variant: 'usecases', accent: 'gold', code: 'Problem → outcome', icon: 'content-usecases.svg', label: 'Use cases', summary: 'Start with one operational pressure point and deploy only the modules that remove it.', tags: ['Identify', 'Implement', 'Measure'] },
+  'use-cases.html': { family: 'product', variant: 'usecases', accent: 'gold', code: 'Problem → outcome', icon: 'content-usecases.svg', label: 'Use cases', summary: 'Start with one repeated guild problem and enable only the features that remove it.', tags: ['Identify', 'Implement', 'Measure'] },
   'features-identity.html': { family: 'product', variant: 'identity', accent: 'blue', code: '01', icon: 'content-identity.svg', label: 'Verified identity', summary: 'Make the person, Discord account, characters, main and guild rank agree.', tags: ['Account', 'Character', 'Role'] },
   'features-economy.html': { family: 'product', variant: 'economy', accent: 'gold', code: '02', icon: 'content-economy.svg', label: 'Guild economy', summary: 'Turn loot and contributions into reviewed records instead of private assumptions.', tags: ['Split', 'Accumulate', 'Approve'] },
   'features-events.html': { family: 'product', variant: 'events', accent: 'green', code: '03', icon: 'content-events.svg', label: 'Event engine', summary: 'General Discord events in both editions, with specialized Tibia team rules in Community.', tags: ['Schedule', 'Team', 'Reward'] },
-  'features-intelligence.html': { family: 'product', variant: 'intelligence', accent: 'red', code: '04', icon: 'content-intelligence.svg', label: 'Live intelligence', summary: 'Connect online state, enemy risk and identity changes without duplicate scans.', tags: ['Observe', 'Track', 'Alert'] },
+  'features-intelligence.html': { family: 'product', variant: 'intelligence', accent: 'red', code: '04', icon: 'content-intelligence.svg', label: 'Live monitoring', summary: 'Connect online members, enemy risk and character changes without duplicate scans.', tags: ['Observe', 'Track', 'Alert'] },
   'features-finder.html': { family: 'product', variant: 'finder', accent: 'blue', code: '05', icon: 'content-finder.svg', label: 'Team discovery', summary: 'Use current activity and compatible vocations to surface playable groups.', tags: ['Signal', 'Score', 'Match'] },
   'features-support.html': { family: 'product', variant: 'support', accent: 'violet', code: '06', icon: 'content-support.svg', label: 'Private support', summary: 'Route every request to the correct people without exposing it publicly.', tags: ['Route', 'Resolve', 'Archive'] },
   'bot-registration.html': { family: 'product', variant: 'identity', accent: 'blue', code: 'Member 01', icon: 'content-identity.svg', label: 'Character registration', summary: 'Verify who owns each character and use one trusted identity across the server.', tags: ['Verify', 'Main', 'Roles'] },
@@ -266,22 +266,22 @@ const pagePresentations = {
   'bot-watchlists.html': { family: 'product', variant: 'intelligence', accent: 'red', code: 'Guild ops 02', icon: 'content-watchlists.svg', label: 'Live online lists', summary: 'Show current members and enemies online using information already collected by Luminox.', tags: ['Members', 'Enemies', 'Current'] },
   'bot-tracker.html': { family: 'product', variant: 'intelligence', accent: 'red', code: 'Guild ops 03', icon: 'content-intelligence.svg', label: 'Identity tracker', summary: 'Keep important characters connected through renames, trades and world transfers.', tags: ['Detect', 'Connect', 'Alert'] },
   'bot-guards.html': { family: 'product', variant: 'intelligence', accent: 'red', code: 'Guild ops 04', icon: 'content-guards.svg', label: 'Guard coordination', summary: 'Notify eligible defenders, coordinate enemy reports and record battle participation.', tags: ['Alert', 'Thread', 'History'] },
-  'bot-recruitment.html': { family: 'product', variant: 'finder', accent: 'green', code: 'Guild ops 05', icon: 'content-recruitment.svg', label: 'Recruitment workflow', summary: 'Record real recruitment, review ownership disputes and protect rewards from abuse.', tags: ['Report', 'Review', 'Retain'] },
+  'bot-recruitment.html': { family: 'product', variant: 'finder', accent: 'green', code: 'Guild ops 05', icon: 'content-recruitment.svg', label: 'Recruitment records', summary: 'Record real recruitment, review ownership disputes and protect rewards from abuse.', tags: ['Report', 'Review', 'Retain'] },
   'bot-guildhall.html': { family: 'product', variant: 'economy', accent: 'violet', code: 'Guild ops 06', icon: 'content-guildhall.svg', label: 'Guildhall rooms', summary: 'Publish available rooms and review member claims through one permanent panel.', tags: ['Rooms', 'Claims', 'Occupants'] },
   'bot-support.html': { family: 'product', variant: 'support', accent: 'blue', code: 'Staff 01', icon: 'content-support.svg', label: 'Private support', summary: 'Route each request into a private Discord thread with the responsible staff.', tags: ['Open', 'Claim', 'Archive'] },
-  'bot-moderation.html': { family: 'product', variant: 'trust', accent: 'red', code: 'Staff 02', icon: 'content-moderation.svg', label: 'Moderation tools', summary: 'Protect configured channels and maintain accountable restrictions and staff logs.', tags: ['Prevent', 'Restrict', 'Audit'] },
+  'bot-moderation.html': { family: 'product', variant: 'trust', accent: 'red', code: 'Staff 02', icon: 'content-moderation.svg', label: 'Moderation tools', summary: 'Protect configured channels and keep restrictions and staff actions clearly recorded.', tags: ['Prevent', 'Restrict', 'Audit'] },
   'bot-staff.html': { family: 'product', variant: 'support', accent: 'violet', code: 'Staff 03', icon: 'content-guild.svg', label: 'Staff tools', summary: 'Separate general authority from specialist responsibilities and structured decisions.', tags: ['Roles', 'Vote', 'Apply'] },
   'bot-automation.html': { family: 'product', variant: 'constellation', accent: 'green', code: 'Staff 04', icon: 'content-automation.svg', label: 'Server automation', summary: 'Refresh public information and clean temporary content without constant staff work.', tags: ['Refresh', 'Expire', 'Clean'] },
   'bot-website.html': { family: 'product', variant: 'support', accent: 'blue', code: 'Staff 05', icon: 'content-website.svg', label: 'Website publishing', summary: 'Collect media and articles in Discord, review them privately and publish safely.', tags: ['Submit', 'Review', 'Publish'] },
-  'security.html': { family: 'product', variant: 'trust', accent: 'blue', code: 'Trust model', icon: 'content-security.svg', label: 'Trust & safety', summary: 'Understand permissions, staff review, automatic cleanup and what remains in Discord.', tags: ['Controlled', 'Auditable', 'Clear'] },
+  'security.html': { family: 'product', variant: 'trust', accent: 'blue', code: 'Trust model', icon: 'content-security.svg', label: 'Trust & safety', summary: 'Understand permissions, staff review, automatic cleanup and what remains in Discord.', tags: ['Controlled', 'Reviewable', 'Clear'] },
   'guild.html': { family: 'guild', variant: 'manifesto', accent: 'gold', code: 'Secura', icon: 'content-guild.svg', label: 'The guild', summary: 'An international Tibia community where structure protects the social experience.', tags: ['Trust', 'Respect', 'Together'] },
   'guild-history.html': { family: 'guild', variant: 'legacy', accent: 'gold', code: 'Our story', icon: 'content-blog.svg', label: 'Built together', summary: 'The needs, principles and people that shaped Lumina from a guild roster into a lasting community.', tags: ['Belong', 'Build', 'Preserve'] },
   'guild-secura.html': { family: 'guild', variant: 'world', accent: 'blue', code: 'Our world', icon: 'content-journey.svg', label: 'Life on Secura', summary: 'One shared Tibia world gives an international community a clear in-game identity and reputation.', tags: ['Tibia', 'Secura', 'Respect'] },
   'guild-community.html': { family: 'guild', variant: 'community', accent: 'green', code: 'Chapter 02', icon: 'content-guild.svg', label: 'Community', summary: 'Organization creates more room for helping, playing and staying connected.', tags: ['Hunts', 'Voice', 'Support'] },
   'guild-members.html': { family: 'guild', variant: 'members', accent: 'gold', code: 'Member life', icon: 'content-members.svg', label: 'Membership', summary: 'Verified access, shared activities and the responsibilities that turn a roster entry into real guild membership.', tags: ['Tibia', 'Secura', 'Together'] },
-  'guild-leadership.html': { family: 'guild', variant: 'leadership', accent: 'violet', code: 'Responsibility', icon: 'content-guild.svg', label: 'Clear leadership', summary: 'Broad leadership and specialist responsibility create an approachable, accountable route for members.', tags: ['Listen', 'Decide', 'Support'] },
+  'guild-leadership.html': { family: 'guild', variant: 'leadership', accent: 'violet', code: 'Responsibility', icon: 'content-guild.svg', label: 'Clear leadership', summary: 'Broad leadership and specialist responsibilities give members a clear route to the right person.', tags: ['Listen', 'Decide', 'Support'] },
   'guild-activities.html': { family: 'guild', variant: 'activities', accent: 'green', code: 'Guild life', icon: 'content-events.svg', label: 'Play together', summary: 'Hunts, bosses, quests, social sessions and roleplay give different members a place to participate.', tags: ['Organize', 'Join', 'Remember'] },
-  'blog.html': { family: 'guild', variant: 'blog', accent: 'gold', code: 'Guild journal', icon: 'content-blog.svg', label: 'Lumina blog', summary: 'Guild news, chronicles and thoughtful updates published through a reviewed Discord workflow.', tags: ['News', 'Stories', 'Community'] },
+  'blog.html': { family: 'guild', variant: 'blog', accent: 'gold', code: 'Guild journal', icon: 'content-blog.svg', label: 'Lumina blog', summary: 'Guild news, chronicles and thoughtful updates written and reviewed through Discord.', tags: ['News', 'Stories', 'Community'] },
   'gallery.html': { family: 'guild', variant: 'gallery', accent: 'violet', code: 'Visual archive', icon: 'content-gallery.svg', label: 'Lumina gallery', summary: 'Staff-reviewed adventures, community life, roleplay and milestones preserved with their story.', tags: ['Stories', 'Collections', 'Memories'] },
   'guild-roleplay.html': { family: 'guild', variant: 'roleplay', accent: 'violet', code: 'Chapter 03', icon: 'roleplay.svg', label: 'Roleplay sessions', summary: 'Original characters, narrated adventures and shared stories created by Lumina members.', tags: ['Characters', 'Stories', 'Sessions'] },
   'guild-join.html': { family: 'guild', variant: 'journey', accent: 'blue', code: 'Chapter 04', icon: 'content-journey.svg', label: 'Join Lumina', summary: 'A clear journey from interested visitor to verified guild member.', tags: ['Apply', 'Verify', 'Enter'] },
@@ -405,7 +405,7 @@ const pageOpeningTitles = {
   'features-events.html': 'Better Events',
   'features-finder.html': 'Find Your Team',
   'features-identity.html': 'Verified Members',
-  'features-intelligence.html': 'Live Intelligence',
+  'features-intelligence.html': 'Live Monitoring',
   'features-support.html': 'Private Support',
   'bot-registration.html': 'Character Registration',
   'bot-loyalty.html': 'Loyalty Progression',
@@ -772,7 +772,7 @@ const renderPricingTiers = () => {
   visual.setAttribute('aria-label', 'Luminox plan paths');
   visual.innerHTML = `
     <div class="opening-tier-stack">
-      <a class="opening-tier opening-tier-free" href="#free-plan"><span><img src="assets/icons/plan-free.svg" alt=""><b>Start</b></span><strong>Free</strong><em>€0</em><small>Build the first reliable workflow.</small></a>
+      <a class="opening-tier opening-tier-free" href="#free-plan"><span><img src="assets/icons/plan-free.svg" alt=""><b>Start</b></span><strong>Free</strong><em>€0</em><small>Build the first reliable setup.</small></a>
       <a class="opening-tier opening-tier-premium" href="#premium-tiers"><span><img src="assets/icons/plan-premium.svg" alt=""><b>Scale</b></span><strong>Premium</strong><em>From €4,99</em><small>Core, Growth and Scale.</small></a>
       <a class="opening-tier opening-tier-exclusive" href="#founder-edition"><span><img src="assets/icons/plan-exclusive.svg" alt=""><b>Private</b></span><strong>Exclusive</strong><em>Lumina only</em><small>Discover access to Founder Edition.</small></a>
     </div>
@@ -787,7 +787,7 @@ const renderContactPaths = () => {
   visual.innerHTML = `
     <div class="opening-contact-heading"><p>Choose a conversation</p><span>Three routes. One Discord-first experience.</span></div>
     <a class="opening-contact-route opening-contact-support" href="https://discord.com/channels/1444873714213720318/1513054668748754976" target="_blank" rel="noopener noreferrer"><img src="assets/icons/content-support.svg" alt=""><span><small>Already using Luminox</small><strong>Product support</strong><em>Panels, permissions and errors</em></span><b>↗</b></a>
-    <a class="opening-contact-route opening-contact-product" href="#contact-paths"><img src="assets/icons/content-pricing.svg" alt=""><span><small>Exploring Luminox</small><strong>Product guidance</strong><em>Editions, plans and rollout fit</em></span><b>↓</b></a>
+    <a class="opening-contact-route opening-contact-product" href="#contact-paths"><img src="assets/icons/content-pricing.svg" alt=""><span><small>Exploring Luminox</small><strong>Product guidance</strong><em>Editions, plans and best fit</em></span><b>↓</b></a>
     <a class="opening-contact-route opening-contact-guild" href="guild-join.html"><img src="assets/icons/content-guild.svg" alt=""><span><small>Playing on Secura</small><strong>Join Lumina</strong><em>Culture, rules and membership</em></span><b>→</b></a>`;
   return visual;
 };
@@ -937,8 +937,8 @@ const conversionCopy = {
     secondary: ['contact.html', 'Ask a question']
   },
   product: {
-    eyebrow: 'See the workflow in your server',
-    title: 'Start with the smallest useful Luminox rollout.',
+    eyebrow: 'See Luminox in your server',
+    title: 'Start with the smallest useful Luminox setup.',
     text: 'Begin with Free and one clear use case. Premium is available when your guild needs higher limits, longer history or closer support.',
     primary: ['pricing.html', 'Compare Free and Premium'],
     secondary: ['contact.html', 'Discuss your guild']
@@ -952,7 +952,7 @@ const conversionCopy = {
   },
   commercial: {
     eyebrow: 'Choose the right service level',
-    title: 'Start Free or discuss a Premium rollout.',
+    title: 'Start Free or discuss the right Premium plan.',
     text: 'Tell us what your staff handles today and we will recommend the smallest plan that solves it.',
     primary: ['contact.html', 'Ask about Premium'],
     secondary: ['use-cases.html', 'Explore use cases']
@@ -969,7 +969,7 @@ const conversionCopy = {
 const conversionCopyByPage = {
   'docs-panels.html': {
     eyebrow: 'Choose your first panel',
-    title: 'Publish one useful workflow before expanding the server.',
+    title: 'Publish one useful panel before expanding the server.',
     text: 'Use the directory to match each panel with its channel, setup command and intended audience.',
     primary: ['docs-getting-started.html', 'Follow the setup path'],
     secondary: ['pricing.html', 'Compare editions']
@@ -977,22 +977,22 @@ const conversionCopyByPage = {
   'docs-registration.html': {
     eyebrow: 'Build trusted identity first',
     title: 'Connect characters, accounts and roles before adding automation.',
-    text: 'A verified Registration panel gives every later Luminox workflow a reliable member identity.',
+    text: 'A verified Registration panel gives every later Luminox feature a reliable member identity.',
     primary: ['setup.html', 'Configure registration'],
-    secondary: ['features-identity.html', 'See the identity workflow']
+    secondary: ['features-identity.html', 'See verified identity']
   },
   'docs-events.html': {
     eyebrow: 'Launch one event board',
     title: 'Give members a guided place to organize the next activity.',
     text: 'Start with the event type your guild uses most, verify its roles and only then publish the remaining boards.',
-    primary: ['features-events.html', 'Explore event workflows'],
+    primary: ['features-events.html', 'Explore event boards'],
     secondary: ['docs-timezones.html', 'Review scheduling']
   },
   'docs-guildbank.html': {
     eyebrow: 'Make every movement reviewable',
     title: 'Define thresholds and specialist access before accepting deposits.',
     text: 'The GuildBank panel separates requests from confirmed balance and preserves a clear final audit trail.',
-    primary: ['features-economy.html', 'See the economy workflow'],
+    primary: ['features-economy.html', 'See guild economy'],
     secondary: ['docs-loot.html', 'Connect Loot Split']
   },
   'docs-finder.html': {
@@ -1010,16 +1010,16 @@ const conversionCopyByPage = {
     secondary: ['docs-staff.html', 'Review staff access']
   },
   'docs-moderation.html': {
-    eyebrow: 'Keep restrictions accountable',
+    eyebrow: 'Keep restrictions recorded',
     title: 'Connect moderation lists with identity history and live awareness.',
     text: 'Automod protects selected channels in both editions. Community adds Blacklist, Ban List and Tracker so Tibia-linked restrictions and identity changes remain attributable.',
-    primary: ['features-intelligence.html', 'Explore guild intelligence'],
+    primary: ['features-intelligence.html', 'Explore live monitoring'],
     secondary: ['docs-tracker.html', 'Review Tracker']
   },
   'docs-recruitment.html': {
     eyebrow: 'Reward verified growth',
     title: 'Make recruitment claims reviewable before Loyalty is protected.',
-    text: 'Report a recent guild arrival before Discord registration, then keep identity validation, ownership disputes and retention-aware rewards in one understandable workflow.',
+    text: 'Report a recent guild arrival before Discord registration, then keep identity validation, ownership disputes and retention-aware rewards in one understandable process.',
     primary: ['docs-panels.html', 'Publish Recruitment'],
     secondary: ['docs-loyalty.html', 'Review Loyalty rules']
   },
@@ -1296,7 +1296,7 @@ document.querySelectorAll('[data-tab]').forEach((button) => {
 const pricingEditionContent = {
   community: {
     heading: 'Community Edition Plans',
-    summary: 'Purpose-built for Tibia guilds using characters, vocations, worlds, guild ranks and live game intelligence.',
+    summary: 'Purpose-built for Tibia guilds using characters, vocations, worlds, guild ranks and live game monitoring.',
     prices: ['€0', '€7,99', '€14,99', '€29,99'],
     plans: {
       free: {
@@ -1332,13 +1332,13 @@ const pricingEditionContent = {
           'Website publishing panel plus every public Community feature.',
           'Up to 100 active events, 25 Support categories and 100 Automod channels.',
           '2-minute eligible external policy and 1-minute cached panels.',
-          '10-year useful history and priority rollout support.'
+          '10-year useful history and priority setup support.'
         ]
       }
     },
     comparison: {
-      bestFit: ['First Tibia workflow', 'Small Tibia guild', 'Growing Tibia guild', 'Established Tibia operation'],
-      access: ['Identity + guild basics', 'Loyalty + specialized events + live risk', 'Economy + recruitment + intelligence', 'Website publishing + all Community features']
+      bestFit: ['First Tibia setup', 'Small Tibia guild', 'Growing Tibia guild', 'Established Tibia guild'],
+      access: ['Identity + guild basics', 'Loyalty + specialized events + live risk', 'Economy + recruitment + live monitoring', 'Website publishing + all Community features']
     }
   },
   universal: {
@@ -1365,7 +1365,7 @@ const pricingEditionContent = {
         ]
       },
       growth: {
-        fit: 'For growing communities that need Core workflows at significantly higher operating capacity.',
+        fit: 'For growing communities that need Core features at significantly higher limits.',
         features: [
           'Every Universal Core module at Growth capacity.',
           'Up to 30 active events, 15 Support categories and 30 Automod channels.',
@@ -1374,17 +1374,17 @@ const pricingEditionContent = {
         ]
       },
       scale: {
-        fit: 'For established gaming communities using Luminox as their operational layer.',
+        fit: 'For established gaming communities relying on Luminox as a daily platform.',
         features: [
           'Website publishing panel plus every Universal Core module.',
           'Up to 100 active events, 25 Support categories and 100 Automod channels.',
           '2-minute eligible external policy and 1-minute cached panels.',
-          '10-year useful history and priority rollout support.'
+          '10-year useful history and priority setup support.'
         ]
       }
     },
     comparison: {
-      bestFit: ['First Discord workflow', 'Small gaming community', 'Growing community', 'Established community operation'],
+      bestFit: ['First Discord setup', 'Small gaming community', 'Growing community', 'Established gaming community'],
       access: ['Support + Events + automation', 'Progression + staff systems', 'Core access at higher capacity', 'Website publishing + highest Universal capacity']
     }
   }

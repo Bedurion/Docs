@@ -5,7 +5,7 @@
     'docs.html': {
       label: 'Documentation overview',
       title: 'Understand the system before configuring it.',
-      introduction: 'Luminox is a collection of connected Discord workflows rather than a list of isolated commands. Identity, guild membership, panels, permissions, activity and permanent Discord records work together, so the documentation begins with the purpose of each system before showing its controls.',
+      introduction: 'Luminox is a collection of connected Discord features rather than a list of isolated commands. Identity, guild membership, panels, permissions, activity and permanent Discord records work together. The documentation therefore explains the purpose of each feature before showing its controls.',
       solves: 'It gives members, staff and administrators one place to understand what Luminox manages and which guide answers their current question.',
       audience: 'New members, guild leaders evaluating Luminox, moderators learning their tools and administrators configuring a server.',
       outcome: 'Choose the correct guide, understand its prerequisites and avoid running a command without knowing what it changes.'
@@ -22,7 +22,7 @@
       label: 'Panel directory explained',
       title: 'Know what every panel is for before publishing it.',
       introduction: 'Panels are the normal member interface for Luminox. They replace memorized slash commands with buttons, selectors and guided forms while keeping live controls at the bottom and permanent history above. This directory explains the purpose, audience and prerequisite of every panel.',
-      solves: 'It helps administrators choose the correct channel and prevents members from seeing duplicated commands and controls for the same workflow.',
+      solves: 'It helps administrators choose the correct channel and prevents members from seeing duplicated commands and controls for the same process.',
       audience: 'Administrators planning the server layout and staff deciding which systems their guild actually needs.',
       outcome: 'Identify each panel, its setup command, who can use it and the safest refresh action when its presentation needs repair.'
     },
@@ -60,7 +60,7 @@
     },
     'docs-loot.html': {
       label: 'Loot Split explained',
-      title: 'Turn Tibia analyzer text into accountable transfers.',
+      title: 'Turn Tibia analyzer text into clear transfers.',
       introduction: 'Loot Split reads the hunt analyzer copied from Tibia and guides the responsible member through pricing, looter selection, compensation and GuildBank contribution decisions. The panel performs the calculation while the user confirms every important choice.',
       solves: 'It reduces arithmetic mistakes and gives every participant a clear final share and transfer direction.',
       audience: 'Members splitting a hunt and administrators publishing the Loot panel.',
@@ -102,7 +102,7 @@
       label: 'Watchlists explained',
       title: 'See current guild and enemy activity at a glance.',
       introduction: 'Watchlists turn the latest online information into continuously updated Discord panels. Members Online represents the configured guild; Enemies Online includes only relevant current-world characters linked to the Blacklist.',
-      solves: 'It provides live operational awareness without maintaining a second independent online scan for every panel.',
+      solves: 'It provides a current guild and enemy view without maintaining a second independent online scan for every panel.',
       audience: 'Guild members monitoring activity and administrators assigning each automatic list to a channel.',
       outcome: 'Understand online counts, power totals, session information, channel counters and why transferred enemies disappear from the active list.'
     },
@@ -126,14 +126,14 @@
       label: 'Guildhall explained',
       title: 'Manage a shared property and its rooms transparently.',
       introduction: 'The Guildhall panel records the current property, room inventory, ordered room quality, registered occupants, sale reports and member claims. Staff decisions become fixed Discord log entries above the current controls.',
-      solves: 'It replaces private spreadsheets and informal room promises with visible availability and accountable specialist review.',
+      solves: 'It replaces private spreadsheets and informal room promises with visible availability and recorded staff review.',
       audience: 'Registered members requesting rooms, administrators and moderators with the configured Guildhall specialist role.',
       outcome: 'Know how to declare a property, configure up to one hundred rooms, approve claims, change occupants and preserve the audit trail.'
     },
     'docs-moderation.html': {
       label: 'Moderation explained',
       title: 'Keep sanctions, risk records and access changes connected.',
-      introduction: 'Both public editions can use Automod and the operational moderation log. Community Edition adds the Tibia-linked Blacklist and Ban List, where account restrictions remove managed guild access and every character, guild and staff action remains attributable.',
+      introduction: 'Both public editions can use Automod and the moderation log. Community Edition adds the Tibia-linked Blacklist and Ban List, where account restrictions remove managed guild access and every character, guild and staff action remains attributable.',
       solves: 'It prevents sanctions from becoming anonymous text lists and stops restricted members from regaining managed guild roles through normal synchronization.',
       audience: 'Administrators and configured moderators managing safety, access and historical accountability.',
       outcome: 'Understand the difference between Blacklist and Ban List, how panels replace CRUD commands, how Automod protects channels and where actions are logged.'
@@ -167,7 +167,7 @@
       title: 'Separate global authority from specialist responsibility.',
       introduction: 'Luminox recognizes administrators through Discord permissions and moderators through one or more configured global roles. Sensitive systems can then require an additional specialist role so staff access matches real responsibility.',
       solves: 'It avoids giving every moderator access to finance, recruitment, support or guildhall decisions they do not manage.',
-      audience: 'Administrators designing staff access and moderators learning which additional role a workflow requires.',
+      audience: 'Administrators designing staff access and moderators learning which additional role each sensitive feature requires.',
       outcome: 'Understand multiple moderator roles, specialist combinations, internal voting, public applications and administrator oversight.'
     },
     'docs-admin.html': {
@@ -205,7 +205,7 @@
     'docs-faq.html': {
       label: 'FAQ explained',
       title: 'Resolve common questions without reading every guide.',
-      introduction: 'The FAQ gives short operational answers about registration, panels, Loyalty, permissions, archived threads and refreshes. It is an orientation layer: detailed setup and edge cases remain in the linked system guide.',
+      introduction: 'The FAQ gives short practical answers about registration, panels, Loyalty, permissions, archived threads and refreshes. It is an orientation layer: detailed setup and edge cases remain in the linked system guide.',
       solves: 'It answers the first practical question quickly and points the reader to the correct deeper documentation.',
       audience: 'Members, staff and administrators who need a concise answer before opening Support.',
       outcome: 'Understand the most common boundaries and know which command or guide to use next.'
@@ -240,7 +240,7 @@
     '/install overview': overview('Installation', 'Shows the selected edition, verified guild, configured roles, channels, panels and remaining setup work.'),
     '/install refresh': refresh('configured public panels', 'Redraws configured panels without starting the heavier registered-character synchronization.'),
     '/guild set': command('Verified guild and world configuration command.', 'Adds, verifies, edits or removes the Tibia guild that defines this Discord server’s membership and allowed world.', 'An administrator enters the guild and completes the Tibia.com verification flow. Luminox stores the verified guild and derives the world used by registration, ranks and membership checks.'),
-    '/guild chat': command('Important guild-alert channel command.', 'Assigns the channel used for major operational alerts such as significant Blacklist or enemy outcomes.', 'Select one text channel. Luminox stores it as the high-priority guild destination while dedicated Tracker and moderation logs continue to operate separately.'),
+    '/guild chat': command('Important guild-alert channel command.', 'Assigns the channel used for major guild alerts such as significant Blacklist or enemy outcomes.', 'Select one text channel. Luminox stores it as the high-priority guild destination while dedicated Tracker and moderation logs continue to operate separately.'),
     '/ranks map': command('Guild-rank mapping command.', 'Connects one Tibia guild rank to one Discord role.', 'Select the Tibia rank and Discord role. During synchronization, Luminox compares the verified main character’s guild rank and applies the corresponding managed role.'),
     '/ranks guest': command('Guest-role configuration command.', 'Defines the Discord role for registered characters on the configured world who are not members of the configured guild.', 'Select the Guest role once. Luminox applies it only when an account has a valid registration but no eligible guild character, while preserving unrelated Discord roles.'),
     '/ranks overview': overview('Rank mapping', 'Lists every Tibia-rank mapping and the current Guest-role configuration.'),
@@ -266,7 +266,7 @@
     '/events set quests': panel('Quest Board', 'Assigns the Quest channel where every vocation may join and scheduling may begin after recruitment.'),
     '/events set general': panel('Event Board', 'Assigns the general activity channel for unrestricted guild events and attendance rules.'),
     '/events set': panel('Event Board', 'Assigns one selected Hunt, Boss, Quest or general Event Board to its own channel.'),
-    '/loot set': panel('Loot Split', 'Publishes the guided hunt-analyzer and loot-distribution workflow.'),
+    '/loot set': panel('Loot Split', 'Publishes the guided hunt-analyzer and loot-distribution process.'),
     '/loot': command('Retired member-facing loot command.', 'No longer serves as the normal entry point because the Loot Split panel replaces it.', 'Members use the Split loot button in the configured channel. Keeping one panel entry point avoids duplicated command and button workflows.', 'Retired'),
     '/autodelete set': command('Per-channel message-retention command.', 'Creates or edits an Always or Timed cleanup rule for one text channel.', 'Select the channel and mode. Always removes new unpinned messages immediately and cleans older history gradually; Timed removes eligible messages after the chosen age.'),
     '/autodelete disable': command('Autodelete removal command.', 'Disables whichever cleanup rule is active in the selected channel.', 'Select the channel only; Luminox removes its stored rule without requiring the old mode or duration and safely reports when no rule exists.'),
@@ -426,7 +426,7 @@
     intro.className = 'section doc-orientation command-reference-intro';
     intro.innerHTML = `
       <div class="doc-orientation-copy"><p class="eyebrow">Command reference explained</p><h2>Commands are configuration tools, not the product itself.</h2><p>Members normally use guided panels. Slash commands configure those panels, inspect the current server or perform deliberate maintenance. Every entry below now explains what the command is, what it changes and how Luminox processes it.</p></div>
-      <div class="doc-orientation-details"><article><span>Member commands</span><p>Private identity, timezone and lookup actions available without staff authority.</p></article><article><span>Administrator commands</span><p>Server-specific setup, inspection and recovery actions protected by Discord permissions.</p></article><article><span>Panel-first rule</span><p>If a member workflow has a button, that button is the supported entry point instead of a duplicate slash command.</p></article></div>`;
+      <div class="doc-orientation-details"><article><span>Member commands</span><p>Private identity, timezone and lookup actions available without staff authority.</p></article><article><span>Administrator commands</span><p>Server-specific setup, inspection and recovery actions protected by Discord permissions.</p></article><article><span>Panel-first rule</span><p>If a member feature has a button, that button is the supported entry point instead of a duplicate slash command.</p></article></div>`;
     hero.after(intro);
   };
 

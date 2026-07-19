@@ -2,14 +2,14 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Complete Luminox GuildBank deposits, withdrawals, review and retention guide. Learn setup, permissions and safe daily use in Discord."><title>Lumina · Luminox GuildBank</title>
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://bedurion.github.io/Docs-Lumina/docs-guildbank.html">
+  <link rel="canonical" href="https://guildlumina.com/docs-guildbank.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina · Luminox">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Lumina · Luminox GuildBank">
   <meta property="og:description" content="Complete Luminox GuildBank deposits, withdrawals, review and retention guide. Learn setup, permissions and safe daily use in Discord.">
-  <meta property="og:url" content="https://bedurion.github.io/Docs-Lumina/docs-guildbank.html">
-  <meta property="og:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta property="og:url" content="https://guildlumina.com/docs-guildbank.html">
+  <meta property="og:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
@@ -17,14 +17,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Lumina · Luminox GuildBank">
   <meta name="twitter:description" content="Complete Luminox GuildBank deposits, withdrawals, review and retention guide. Learn setup, permissions and safe daily use in Discord.">
-  <meta name="twitter:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta name="twitter:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta name="twitter:image:alt" content="Lumina guild and Luminox Discord bot">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://bedurion.github.io/Docs-Lumina/docs-guildbank.html#webpage","url":"https://bedurion.github.io/Docs-Lumina/docs-guildbank.html","name":"Lumina · Luminox GuildBank","description":"Complete Luminox GuildBank deposits, withdrawals, review and retention guide. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://bedurion.github.io/Docs-Lumina/#website","url":"https://bedurion.github.io/Docs-Lumina/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://guildlumina.com/docs-guildbank.html#webpage","url":"https://guildlumina.com/docs-guildbank.html","name":"Lumina · Luminox GuildBank","description":"Complete Luminox GuildBank deposits, withdrawals, review and retention guide. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://guildlumina.com/#website","url":"https://guildlumina.com/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
   <link rel="stylesheet" href="styles.css?v=20260719-23"><link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg"></head>
 <body>
   <header class="site-header compact-header" id="top"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/brand/lumina-seal-256.png" alt="" aria-hidden="true"></span><img class="brand-wordmark" src="assets/brand/lumina-wordmark.svg?v=20260718-3" alt="Lumina" width="128" height="39"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links" data-nav-links></div></nav></header>
   <main class="page-shell">
-    <section class="page-hero"><p class="eyebrow">Documentation · GuildBank</p><h1>A reviewable ledger for deposits, withdrawals and loot contributions.</h1><p class="lead">GuildBank combines a permanent Discord audit trail, account accumulation, specialist review and Loyalty rewards.</p></section>
+    <section class="page-hero"><p class="eyebrow">Documentation · GuildBank</p><h1>Record and review every GuildBank movement.</h1><p class="lead">This guide shows how members request deposits, authorized staff create withdrawals, small contributions accumulate and Treasurers approve or deny entries before they affect the confirmed balance or Loyalty.</p></section>
     <section class="section doc-layout"><aside class="toc-card"><p class="eyebrow">On this page</p><a href="#setup">Setup</a><a href="#panel">Control panel</a><a href="#deposit">Deposits</a><a href="#review">Review</a><a href="#loyalty">Loyalty</a><a href="#logs">Logs</a><a href="#retention">Retention</a></aside><article class="doc-article">
       <section id="setup" class="doc-section"><p class="eyebrow">Setup</p><h2>Channel, Treasurer and two minimums</h2><div class="info-table"><div><strong>Log/control channel</strong><span><code>/guildbank set log channel:#guildbank</code></span></div><div><strong>Treasurer</strong><span><code>/guildbank set treasurer role:@Treasurer</code></span></div><div><strong>Thresholds</strong><span><code>/guildbank set minimum amount:1 review-amount:1000000</code></span></div><div><strong>Inspect</strong><span><code>/guildbank overview</code></span></div><div><strong>Reposition</strong><span><code>/guildbank refresh</code></span></div></div><p>The deposit minimum is the smallest record Luminox accepts. The review minimum is the accumulated account total that becomes eligible for staff confirmation.</p></section>
       <section id="panel" class="doc-section"><p class="eyebrow">Control panel</p><h2>The final message stays close to new activity</h2><ul class="check-list"><li><strong>Deposit</strong> starts a guided user/character/amount/source/note flow.</li><li><strong>Withdraw</strong> is restricted to authorized staff.</li><li><strong>Confirm pending entry</strong> opens staff review.</li><li><strong>Clean</strong> lets administrators erase an erroneous ledger record and reverse its linked Loyalty effect.</li><li>Confirmed historical embeds remain above; the control panel is kept at the bottom.</li></ul></section>
@@ -35,5 +35,5 @@
       <section id="retention" class="doc-section"><p class="eyebrow">Sustainable storage</p><h2>Keep the balance without unlimited detail</h2><ul class="check-list"><li>Pending entries have three months to be reviewed.</li><li>Detailed reviewed transfers are kept for twelve months before being reduced to the information needed for totals and safety.</li><li>Expired and reviewed outcomes remain visible in historical Discord logs.</li><li>Confirmed totals remain available without keeping every old internal detail forever.</li></ul></section>
     </article></section>
   </main>
-  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-1"></script><script src="script.js?v=20260719-9"></script>
+  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-3"></script><script src="script.js?v=20260719-11"></script>
 </body></html>

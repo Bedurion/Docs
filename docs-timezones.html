@@ -2,14 +2,14 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Luminox timezone setup, natural event dates and Friend Time conversion guide. Learn setup, permissions and safe daily use in Discord."><title>Luminox Timezone Guide | Events &amp; Friend Time</title>
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://bedurion.github.io/Docs-Lumina/docs-timezones.html">
+  <link rel="canonical" href="https://guildlumina.com/docs-timezones.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina · Luminox">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Luminox Timezone Guide | Events &amp; Friend Time">
   <meta property="og:description" content="Luminox timezone setup, natural event dates and Friend Time conversion guide. Learn setup, permissions and safe daily use in Discord.">
-  <meta property="og:url" content="https://bedurion.github.io/Docs-Lumina/docs-timezones.html">
-  <meta property="og:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta property="og:url" content="https://guildlumina.com/docs-timezones.html">
+  <meta property="og:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
@@ -17,14 +17,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Luminox Timezone Guide | Events &amp; Friend Time">
   <meta name="twitter:description" content="Luminox timezone setup, natural event dates and Friend Time conversion guide. Learn setup, permissions and safe daily use in Discord.">
-  <meta name="twitter:image" content="https://bedurion.github.io/Docs-Lumina/assets/brand/seal-dark-web.png">
+  <meta name="twitter:image" content="https://guildlumina.com/assets/brand/seal-dark-web.png">
   <meta name="twitter:image:alt" content="Lumina guild and Luminox Discord bot">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://bedurion.github.io/Docs-Lumina/docs-timezones.html#webpage","url":"https://bedurion.github.io/Docs-Lumina/docs-timezones.html","name":"Luminox Timezone Guide | Events & Friend Time","description":"Luminox timezone setup, natural event dates and Friend Time conversion guide. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://bedurion.github.io/Docs-Lumina/#website","url":"https://bedurion.github.io/Docs-Lumina/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://guildlumina.com/docs-timezones.html#webpage","url":"https://guildlumina.com/docs-timezones.html","name":"Luminox Timezone Guide | Events & Friend Time","description":"Luminox timezone setup, natural event dates and Friend Time conversion guide. Learn setup, permissions and safe daily use in Discord.","isPartOf":{"@type":"WebSite","@id":"https://guildlumina.com/#website","url":"https://guildlumina.com/","name":"Lumina · Luminox"},"inLanguage":"en"}</script>
   <link rel="stylesheet" href="styles.css?v=20260719-23"><link rel="icon" type="image/svg+xml" sizes="any" href="assets/brand/favicon.svg"></head>
 <body>
   <header class="site-header compact-header" id="top"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/brand/lumina-seal-256.png" alt="" aria-hidden="true"></span><img class="brand-wordmark" src="assets/brand/lumina-wordmark.svg?v=20260718-3" alt="Lumina" width="128" height="39"></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links" data-nav-links></div></nav></header>
   <main class="page-shell">
-    <section class="page-hero"><p class="eyebrow">Documentation · Timezones</p><h1>Write local time; let Discord display local time.</h1><p class="lead">Luminox saves a standard timezone such as Europe/Madrid, understands event dates in the creator's local time and lets Discord show the correct time to every viewer.</p></section>
+    <section class="page-hero"><p class="eyebrow">Documentation · Timezones</p><h1>Write one time and let every member see their local time.</h1><p class="lead">This guide explains timezone setup, accepted date formats, event scheduling and the clock reaction that converts a time written in chat for another member.</p></section>
     <section class="section doc-layout"><aside class="toc-card"><p class="eyebrow">On this page</p><a href="#set">Set timezone</a><a href="#registration">Registration</a><a href="#events">Events</a><a href="#formats">Friendly formats</a><a href="#friend-time">Friend Time</a><a href="#limits">Limits</a><a href="#examples">Examples</a></aside><article class="doc-article">
       <section id="set" class="doc-section"><p class="eyebrow">Personal command</p><h2>Configure once</h2><code class="command-signature">/timezone set zone:Europe/Madrid</code><p>Choose a standard worldwide timezone name such as <code>America/New_York</code>, <code>Europe/Warsaw</code> or <code>Asia/Tokyo</code>. These are sometimes called IANA timezones. The setting belongs to the Discord account, not to one character, and remains available when the main character changes.</p><p>The timezone selector is also available from the Registration panel. Both entry points update the same account setting.</p></section>
       <section id="registration" class="doc-section"><p class="eyebrow">Registration</p><h2>The first character guides missing timezone setup</h2><p>If no timezone exists, the registration panel asks for it inside the same guided flow before verification continues. Once stored, failed or repeated registrations do not ask again.</p></section>
@@ -35,5 +35,5 @@
       <section id="examples" class="doc-section"><p class="eyebrow">Examples</p><h2>Choose the correct tool</h2><div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>Input</th><th>Use</th><th>Result</th></tr></thead><tbody><tr><td><code>Meet at 20:00</code></td><td>🕒 or Apps → Convert time</td><td>Converts 20:00 from the author's zone to the viewer's zone.</td></tr><tr><td><code>20:00 or 22:30</code></td><td>🕒 or context menu</td><td>Returns both explicit times in one response.</td></tr><tr><td><code>Tomorrow at 20:00</code></td><td>Event creation</td><td>Parses the full date through the creator's confirmed timezone.</td></tr><tr><td><code>Every Friday 18:00-21:00</code></td><td>Event availability voting</td><td>Creates a recurring availability proposal, not a Friend Time reaction.</td></tr></tbody></table></div></section>
     </article></section>
   </main>
-  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-1"></script><script src="script.js?v=20260719-9"></script>
+  <footer class="footer"><a href="#top">Back to top</a><span>Built for Lumina · Luminox</span></footer><script src="docs-guide.js?v=20260719-3"></script><script src="script.js?v=20260719-11"></script>
 </body></html>
