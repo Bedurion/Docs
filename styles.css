@@ -7248,20 +7248,25 @@ body.page-interior .opening-title-row h1 {
 .home-cta-bot-primary .home-cta-copy strong {
   display: inline-block;
   width: fit-content;
-  color: #fff1c4;
+  color: #fff;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 900;
 }
 
 .home-cta-guild-primary .home-cta-copy strong {
-  background-image: linear-gradient(96deg, #ffe89a 0%, #ffc16f 38%, #ff8b82 72%, #f5deff 100%);
-  filter: drop-shadow(0 2px 9px rgba(243, 204, 99, 0.14));
+  background-image: linear-gradient(96deg, #fff9e8 0%, #ffe69a 28%, #fff5ed 52%, #ffc6ca 76%, #f3e8ff 100%);
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.72))
+    drop-shadow(0 0 8px rgba(255, 216, 108, 0.18));
 }
 
 .home-cta-bot-primary .home-cta-copy strong {
-  background-image: linear-gradient(96deg, #ffb0c0 0%, #d5a4ff 45%, #8fc4ff 72%, #8ce9dc 100%);
-  filter: drop-shadow(0 2px 9px rgba(176, 121, 255, 0.16));
+  background-image: linear-gradient(96deg, #fff5fb 0%, #ffc9db 26%, #f7ecff 51%, #c7e1ff 76%, #c8fff4 100%);
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.72))
+    drop-shadow(0 0 8px rgba(191, 125, 255, 0.2));
 }
 
 .home-cta-arrow {
