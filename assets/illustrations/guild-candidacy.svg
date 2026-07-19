@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" fill="none">
+  <defs>
+    <linearGradient id="cand-line" x1="162" y1="103" x2="570" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#5EE19D"/><stop offset=".5" stop-color="#F6D46F"/><stop offset="1" stop-color="#A675FF"/></linearGradient>
+    <radialGradient id="cand-aura" cx="0" cy="0" r="1" gradientTransform="translate(360 270) rotate(90) scale(240 305)" gradientUnits="userSpaceOnUse"><stop stop-color="#5EE19D" stop-opacity=".17"/><stop offset=".52" stop-color="#A675FF" stop-opacity=".08"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <filter id="cand-shadow" x="-25%" y="-25%" width="150%" height="175%"><feDropShadow dx="0" dy="28" stdDeviation="26" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <ellipse cx="360" cy="270" rx="304" ry="244" fill="url(#cand-aura)"/>
+  <g filter="url(#cand-shadow)">
+    <path d="M196 119h328v302H196z" fill="#0C142C" stroke="url(#cand-line)" stroke-width="3"/>
+    <path d="M240 183h240M240 229h157M240 275h206" stroke="#F6D46F" stroke-opacity=".42" stroke-width="8" stroke-linecap="round"/>
+    <g transform="translate(247 317)"><circle cx="47" cy="38" r="34" fill="#5EE19D" fill-opacity=".12" stroke="#5EE19D" stroke-width="3"/><path d="M5 102c8-32 25-48 42-48s34 16 42 48" stroke="#5EE19D" stroke-width="5" stroke-linecap="round"/></g>
+    <g transform="translate(372 314)"><path d="m64 0 58 33v67l-58 34-58-34V33L64 0Z" fill="#111A35" stroke="#A675FF" stroke-width="3"/><path d="m35 66 20 20 40-46" stroke="#F6D46F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+  <path d="M159 154c-27 35-42 75-45 121M561 386c27-34 42-75 45-121" stroke="url(#cand-line)" stroke-opacity=".32" stroke-width="3" stroke-dasharray="7 12"/>
+  <g fill="#F6D46F"><circle cx="117" cy="169" r="4"/><circle cx="603" cy="374" r="4"/></g>
+</svg>

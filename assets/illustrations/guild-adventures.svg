@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" fill="none">
+  <defs>
+    <linearGradient id="ga-line" x1="120" y1="420" x2="600" y2="116" gradientUnits="userSpaceOnUse"><stop stop-color="#5EE19D"/><stop offset=".5" stop-color="#F6D46F"/><stop offset="1" stop-color="#FB7185"/></linearGradient>
+    <radialGradient id="ga-aura" cx="0" cy="0" r="1" gradientTransform="translate(362 276) rotate(90) scale(236 308)" gradientUnits="userSpaceOnUse"><stop stop-color="#5EE19D" stop-opacity=".18"/><stop offset=".52" stop-color="#F6D46F" stop-opacity=".08"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <filter id="ga-shadow" x="-25%" y="-25%" width="150%" height="170%"><feDropShadow dx="0" dy="28" stdDeviation="25" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <ellipse cx="360" cy="270" rx="306" ry="238" fill="url(#ga-aura)"/>
+  <circle cx="360" cy="270" r="206" stroke="#5EE19D" stroke-opacity=".12" stroke-dasharray="8 14"/>
+  <g filter="url(#ga-shadow)">
+    <path d="M141 386 255 239l91 88 96-170 137 229H141Z" fill="#0C142B" stroke="url(#ga-line)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m255 239 29 28-28 18-28-8 27-38ZM442 157l35 59-32-11-30 18 27-66Z" fill="#F6D46F" fill-opacity=".18" stroke="#F6D46F" stroke-opacity=".72" stroke-width="2"/>
+    <path d="M197 386c52-54 101-30 148-79 52-54 106-42 167-116" stroke="url(#ga-line)" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 18"/>
+    <g transform="translate(312 245)"><path d="m48 0 42 24v49L48 97 6 73V24L48 0Z" fill="#111A35" stroke="#62C8FF" stroke-width="3"/><path d="m28 48 14 14 27-31" stroke="#5EE19D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+  <g fill="#F6D46F"><circle cx="122" cy="188" r="4"/><circle cx="602" cy="168" r="4"/></g>
+  <g fill="#A675FF"><circle cx="104" cy="325" r="3"/><circle cx="620" cy="332" r="3"/></g>
+</svg>

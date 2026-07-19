@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" fill="none">
+  <defs>
+    <linearGradient id="lead-line" x1="210" y1="96" x2="520" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#F6D46F"/><stop offset=".48" stop-color="#A675FF"/><stop offset="1" stop-color="#62C8FF"/></linearGradient>
+    <radialGradient id="lead-aura" cx="0" cy="0" r="1" gradientTransform="translate(360 266) rotate(90) scale(240 304)" gradientUnits="userSpaceOnUse"><stop stop-color="#A675FF" stop-opacity=".18"/><stop offset=".5" stop-color="#F6D46F" stop-opacity=".08"/><stop offset="1" stop-color="#62C8FF" stop-opacity="0"/></radialGradient>
+    <filter id="lead-shadow" x="-30%" y="-30%" width="160%" height="175%"><feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#000" flood-opacity=".48"/></filter>
+  </defs>
+  <ellipse cx="360" cy="270" rx="300" ry="242" fill="url(#lead-aura)"/>
+  <path d="M360 140v260M213 226l147 86 147-86M213 226v116M507 226v116" stroke="url(#lead-line)" stroke-opacity=".3" stroke-width="3"/>
+  <g filter="url(#lead-shadow)">
+    <g transform="translate(272 76)"><path d="M88 0 166 45v90l-78 45-78-45V45L88 0Z" fill="#0D142B" stroke="url(#lead-line)" stroke-width="3"/><path d="m88 37 17 31 35 7-24 26 4 36-32-15-32 15 4-36-24-26 35-7 17-31Z" fill="#F6D46F" fill-opacity=".18" stroke="#F6D46F" stroke-width="3"/></g>
+    <g transform="translate(105 300)"><rect width="220" height="142" rx="34" fill="#0B1228" stroke="#62C8FF" stroke-opacity=".72" stroke-width="3"/><circle cx="72" cy="57" r="24" stroke="#62C8FF" stroke-width="3"/><path d="M40 114c8-24 19-36 32-36s24 12 32 36M131 49h55M131 76h38M131 103h47" stroke="#62C8FF" stroke-width="4" stroke-linecap="round"/></g>
+    <g transform="translate(395 300)"><rect width="220" height="142" rx="34" fill="#0B1228" stroke="#A675FF" stroke-opacity=".72" stroke-width="3"/><circle cx="72" cy="57" r="24" stroke="#A675FF" stroke-width="3"/><path d="M40 114c8-24 19-36 32-36s24 12 32 36M131 49h55M131 76h38M131 103h47" stroke="#A675FF" stroke-width="4" stroke-linecap="round"/></g>
+  </g>
+  <g fill="#F6D46F"><circle cx="115" cy="180" r="4"/><circle cx="602" cy="165" r="4"/></g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" fill="none">
+  <defs>
+    <linearGradient id="sc-ring" x1="170" y1="105" x2="550" y2="444" gradientUnits="userSpaceOnUse"><stop stop-color="#62C8FF"/><stop offset=".45" stop-color="#F6D46F"/><stop offset="1" stop-color="#5EE19D"/></linearGradient>
+    <radialGradient id="sc-aura" cx="0" cy="0" r="1" gradientTransform="translate(360 270) rotate(90) scale(248 304)" gradientUnits="userSpaceOnUse"><stop stop-color="#62C8FF" stop-opacity=".18"/><stop offset=".52" stop-color="#5EE19D" stop-opacity=".07"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <filter id="sc-shadow" x="-25%" y="-25%" width="150%" height="170%"><feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#000" flood-opacity=".48"/></filter>
+  </defs>
+  <ellipse cx="360" cy="270" rx="307" ry="244" fill="url(#sc-aura)"/>
+  <g filter="url(#sc-shadow)">
+    <circle cx="360" cy="270" r="192" fill="#0B1228" stroke="url(#sc-ring)" stroke-width="4"/>
+    <circle cx="360" cy="270" r="145" stroke="#62C8FF" stroke-opacity=".25" stroke-width="2" stroke-dasharray="6 10"/>
+    <path d="M360 104v332M194 270h332M243 153l234 234M477 153 243 387" stroke="#F6D46F" stroke-opacity=".15" stroke-width="2"/>
+    <path d="m360 134 42 106 106 30-106 30-42 106-42-106-106-30 106-30 42-106Z" fill="#101A35" stroke="url(#sc-ring)" stroke-width="3"/>
+    <path d="m360 171 24 82-24 17-24-17 24-82Z" fill="#F6D46F"/><path d="m360 369-24-82 24-17 24 17-24 82Z" fill="#62C8FF" fill-opacity=".65"/>
+    <circle cx="360" cy="270" r="17" fill="#D7273F" stroke="#FF9292" stroke-width="3"/>
+  </g>
+  <g fill="#F6D46F"><circle cx="107" cy="176" r="4"/><circle cx="612" cy="184" r="4"/></g>
+  <g fill="#5EE19D"><circle cx="112" cy="374" r="3"/><circle cx="600" cy="391" r="3"/></g>
+</svg>

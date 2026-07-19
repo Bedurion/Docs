@@ -84,6 +84,12 @@ for (const file of htmlFiles) {
   const duplicateIds = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   duplicateIds.forEach((id) => report(file, `duplicate id #${id}`));
 
+  const standardConversionCount = [...source.matchAll(/class="[^"]*\bconversion-cta\b[^"]*"/g)].length;
+  const customConversionCount = [...source.matchAll(/\sdata-page-conversion(?:\s|>)/g)].length;
+  if (standardConversionCount + customConversionCount > 1) {
+    report(file, 'contains multiple final conversion sections');
+  }
+
   const headingLevels = [...source.matchAll(/<h([1-6])\b/gi)].map((match) => Number(match[1]));
   headingLevels.forEach((level, index) => {
     const previousLevel = headingLevels[index - 1];

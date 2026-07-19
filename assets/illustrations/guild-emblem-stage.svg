@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 760" fill="none">
+  <defs>
+    <linearGradient id="ges-gold" x1="126" y1="98" x2="608" y2="664" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF2B8"/>
+      <stop offset=".36" stop-color="#F3CC63"/>
+      <stop offset=".72" stop-color="#D48A2A"/>
+      <stop offset="1" stop-color="#7C4319"/>
+    </linearGradient>
+    <linearGradient id="ges-spectrum" x1="126" y1="598" x2="592" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EE19D"/>
+      <stop offset=".34" stop-color="#56C7F5"/>
+      <stop offset=".67" stop-color="#A675FF"/>
+      <stop offset="1" stop-color="#F3CC63"/>
+    </linearGradient>
+    <radialGradient id="ges-aura" cx="0" cy="0" r="1" gradientTransform="translate(360 342) rotate(90) scale(318 326)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3CC63" stop-opacity=".13"/>
+      <stop offset=".38" stop-color="#8B5CF6" stop-opacity=".09"/>
+      <stop offset=".72" stop-color="#56C7F5" stop-opacity=".035"/>
+      <stop offset="1" stop-color="#070A13" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ges-core" cx="0" cy="0" r="1" gradientTransform="translate(360 328) rotate(90) scale(226)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3CC63" stop-opacity=".11"/>
+      <stop offset=".66" stop-color="#11182C" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#070A13" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ges-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ges-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="360" cy="354" rx="330" ry="340" fill="url(#ges-aura)"/>
+  <ellipse cx="360" cy="328" rx="238" ry="238" fill="url(#ges-core)"/>
+  <ellipse cx="360" cy="332" rx="245" ry="278" stroke="url(#ges-gold)" stroke-opacity=".28" stroke-width="1.5"/>
+  <ellipse cx="360" cy="332" rx="282" ry="320" stroke="url(#ges-spectrum)" stroke-opacity=".18" stroke-width="1.3" stroke-dasharray="3 13"/>
+
+  <g opacity=".7">
+    <path d="M360 58 392 93 360 128 328 93 360 58Z" stroke="url(#ges-gold)" stroke-width="2"/>
+    <path d="M360 72v42M339 93h42" stroke="#F3CC63" stroke-opacity=".72" stroke-width="1.4"/>
+    <circle cx="360" cy="93" r="5" fill="#FB7185" filter="url(#ges-glow)"/>
+  </g>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M113 368C105 220 190 116 315 83M607 368C615 220 530 116 405 83" stroke="url(#ges-spectrum)" stroke-opacity=".38" stroke-width="2"/>
+    <path d="M94 397C112 527 203 625 316 661M626 397C608 527 517 625 404 661" stroke="url(#ges-gold)" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M119 433C155 543 230 601 318 627M601 433C565 543 490 601 402 627" stroke="#F3CC63" stroke-opacity=".16" stroke-width="1.3"/>
+  </g>
+
+  <g opacity=".66" stroke="url(#ges-gold)" stroke-width="2" stroke-linecap="round">
+    <path d="M112 392c46 8 78 29 107 68-42-14-76-12-112 2 39 11 69 30 93 61-37-9-65-3-91 13"/>
+    <path d="M608 392c-46 8-78 29-107 68 42-14 76-12 112 2-39 11-69 30-93 61 37-9 65-3 91 13"/>
+    <path d="M147 473c41 17 74 43 99 80M573 473c-41 17-74 43-99 80" stroke-opacity=".44"/>
+  </g>
+
+  <g opacity=".25" stroke="#F3CC63" stroke-width="1.4">
+    <path d="M194 582V478l49-20v-31l43-18 74-61 74 61 43 18v31l49 20v104"/>
+    <path d="M241 582v-82h54v82M425 582v-82h54v82M315 582V454h90v128"/>
+    <path d="M338 582v-55c0-15 10-27 22-27s22 12 22 27v55"/>
+  </g>
+
+  <path d="M360 617 405 661 360 713 315 661 360 617Z" fill="#0B1122" stroke="url(#ges-gold)" stroke-width="2.5"/>
+  <path d="M360 636 384 662 360 691 336 662 360 636Z" fill="#A0182C" stroke="#FB7185" stroke-width="1.5" filter="url(#ges-glow)"/>
+  <path d="m360 642 16 20-16 21-16-21 16-20Z" fill="#FB7185" fill-opacity=".38"/>
+  <path d="M360 617V128" stroke="url(#ges-gold)" stroke-opacity=".12" stroke-width="1" stroke-dasharray="3 11"/>
+
+  <g fill="#F3CC63" filter="url(#ges-glow)">
+    <circle cx="105" cy="330" r="3"/><circle cx="615" cy="330" r="3"/>
+    <circle cx="151" cy="187" r="2.5"/><circle cx="569" cy="187" r="2.5"/>
+    <circle cx="164" cy="557" r="2.5"/><circle cx="556" cy="557" r="2.5"/>
+  </g>
+  <g fill="#56C7F5"><circle cx="92" cy="434" r="2.5"/><circle cx="628" cy="434" r="2.5"/></g>
+  <g fill="#A675FF"><circle cx="245" cy="106" r="2.5"/><circle cx="475" cy="106" r="2.5"/></g>
+
+  <ellipse cx="360" cy="690" rx="146" ry="21" fill="#F3CC63" fill-opacity=".08" filter="url(#ges-soft)"/>
+</svg>

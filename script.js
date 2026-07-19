@@ -7,14 +7,19 @@ const navigationSections = {
     label: 'Guild',
     icon: 'nav-guild.svg',
     pages: [
-      ['guild.html', 'Overview'],
-      ['guild-community.html', 'Community'],
-      ['guild-members.html', 'Members'],
-      ['blog.html', 'Blog'],
-      ['gallery.html', 'Gallery'],
-      ['guild-roleplay.html', 'Roleplay'],
-      ['guild-join.html', 'Join Lumina'],
-      ['guild-rules.html', 'Rules']
+      ['guild.html', 'Overview', 'Discover Lumina'],
+      ['guild-history.html', 'Our Story', 'Discover Lumina'],
+      ['guild-secura.html', 'Life on Secura', 'Discover Lumina'],
+      ['guild-members.html', 'Members', 'Discover Lumina'],
+      ['guild-leadership.html', 'Leadership', 'Discover Lumina'],
+      ['guild-community.html', 'Community', 'Guild Life'],
+      ['guild-activities.html', 'Activities', 'Guild Life'],
+      ['gallery.html', 'Gallery', 'Guild Life'],
+      ['guild-roleplay.html', 'Roleplay', 'Guild Life'],
+      ['blog.html', 'Blog', 'Guild Life'],
+      ['guild-join.html', 'Join Lumina', 'Become a Member'],
+      ['guild-faq.html', 'Candidate FAQ', 'Become a Member'],
+      ['guild-rules.html', 'Rules', 'Become a Member']
     ]
   },
   features: {
@@ -125,13 +130,17 @@ const renderDropdownLinks = (section) => {
       </div>
     </section>`).join('');
 };
-const renderNavMenu = (section, wide = false) => `
+const renderNavMenu = (section, wide = false) => {
+  const groupCount = new Set(section.pages.map(([, , group]) => group).filter(Boolean)).size;
+  const groupClass = groupCount > 0 ? ` nav-groups-${groupCount}` : '';
+  return `
   <div class="nav-menu" data-nav-section="${section.label.toLowerCase()}">
     <button class="nav-link nav-menu-button ${sectionContainsPage(section) ? 'active' : ''}" type="button" aria-expanded="false">
       ${renderNavIcon(section.icon)}<span>${section.label}</span><span class="nav-chevron" aria-hidden="true"></span>
     </button>
-    <div class="nav-dropdown ${wide ? 'nav-dropdown-wide' : ''}">${renderDropdownLinks(section)}</div>
+    <div class="nav-dropdown ${wide ? 'nav-dropdown-wide' : ''}${groupClass}">${renderDropdownLinks(section)}</div>
   </div>`;
+};
 
 if (navLinks) {
   navLinks.innerHTML = `
@@ -142,7 +151,7 @@ if (navLinks) {
       </button>
     </div>
     <a class="nav-link ${currentPage === 'index.html' ? 'active' : ''}" href="index.html">${renderNavIcon('home.svg')}<span>Home</span></a>
-    ${renderNavMenu(navigationSections.guild)}
+    ${renderNavMenu(navigationSections.guild, true)}
     ${renderNavMenu(navigationSections.features, true)}
     ${renderNavMenu(navigationSections.docs, true)}
     ${renderNavMenu(navigationSections.pricing)}
@@ -266,12 +275,17 @@ const pagePresentations = {
   'bot-website.html': { family: 'product', variant: 'support', accent: 'blue', code: 'Staff 05', icon: 'content-website.svg', label: 'Website publishing', summary: 'Collect media and articles in Discord, review them privately and publish safely.', tags: ['Submit', 'Review', 'Publish'] },
   'security.html': { family: 'product', variant: 'trust', accent: 'blue', code: 'Trust model', icon: 'content-security.svg', label: 'Trust & safety', summary: 'Understand permissions, staff review, automatic cleanup and what remains in Discord.', tags: ['Controlled', 'Auditable', 'Clear'] },
   'guild.html': { family: 'guild', variant: 'manifesto', accent: 'gold', code: 'Secura', icon: 'content-guild.svg', label: 'The guild', summary: 'An international Tibia community where structure protects the social experience.', tags: ['Trust', 'Respect', 'Together'] },
+  'guild-history.html': { family: 'guild', variant: 'legacy', accent: 'gold', code: 'Our story', icon: 'content-blog.svg', label: 'Built together', summary: 'The needs, principles and people that shaped Lumina from a guild roster into a lasting community.', tags: ['Belong', 'Build', 'Preserve'] },
+  'guild-secura.html': { family: 'guild', variant: 'world', accent: 'blue', code: 'Our world', icon: 'content-journey.svg', label: 'Life on Secura', summary: 'One shared Tibia world gives an international community a clear in-game identity and reputation.', tags: ['Tibia', 'Secura', 'Respect'] },
   'guild-community.html': { family: 'guild', variant: 'community', accent: 'green', code: 'Chapter 02', icon: 'content-guild.svg', label: 'Community', summary: 'Organization creates more room for helping, playing and staying connected.', tags: ['Hunts', 'Voice', 'Support'] },
   'guild-members.html': { family: 'guild', variant: 'members', accent: 'gold', code: 'Member life', icon: 'content-members.svg', label: 'Membership', summary: 'Verified access, shared activities and the responsibilities that turn a roster entry into real guild membership.', tags: ['Tibia', 'Secura', 'Together'] },
+  'guild-leadership.html': { family: 'guild', variant: 'leadership', accent: 'violet', code: 'Responsibility', icon: 'content-guild.svg', label: 'Clear leadership', summary: 'Broad leadership and specialist responsibility create an approachable, accountable route for members.', tags: ['Listen', 'Decide', 'Support'] },
+  'guild-activities.html': { family: 'guild', variant: 'activities', accent: 'green', code: 'Guild life', icon: 'content-events.svg', label: 'Play together', summary: 'Hunts, bosses, quests, social sessions and roleplay give different members a place to participate.', tags: ['Organize', 'Join', 'Remember'] },
   'blog.html': { family: 'guild', variant: 'blog', accent: 'gold', code: 'Guild journal', icon: 'content-blog.svg', label: 'Lumina blog', summary: 'Guild news, chronicles and thoughtful updates published through a reviewed Discord workflow.', tags: ['News', 'Stories', 'Community'] },
   'gallery.html': { family: 'guild', variant: 'gallery', accent: 'violet', code: 'Visual archive', icon: 'content-gallery.svg', label: 'Lumina gallery', summary: 'Staff-reviewed adventures, community life, roleplay and milestones preserved with their story.', tags: ['Stories', 'Collections', 'Memories'] },
   'guild-roleplay.html': { family: 'guild', variant: 'roleplay', accent: 'violet', code: 'Chapter 03', icon: 'roleplay.svg', label: 'Roleplay sessions', summary: 'Original characters, narrated adventures and shared stories created by Lumina members.', tags: ['Characters', 'Stories', 'Sessions'] },
   'guild-join.html': { family: 'guild', variant: 'journey', accent: 'blue', code: 'Chapter 04', icon: 'content-journey.svg', label: 'Join Lumina', summary: 'A clear journey from interested visitor to verified guild member.', tags: ['Apply', 'Verify', 'Enter'] },
+  'guild-faq.html': { family: 'guild', variant: 'candidate', accent: 'green', code: 'Before applying', icon: 'content-support.svg', label: 'Candidate FAQ', summary: 'Plain answers about Secura eligibility, registration, guild life and the application path.', tags: ['Understand', 'Prepare', 'Apply'] },
   'guild-rules.html': { family: 'guild', variant: 'charter', accent: 'red', code: 'Chapter 05', icon: 'content-security.svg', label: 'Guild charter', summary: 'The principles that protect claims, communication and long-term trust.', tags: ['Respect', 'Evidence', 'Accountability'] },
   'pricing.html': { family: 'commercial', variant: 'editions', accent: 'gold', code: 'Free + 3 Premium', icon: 'content-pricing.svg', label: 'Plans and editions', summary: 'Start free, then choose Core, Growth or Scale when your guild needs more capacity.', tags: ['Free', 'Core', 'Growth', 'Scale'] },
   'pricing-faq.html': { family: 'commercial', variant: 'questions', accent: 'violet', code: 'Buyer FAQ', icon: 'content-pricing.svg', label: 'Premium questions', summary: 'Plain answers about editions, plans, Discord billing and changing a subscription.', tags: ['Choose', 'Understand', 'Control'] },
@@ -341,6 +355,11 @@ const pageArtworkByPage = Object.freeze({
   'security.html': 'trust-vault.svg',
   'guild-community.html': 'guild-fellowship.svg',
   'guild-members.html': 'guild-fellowship.svg',
+  'guild-history.html': 'guild-legacy.svg',
+  'guild-secura.html': 'secura-compass.svg',
+  'guild-leadership.html': 'guild-leadership.svg',
+  'guild-activities.html': 'guild-adventures.svg',
+  'guild-faq.html': 'guild-candidacy.svg',
   'blog.html': 'blog-journal.svg',
   'guild-join.html': 'guild-fellowship.svg',
   'guild-rules.html': 'guild-charter.svg',
@@ -412,9 +431,14 @@ const pageOpeningTitles = {
   'gallery.html': 'Lumina Gallery',
   'guild-roleplay.html': 'Guild Roleplay',
   'guild.html': 'Meet Lumina',
+  'guild-history.html': 'Our Story',
+  'guild-secura.html': 'Life on Secura',
   'guild-community.html': 'Better Together',
   'guild-members.html': 'Lumina Members',
+  'guild-leadership.html': 'Clear Leadership',
+  'guild-activities.html': 'Guild Activities',
   'guild-join.html': 'Join Lumina',
+  'guild-faq.html': 'Candidate FAQ',
   'guild-rules.html': 'Lumina Standards',
   'pricing.html': 'Plans That Scale',
   'pricing-faq.html': 'Premium Answers',
@@ -530,7 +554,9 @@ const openingLayoutGroups = {
     'features-intelligence.html',
     'bot-events.html',
     'bot-timezones.html',
-    'bot-automation.html'
+    'bot-automation.html',
+    'guild-activities.html',
+    'guild-secura.html'
   ],
   centered: [
     'docs-panels.html',
@@ -566,6 +592,7 @@ const openingLayoutGroups = {
     'features-identity.html',
     'features-finder.html',
     'guild-join.html',
+    'guild-faq.html',
     'guarantee.html',
     'bot-registration.html',
     'bot-loot.html',
@@ -577,6 +604,8 @@ const openingLayoutGroups = {
     'security.html',
     'guild-community.html',
     'guild-members.html',
+    'guild-history.html',
+    'guild-leadership.html',
     'blog.html',
     'bot-finder.html',
     'bot-tracker.html'
@@ -685,13 +714,15 @@ const renderGuildCover = () => {
   visual.className = 'opening-guild-cover';
   visual.setAttribute('aria-label', 'Lumina guild profile');
   visual.innerHTML = `
-    <div class="guild-cover-art" aria-hidden="true"><img src="assets/illustrations/guild-citadel.svg" alt=""></div>
-    <div class="guild-cover-seal"><img src="assets/brand/lumina-seal-256.png" alt="Lumina guild seal"></div>
+    <div class="guild-cover-stage" aria-hidden="true"><img src="assets/illustrations/guild-emblem-stage.svg" alt=""></div>
+    <div class="guild-cover-kicker"><span>Official guild seal</span><i aria-hidden="true"></i><small>Secura</small></div>
+    <div class="guild-cover-seal"><span aria-hidden="true"></span><img src="assets/brand/seal-dark-web.png" alt="Lumina guild seal" loading="eager" decoding="async"></div>
+    <div class="guild-cover-identity"><strong>Lumina</strong><span>Tibia guild · Secura</span></div>
     <p class="guild-cover-motto">Structure protects the community.</p>
     <div class="guild-cover-facts">
-      <span><strong>Secura</strong><small>World</small></span>
-      <span><strong>International</strong><small>Community</small></span>
-      <span><strong>Luminox</strong><small>Built here</small></span>
+      <span><small>World</small><strong>Secura</strong></span>
+      <span><small>Community</small><strong>International</strong></span>
+      <span><small>System</small><strong>Luminox</strong></span>
     </div>`;
   return visual;
 };
@@ -1002,7 +1033,13 @@ const conversionCopyByPage = {
 };
 
 const appendContextualConversion = () => {
-  if (!mainContent || mainContent.querySelector('.conversion-cta') || ['index.html', '404.html', 'contact.html'].includes(currentPage)) return;
+  if (
+    !mainContent ||
+    mainContent.hasAttribute('data-no-contextual-conversion') ||
+    mainContent.querySelector('[data-page-conversion]') ||
+    mainContent.querySelector('.conversion-cta') ||
+    ['index.html', '404.html', 'contact.html'].includes(currentPage)
+  ) return;
   const presentation = pagePresentations[currentPage];
   const copy = conversionCopyByPage[currentPage] || (presentation ? conversionCopy[presentation.family] : null);
   if (!copy) return;

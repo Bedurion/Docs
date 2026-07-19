@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" fill="none">
+  <defs>
+    <linearGradient id="gl-gold" x1="148" y1="84" x2="586" y2="462" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF0AA"/><stop offset=".45" stop-color="#F2C94C"/><stop offset="1" stop-color="#9B4D1C"/></linearGradient>
+    <linearGradient id="gl-path" x1="140" y1="390" x2="590" y2="152" gradientUnits="userSpaceOnUse"><stop stop-color="#5EE19D"/><stop offset=".48" stop-color="#62C8FF"/><stop offset="1" stop-color="#A675FF"/></linearGradient>
+    <radialGradient id="gl-aura" cx="0" cy="0" r="1" gradientTransform="translate(360 270) rotate(90) scale(246 312)" gradientUnits="userSpaceOnUse"><stop stop-color="#F2C94C" stop-opacity=".2"/><stop offset=".52" stop-color="#8B5CF6" stop-opacity=".09"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+    <filter id="gl-shadow" x="-25%" y="-25%" width="150%" height="170%"><feDropShadow dx="0" dy="26" stdDeviation="25" flood-color="#000" flood-opacity=".48"/></filter>
+  </defs>
+  <ellipse cx="360" cy="270" rx="310" ry="244" fill="url(#gl-aura)"/>
+  <path d="M107 413C210 381 270 330 353 270c85-61 145-98 260-137" stroke="url(#gl-path)" stroke-opacity=".34" stroke-width="3" stroke-dasharray="7 12"/>
+  <g filter="url(#gl-shadow)">
+    <path d="M360 78 516 166v181L360 438 204 347V166L360 78Z" fill="#0B1228" stroke="url(#gl-gold)" stroke-width="3"/>
+    <path d="M360 111 487 183v146L360 403 233 329V183l127-72Z" fill="#101A36" stroke="#F2C94C" stroke-opacity=".25" stroke-width="2"/>
+    <path d="M360 146v220M264 201l192 111M456 201 264 312" stroke="#F2C94C" stroke-opacity=".2" stroke-width="2"/>
+    <circle cx="360" cy="256" r="68" fill="#090F21" stroke="url(#gl-gold)" stroke-width="3"/>
+    <path d="M360 199v111M321 232h78M330 294l30-95 30 95" stroke="#F2C94C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m360 331 18 22-18 22-18-22 18-22Z" fill="#D7273F" stroke="#FF8A8A" stroke-width="2"/>
+  </g>
+  <g fill="#F2C94C"><circle cx="146" cy="182" r="4"/><circle cx="592" cy="213" r="4"/><circle cx="566" cy="424" r="3"/></g>
+  <g fill="#62C8FF"><circle cx="120" cy="344" r="3"/><circle cx="622" cy="334" r="3"/></g>
+</svg>
