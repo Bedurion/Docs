@@ -1079,21 +1079,98 @@ const enhanceContentRhythm = () => {
 
 enhanceContentRhythm();
 
+const buttonActionIconByPage = Object.freeze({
+  '404.html': 'action-home.svg',
+  'blog.html': 'content-blog.svg',
+  'changelog.html': 'action-history.svg',
+  'commands.html': 'content-commands.svg',
+  'contact.html': 'action-support.svg',
+  'docs.html': 'content-docs.svg',
+  'features.html': 'content-systems.svg',
+  'features-intelligence.html': 'content-watchlists.svg',
+  'gallery.html': 'content-gallery.svg',
+  'guarantee.html': 'action-security.svg',
+  'guild-activities.html': 'content-events.svg',
+  'guild-community.html': 'content-guild.svg',
+  'guild-faq.html': 'action-support.svg',
+  'guild-history.html': 'action-history.svg',
+  'guild-join.html': 'content-journey.svg',
+  'guild-leadership.html': 'content-members.svg',
+  'guild-members.html': 'content-members.svg',
+  'guild-roleplay.html': 'roleplay.svg',
+  'guild-rules.html': 'action-security.svg',
+  'guild-secura.html': 'content-guild.svg',
+  'guild.html': 'content-guild.svg',
+  'index.html': 'action-home.svg',
+  'pricing-faq.html': 'action-docs.svg',
+  'pricing.html': 'action-pricing.svg',
+  'roadmap.html': 'content-roadmap.svg',
+  'security.html': 'content-security.svg',
+  'setup.html': 'content-setup.svg',
+  'systems.html': 'content-systems.svg',
+  'use-cases.html': 'content-usecases.svg'
+});
+
+const buttonActionIconByTopic = Object.freeze({
+  automation: 'content-automation.svg',
+  economy: 'content-economy.svg',
+  events: 'content-events.svg',
+  finder: 'content-finder.svg',
+  guards: 'content-guards.svg',
+  guildbank: 'content-economy.svg',
+  guildhall: 'content-guildhall.svg',
+  identity: 'content-identity.svg',
+  intelligence: 'content-intelligence.svg',
+  leaderboards: 'content-leaderboards.svg',
+  loot: 'content-loot.svg',
+  loyalty: 'content-loyalty.svg',
+  moderation: 'content-moderation.svg',
+  progression: 'content-progression.svg',
+  recruitment: 'content-recruitment.svg',
+  registration: 'content-identity.svg',
+  staff: 'content-members.svg',
+  streaming: 'content-streaming.svg',
+  support: 'content-support.svg',
+  timezones: 'content-timezones.svg',
+  tracker: 'content-intelligence.svg',
+  watchlists: 'content-watchlists.svg',
+  website: 'content-website.svg'
+});
+
+const resolveButtonTargetPage = (href) => {
+  const localTarget = String(href || '').split(/[?#]/)[0];
+  return localTarget.split('/').pop() || '';
+};
+
 const resolveButtonActionIcon = (button) => {
+  const explicitIcon = button.dataset.actionIcon;
+  if (explicitIcon) return explicitIcon;
+
   const href = (button.getAttribute('href') || '').toLowerCase();
   const label = (button.textContent || '').trim().toLowerCase();
   const intent = `${href} ${label}`;
+  const targetPage = resolveButtonTargetPage(href);
+  const topicMatch = targetPage.match(/^(?:bot|docs|features)-([a-z-]+)\.html$/);
 
-  if (/oauth2\/authorize|add luminox|your discord/.test(intent)) return 'action-discord.svg';
-  if (/rule|trust|safety|security/.test(intent)) return 'action-security.svg';
+  if (/oauth2\/authorize|add luminox|add the bot/.test(intent)) return 'add-bot.svg';
+  if (/refund policy/.test(label)) return 'action-security.svg';
+  if (/discord(?:\.com|\.gg)|join our discord|open discord billing/.test(intent)) return 'action-discord.svg';
+  if (/tibia\.com/.test(href)) return 'action-explore.svg';
+  if (/command reference/.test(label)) return 'content-commands.svg';
+  if (/panel directory/.test(label)) return 'content-systems.svg';
+  if (/troubleshoot/.test(intent)) return 'content-troubleshooting.svg';
+  if (/administrator guide/.test(label)) return 'action-settings.svg';
+  if (/documentation|\bguide\b|technical setup/.test(label)) return 'action-docs.svg';
+  if (/configure|installation|\bsetup\b|administrator/.test(label)) return 'action-settings.svg';
+  if (buttonActionIconByPage[targetPage]) return buttonActionIconByPage[targetPage];
+  if (topicMatch && buttonActionIconByTopic[topicMatch[1]]) return buttonActionIconByTopic[topicMatch[1]];
+  if (/\boverview\b|\bbenefits\b|see how|understand|what .* detects/.test(label)) return 'action-explore.svg';
+  if (/rule|trust|safety|security|guarantee|refund/.test(intent)) return 'action-security.svg';
   if (/help|support|question|contact|talk with/.test(intent)) return 'action-support.svg';
-  if (/configure|installation|setup|administrator|automation|troubleshoot|how luminox stays efficient/.test(intent)) return 'action-settings.svg';
   if (/pricing|premium|free|choose core|choose growth|choose scale|compare plan/.test(intent)) return 'action-pricing.svg';
-  if (/guild|lumina|community|gallery|joining process|how to join/.test(intent)) return 'action-guild.svg';
   if (/changelog|roadmap|development history/.test(intent)) return 'action-history.svg';
-  if (/index\.html|return home/.test(intent)) return 'action-home.svg';
-  if (/discord\.com/.test(intent)) return 'action-discord.svg';
-  if (/docs|guide|documentation|command reference|panel directory|faq/.test(intent)) return 'action-docs.svg';
+  if (/docs|command|faq/.test(intent)) return 'action-docs.svg';
+  if (/guild|lumina|community|gallery|joining process|how to join/.test(intent)) return 'action-guild.svg';
   return 'action-explore.svg';
 };
 

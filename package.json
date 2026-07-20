@@ -4,8 +4,10 @@
   "private": true,
   "description": "Static Lumina and Luminox product website and documentation.",
   "scripts": {
-    "test": "node tools/validate-site.js",
-    "validate": "node tools/validate-site.js"
+    "seo": "node tools/build-seo.mjs",
+    "seo:check": "node tools/seo-audit.mjs",
+    "test": "node tools/validate-site.js && node tools/seo-audit.mjs",
+    "validate": "node tools/validate-site.js && node tools/seo-audit.mjs"
   },
   "dependencies": {
     "sharp": "0.35.3"

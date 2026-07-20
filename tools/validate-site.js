@@ -86,7 +86,7 @@ for (const file of htmlFiles) {
     report(file, '404 page must remain noindex');
   }
 
-  const htmlWithoutStructuredData = source.replace(/<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
+  const htmlWithoutStructuredData = source.replace(/<script\b[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '');
   const rawEntity = htmlWithoutStructuredData.match(/&(?![A-Za-z][A-Za-z0-9]+;|#[0-9]+;|#x[0-9A-Fa-f]+;)/);
   if (rawEntity) report(file, 'contains an unescaped ampersand');
 
