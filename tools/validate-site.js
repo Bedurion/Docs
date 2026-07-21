@@ -19,6 +19,15 @@ function report(file, message) {
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'site.webmanifest'), 'utf8'));
 if (manifest.background_color !== '#090d19') report('site.webmanifest', 'background color must match the shared canvas edge');
 if (manifest.theme_color !== '#090d19') report('site.webmanifest', 'theme color must match the shared canvas edge');
+const requiredManifestIcons = new Map([
+  ['assets/brand/favicon-dark.svg', 'any'],
+  ['assets/brand/pwa-icon-192x192.png', '192x192'],
+  ['assets/brand/pwa-icon-512x512.png', '512x512']
+]);
+for (const [src, sizes] of requiredManifestIcons) {
+  const icon = manifest.icons?.find((entry) => entry.src === src && entry.sizes === sizes);
+  if (!icon) report('site.webmanifest', `missing application icon ${src} (${sizes})`);
+}
 
 function stripFragment(value) {
   return value.split('#')[0].split('?')[0];
@@ -43,6 +52,10 @@ for (const file of htmlFiles) {
   if (!/<meta\s+name="viewport"/i.test(source)) report(file, 'missing viewport');
   if (!/<meta\s+name="viewport"\s+content="[^"]*viewport-fit=cover[^"]*"/i.test(source)) report(file, 'viewport must cover mobile safe areas');
   if (!/<meta\s+name="theme-color"\s+content="#090d19"/i.test(source)) report(file, 'missing shared mobile browser color');
+  if (!/<link\b[^>]*rel="icon"[^>]*type="image\/svg\+xml"[^>]*href="assets\/brand\/favicon-dark\.svg"/i.test(source)) report(file, 'missing SVG favicon');
+  if (!/<link\b[^>]*rel="icon"[^>]*sizes="32x32"[^>]*href="assets\/brand\/favicon-32x32\.png"/i.test(source)) report(file, 'missing 32px favicon fallback');
+  if (!/<link\b[^>]*rel="icon"[^>]*sizes="16x16"[^>]*href="assets\/brand\/favicon-16x16\.png"/i.test(source)) report(file, 'missing 16px favicon fallback');
+  if (!/<link\b[^>]*rel="apple-touch-icon"[^>]*sizes="180x180"[^>]*href="assets\/brand\/apple-touch-icon\.png"/i.test(source)) report(file, 'missing Apple touch icon');
   if (!description) report(file, 'missing meta description');
   if (!/<h1(?:\s[^>]*)?>[\s\S]*?<\/h1>/i.test(source)) report(file, 'missing h1');
   if (!/data-nav-links/.test(source)) report(file, 'missing shared navigation mount');

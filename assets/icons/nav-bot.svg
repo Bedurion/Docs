@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Bot">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Bot" shape-rendering="geometricPrecision">
   <defs>
-    <linearGradient id="bot-gold" x1="18" y1="14" x2="78" y2="84" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF0A6"/><stop offset=".48" stop-color="#F8D86B"/><stop offset="1" stop-color="#D99F21"/></linearGradient>
-    <filter id="bot-shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity=".7"/></filter>
+    <linearGradient id="botGold" x1="17" y1="13" x2="80" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6B8"/>
+      <stop offset="0.5" stop-color="#F5D361"/>
+      <stop offset="1" stop-color="#C88413"/>
+    </linearGradient>
   </defs>
-  <g filter="url(#bot-shadow)" fill="none" stroke="url(#bot-gold)" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M48 17v10m-8-10h16" stroke-width="6"/>
-    <rect x="19" y="28" width="58" height="49" rx="17" stroke-width="6"/>
-    <circle cx="37" cy="50" r="5" fill="url(#bot-gold)" stroke="none"/>
-    <circle cx="59" cy="50" r="5" fill="url(#bot-gold)" stroke="none"/>
-    <path d="M36 65h24M13 47v15m70-15v15" stroke-width="6"/>
-  </g>
+  <path d="M48 15v12M39 15h18" fill="none" stroke="url(#botGold)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="18" y="27" width="60" height="51" rx="17" fill="#101321" stroke="url(#botGold)" stroke-width="6"/>
+  <path d="M12 46v18m72-18v18" fill="none" stroke="url(#botGold)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="37" cy="50" r="5" fill="#FFF0A6" stroke="#704006" stroke-width="2"/>
+  <circle cx="59" cy="50" r="5" fill="#FFF0A6" stroke="#704006" stroke-width="2"/>
+  <path d="M35 65h26" fill="none" stroke="url(#botGold)" stroke-width="5" stroke-linecap="round"/>
+  <path d="m69 25 4-7 4 7 7 4-7 4-4 7-4-7-7-4Z" fill="#FFF0A6" stroke="#9B6510" stroke-width="2" stroke-linejoin="round"/>
 </svg>

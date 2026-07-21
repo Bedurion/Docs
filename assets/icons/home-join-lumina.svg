@@ -16,17 +16,23 @@
       <stop stop-color="#FFE17A"/>
       <stop offset="1" stop-color="#62E6C3"/>
     </linearGradient>
+    <radialGradient id="portal" cx="0" cy="0" r="1" gradientTransform="translate(29 25) rotate(48) scale(36)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#252D59"/>
+      <stop offset=".52" stop-color="#11182F"/>
+      <stop offset="1" stop-color="#090F22"/>
+    </radialGradient>
   </defs>
-  <path d="M11 39C8 20 24 8 40 10c11 1 20 8 24 18" stroke="url(#orbit)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-  <path d="M13 47c8 13 26 17 40 9" stroke="url(#orbit)" stroke-width="1.5" stroke-linecap="round" opacity=".48"/>
-  <circle cx="11" cy="39" r="2.3" fill="#FFD86C"/>
-  <circle cx="64" cy="28" r="2.3" fill="#9A7BFF"/>
-  <path d="M51.5 17.5v7m-3.5-3.5h7" stroke="#FF8DA6" stroke-width="1.8" stroke-linecap="round"/>
-  <g transform="matrix(.74 0 0 .74 -.26 -.63)">
+  <circle cx="36" cy="36" r="23" fill="url(#portal)" stroke="url(#orbit)" stroke-width="2.4"/>
+  <circle cx="36" cy="36" r="18.5" stroke="url(#orbit)" stroke-width="1" stroke-dasharray="2.5 5.5" opacity=".34"/>
+  <path d="M14 33c1.5-10 8.7-18.2 18.3-20.4M40.5 13.4c8.8 1.8 15.8 8.4 18.4 16.8" stroke="url(#orbit)" stroke-width="1.6" stroke-linecap="round" opacity=".58"/>
+  <circle cx="14" cy="33" r="2.3" fill="#FFD86C"/>
+  <circle cx="58.9" cy="30.2" r="2.3" fill="#9A7BFF"/>
+  <path d="M49.5 15v7m-3.5-3.5h7" stroke="#FF8DA6" stroke-width="1.8" stroke-linecap="round"/>
+  <g transform="matrix(.6 0 0 .6 6.6 6.3)">
     <path d="M65 33a45 45 0 0 0-11-4l-1.5 3a42 42 0 0 0-9 0L42 29a45 45 0 0 0-11 4c-7 10-9 20-8 30a45 45 0 0 0 14 7l3-5a27 27 0 0 1-5-2l1-2c9 4 17 4 26 0l1 2a27 27 0 0 1-5 2l3 5a45 45 0 0 0 14-7c1-10-1-20-8-30Z" fill="url(#discord)"/>
     <circle cx="39" cy="50" r="4" fill="#11162E"/>
     <circle cx="57" cy="50" r="4" fill="#11162E"/>
   </g>
-  <circle cx="56" cy="55" r="10.5" fill="#0B1228" stroke="url(#invite)" stroke-width="2.2"/>
-  <path d="M50.5 55h11m-4-4 4 4-4 4" stroke="url(#invite)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="56.5" cy="55.5" r="10.5" fill="#0B1228" stroke="url(#invite)" stroke-width="2.2"/>
+  <path d="M51 55.5h11m-4-4 4 4-4 4" stroke="url(#invite)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Home"><path d="M18 47L48 22l30 25v30a5 5 0 01-5 5H58V59H38v23H23a5 5 0 01-5-5z" fill="#F2C94C"/><path d="M31 48l17-14 17 14" fill="none" stroke="#100b18" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".65"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Home" shape-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="homeGold" x1="20" y1="18" x2="76" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6B8"/>
+      <stop offset="0.48" stop-color="#F5D361"/>
+      <stop offset="1" stop-color="#C88413"/>
+    </linearGradient>
+  </defs>
+  <path d="M15 46 48 18l33 28-5 6-5-4v29a6 6 0 0 1-6 6H31a6 6 0 0 1-6-6V48l-5 4Z" fill="url(#homeGold)" stroke="#6E3D06" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M39 82V59h18v23" fill="#11101B" stroke="#6E3D06" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M31 47 48 33l17 14" fill="none" stroke="#FFF2A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.76"/>
+</svg>

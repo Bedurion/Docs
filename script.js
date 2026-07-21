@@ -101,7 +101,7 @@ const navigationSections = {
 };
 
 const sectionContainsPage = (section) => section.pages.some(([href]) => href === currentPage);
-const renderNavIcon = (icon) => `<span class="nav-icon-shell"><img class="nav-icon" src="assets/icons/${icon}" alt="" aria-hidden="true"></span>`;
+const renderNavIcon = (icon) => `<span class="nav-icon-shell"><img class="nav-icon" src="assets/icons/${icon}?v=20260722-2" alt="" aria-hidden="true"></span>`;
 const renderDropdownLinks = (section) => {
   const hasGroups = section.pages.some(([, , group]) => group);
   if (!hasGroups) {

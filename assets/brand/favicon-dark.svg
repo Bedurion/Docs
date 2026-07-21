@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Lumina guild seal dark variant">
+  <defs>
+    <radialGradient id="darkWax" cx="38%" cy="27%" r="84%">
+      <stop offset="0" stop-color="#43305d"/>
+      <stop offset="0.34" stop-color="#251b3d"/>
+      <stop offset="0.72" stop-color="#101324"/>
+      <stop offset="1" stop-color="#05070e"/>
+    </radialGradient>
+    <radialGradient id="darkCore" cx="43%" cy="31%" r="80%">
+      <stop offset="0" stop-color="#222a46"/>
+      <stop offset="0.56" stop-color="#10182c"/>
+      <stop offset="1" stop-color="#070a14"/>
+    </radialGradient>
+    <linearGradient id="lightLetter" x1="40" y1="24" x2="91" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffbe5"/>
+      <stop offset="0.32" stop-color="#ffe49a"/>
+      <stop offset="0.68" stop-color="#f2bd55"/>
+      <stop offset="1" stop-color="#b76b20"/>
+    </linearGradient>
+    <linearGradient id="letterEdge" x1="37" y1="23" x2="96" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff8c7"/>
+      <stop offset="0.52" stop-color="#d99a32"/>
+      <stop offset="1" stop-color="#6b3510"/>
+    </linearGradient>
+    <linearGradient id="ruby" x1="54" y1="96" x2="75" y2="119" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff917a"/>
+      <stop offset="0.42" stop-color="#ef3650"/>
+      <stop offset="1" stop-color="#76091e"/>
+    </linearGradient>
+    <linearGradient id="rubyEdge" x1="50" y1="93" x2="80" y2="121" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff5b8"/>
+      <stop offset="0.5" stop-color="#f2bd4f"/>
+      <stop offset="1" stop-color="#8d470f"/>
+    </linearGradient>
+    <filter id="outerGlow" x="-24%" y="-24%" width="148%" height="158%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#02030a" flood-opacity="0.84"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="1.7" flood-color="#ffd86b" flood-opacity="0.2"/>
+    </filter>
+    <filter id="letterGlow" x="-28%" y="-28%" width="156%" height="166%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#02030a" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#ffe78e" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+
+  <circle cx="64" cy="64" r="61" fill="#03050b"/>
+  <circle cx="64" cy="64" r="58" fill="url(#darkWax)" stroke="#080a13" stroke-width="4" stroke-dasharray="5 1.7" stroke-linecap="round" filter="url(#outerGlow)"/>
+  <circle cx="64" cy="64" r="53" fill="#070913" stroke="#ffd873" stroke-width="1.6"/>
+  <circle cx="64" cy="64" r="48.5" fill="url(#darkCore)" stroke="#a76f28" stroke-width="2.5"/>
+  <circle cx="64" cy="64" r="43.5" fill="none" stroke="#d8a84e" stroke-width="1.5" stroke-dasharray="1.6 2.4" stroke-linecap="round" opacity="0.72"/>
+  <circle cx="64" cy="64" r="39.5" fill="none" stroke="#9bdcff" stroke-width="1" opacity="0.2"/>
+
+  <g fill="#f4ca69" opacity="0.92">
+    <path d="M64 17l2.4 4.6L71 24l-4.6 2.4L64 31l-2.4-4.6L57 24l4.6-2.4z"/>
+    <path d="M64 97l2 3.8 3.8 2-3.8 2-2 3.8-2-3.8-3.8-2 3.8-2z"/>
+    <path d="M17 64l4.2-2.2 2.2-4.2 2.2 4.2 4.2 2.2-4.2 2.2-2.2 4.2-2.2-4.2z"/>
+    <path d="M98 64l4.2-2.2 2.2-4.2 2.2 4.2 4.2 2.2-4.2 2.2-2.2 4.2-2.2-4.2z"/>
+  </g>
+
+  <path d="M39 26h32l5 6-7 7h-5v39h15l12-16h9l-5 31H38l-6-8 8-7h4V39h-6l-5-7z" fill="url(#letterEdge)" stroke="#311b09" stroke-width="4.5" stroke-linejoin="round" opacity="0.98"/>
+  <path d="M39 23h32l5 6-7 7h-5v39h15l12-16h9l-5 31H38l-6-8 8-7h4V36h-6l-5-7z" fill="url(#lightLetter)" stroke="#fff0a8" stroke-width="1.7" stroke-linejoin="round" filter="url(#letterGlow)"/>
+  <path d="M42 28h24l2 2.3-5 2.2h-5v47h24l5-6.5-2 11H43l3-4V32h-4.5z" fill="#fffdf1" opacity="0.34"/>
+  <path d="M48 39h3.2v35H48z" fill="#fff3bd" opacity="0.48"/>
+
+  <path d="M64 91l18 15-18 19-18-19z" fill="#080710" stroke="#030309" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 93l15.5 13L64 122l-15.5-16z" fill="url(#rubyEdge)" stroke="#fff4b0" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M64 97l11 9-11 12-11-12z" fill="url(#ruby)" stroke="#ff9a83" stroke-width="1.2"/>
+  <path d="M64 97v21l-11-12zm0 0l11 9-11 2.8z" fill="#ffd9b2" opacity="0.42"/>
+  <path d="M64 108.8l11-2.8-11 12-11-12z" fill="#76081c" opacity="0.6"/>
+  <circle cx="64" cy="106" r="2.4" fill="#fff9d9"/>
+</svg>

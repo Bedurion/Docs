@@ -1,7 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Pricing">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Pricing" shape-rendering="geometricPrecision">
   <defs>
-    <linearGradient id="gold" x1="18" y1="12" x2="82" y2="84" gradientUnits="userSpaceOnUse"><stop stop-color="#F8D86B"/><stop offset="1" stop-color="#D99F21"/></linearGradient>
-    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.72"/></filter>
+    <linearGradient id="priceGold" x1="17" y1="15" x2="80" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6B8"/>
+      <stop offset="0.5" stop-color="#F5D361"/>
+      <stop offset="1" stop-color="#C88413"/>
+    </linearGradient>
   </defs>
-  <path d="M25 29h28l18 18-28 28-18-18z" fill="url(#gold)" filter="url(#shadow)"/><circle cx="44" cy="41" r="5" fill="#160E02"/><path d="M45 57l11-11" stroke="#160E02" stroke-width="6" stroke-linecap="round"/>
+  <path d="M20 28h35l23 23-31 31-27-27Z" fill="url(#priceGold)" stroke="#704006" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="42" cy="42" r="7" fill="#11101B" stroke="#FFF0A6" stroke-width="3"/>
+  <path d="m45 66 17-17" fill="none" stroke="#1A1421" stroke-width="6" stroke-linecap="round"/>
+  <path d="M21 28h34" fill="none" stroke="#FFF2A8" stroke-width="3" stroke-linecap="round" opacity="0.72"/>
 </svg>
