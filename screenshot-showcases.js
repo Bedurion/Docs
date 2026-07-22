@@ -3,7 +3,7 @@
     "index.html": {
       eyebrow: "Discord-native by design",
       title: "See Luminox where it actually works.",
-      summary: "There is no external dashboard. Luminox lives inside Discord: administrators organize each system by channel, while members use permanent panels, guided buttons and clear live information.",
+      summary: "Luminox is our custom Discord bot for managing guilds and gaming communities. There is no external dashboard: administrators organize each system by channel, while members use permanent panels, guided buttons and clear live information entirely inside Discord.",
       tone: "violet",
       layout: "home",
       anchor: ".product-explainer",
@@ -588,7 +588,25 @@
           caption: "The guide below covers categories, required questions, media, staff access, claims, invited participants, closure and satisfaction rewards.",
           alt: "Luminox Private Support panel with Open ticket and My tickets buttons."
         }
-      ]
+      ],
+      gallery: {
+        slides: [
+          {
+            file: "bot-support-02.png", width: 1537, height: 1023, tone: "cyan",
+            kicker: "Category selection", title: "Members choose the right private route before a ticket opens.",
+            lead: "Each category explains its purpose in the same guided selector.",
+            caption: "Complaints, registration help and staff applications can share one public launcher while still reaching different responsible staff teams.",
+            alt: "Luminox Support category selector showing Complaints, Registration and Staff Applications.", href: "#open", linkLabel: "Review the member flow"
+          },
+          {
+            file: "bot-support-03.png", width: 983, height: 1601, tone: "violet",
+            kicker: "Required complaint form", title: "Questions and evidence arrive before staff begin the review.",
+            lead: "Every required field and initial attachment is collected first.",
+            caption: "Category settings define the questions, accepted media and file count so the private thread begins with useful context instead of another information request.",
+            alt: "Luminox Support complaint form with required questions and required media upload.", href: "#categories", linkLabel: "Review category settings"
+          }
+        ]
+      }
     },
     "docs-guildbank.html": {
       eyebrow: "GuildBank in practice",
@@ -1146,7 +1164,25 @@
           caption: "Open ticket starts a new guided request, while My tickets returns the member to open or archived conversations linked to the same account.",
           alt: "Luminox Private Support panel explaining ticket creation, privacy and Open ticket and My tickets buttons."
         }
-      ]
+      ],
+      gallery: {
+        slides: [
+          {
+            file: "bot-support-02.png", width: 1537, height: 1023, tone: "cyan",
+            kicker: "Guided routing", title: "One selector routes each request to the correct staff team.",
+            lead: "Members see what every support category is for before continuing.",
+            caption: "Complaints, registration help and staff applications remain easy to distinguish without exposing the resulting conversation in a public channel.",
+            alt: "Luminox Support category selector showing Complaints, Registration and Staff Applications.", href: "docs-support.html#open", linkLabel: "See the complete member flow"
+          },
+          {
+            file: "bot-support-03.png", width: 983, height: 1601, tone: "violet",
+            kicker: "Complete context", title: "Required questions and evidence are collected before opening the thread.",
+            lead: "The form adapts to the selected category instead of asking everyone the same questions.",
+            caption: "Configurable fields and initial media requirements help responsible staff receive the facts they need from the first message.",
+            alt: "Luminox Support complaint form with required questions and required media upload.", href: "docs-support.html#categories", linkLabel: "See category configuration"
+          }
+        ]
+      }
     },
     "bot-tracker.html": {
       eyebrow: "Identity changes preserved",

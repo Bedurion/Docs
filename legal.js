@@ -1,13 +1,17 @@
 (() => {
   const documents = [...document.querySelectorAll('.legal-document')];
-  const indexLinks = [...document.querySelectorAll('[data-legal-link]')];
+  const documentIds = new Set(documents.map((documentPanel) => documentPanel.id));
+  const documentLinks = [...document.querySelectorAll('a[href^="#"]')].filter((link) => {
+    const id = link.getAttribute('href')?.slice(1);
+    return id && documentIds.has(id);
+  });
   const openAll = document.querySelector('[data-legal-open-all]');
   const closeAll = document.querySelector('[data-legal-close-all]');
 
   const openDocument = (id, shouldScroll = true) => {
     const documentPanel = document.getElementById(id);
     if (!(documentPanel instanceof HTMLDetailsElement)) return;
-    documentPanel.open = true;
+    documents.forEach((panel) => { panel.open = panel === documentPanel; });
     if (shouldScroll) {
       window.requestAnimationFrame(() => {
         documentPanel.scrollIntoView({
@@ -18,7 +22,7 @@
     }
   };
 
-  indexLinks.forEach((link) => {
+  documentLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       const id = link.getAttribute('href')?.slice(1);
       if (!id) return;
@@ -42,4 +46,9 @@
 
   const initialId = window.location.hash.slice(1);
   if (initialId) openDocument(initialId, false);
+
+  window.addEventListener('hashchange', () => {
+    const id = window.location.hash.slice(1);
+    if (documentIds.has(id)) openDocument(id);
+  });
 })();
