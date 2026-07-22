@@ -6,9 +6,9 @@
       summary: "There is no external dashboard. Luminox lives inside Discord: administrators organize each system by channel, while members use permanent panels, guided buttons and clear live information.",
       tone: "violet",
       layout: "home",
-      anchor: ".home-story-card",
+      anchor: ".product-explainer",
       anchorClosest: "section",
-      position: "before",
+      position: "after",
       items: [
         {
           file: "docs-panels-01.png",

@@ -576,6 +576,10 @@
     grid-template-columns: 1fr;
   }
 
+  .discord-screenshot-grid--home .discord-screenshot-gallery {
+    order: -1;
+  }
+
   .discord-screenshot-card--wide {
     grid-column: auto;
   }
