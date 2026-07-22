@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" fill="none">
+  <defs>
+    <linearGradient id="atlas-line" x1="116" y1="94" x2="654" y2="516" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6D46F"/>
+      <stop offset="0.48" stop-color="#B17CFF"/>
+      <stop offset="1" stop-color="#56C7F5"/>
+    </linearGradient>
+    <linearGradient id="atlas-page" x1="285" y1="230" x2="475" y2="455" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0B4"/>
+      <stop offset="0.52" stop-color="#DCC386"/>
+      <stop offset="1" stop-color="#8F7146"/>
+    </linearGradient>
+    <radialGradient id="atlas-aura" cx="0" cy="0" r="1" gradientTransform="translate(380 308) rotate(90) scale(286 330)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6" stop-opacity="0.24"/>
+      <stop offset="0.58" stop-color="#224F86" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#050817" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="atlas-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="atlas-shadow" x="-35%" y="-35%" width="170%" height="190%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#02040E" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="380" cy="306" rx="330" ry="282" fill="url(#atlas-aura)"/>
+  <ellipse cx="380" cy="306" rx="286" ry="232" stroke="url(#atlas-line)" stroke-opacity="0.16"/>
+  <ellipse cx="380" cy="306" rx="232" ry="188" stroke="#B58CFF" stroke-opacity="0.13" stroke-dasharray="8 13"/>
+  <path d="M380 306 164 153M380 306l216-153M380 306 142 435M380 306l238 129" stroke="url(#atlas-line)" stroke-opacity="0.34" stroke-width="2" stroke-dasharray="5 10"/>
+
+  <g filter="url(#atlas-shadow)">
+    <path d="M260 247c42-17 82-7 120 29 38-36 78-46 120-29v184c-42-14-82-4-120 30-38-34-78-44-120-30V247Z" fill="#0D142B" stroke="url(#atlas-line)" stroke-width="3"/>
+    <path d="M277 263c34-10 65 1 92 31v139c-29-19-60-25-92-17V263ZM483 263c-34-10-65 1-92 31v139c29-19 60-25 92-17V263Z" fill="url(#atlas-page)" fill-opacity="0.92"/>
+    <path d="M380 279v177" stroke="#F6D46F" stroke-opacity="0.72" stroke-width="3"/>
+    <path d="M301 322c21-2 40 3 57 16M301 353c21-2 40 3 57 16M301 384c21-2 40 3 57 16M459 322c-21-2-40 3-57 16M459 353c-21-2-40 3-57 16M459 384c-21-2-40 3-57 16" stroke="#574322" stroke-opacity="0.55" stroke-width="5" stroke-linecap="round"/>
+    <path d="m380 209 22 13v26l-22 13-22-13v-26l22-13Z" fill="#121A36" stroke="url(#atlas-line)" stroke-width="2"/>
+    <path d="m380 219 7 13 14 2-10 10 3 14-14-7-14 7 3-14-10-10 14-2 7-13Z" fill="#F6D46F" fill-opacity="0.9"/>
+  </g>
+
+  <g transform="translate(98 94)" filter="url(#atlas-shadow)">
+    <rect width="132" height="118" rx="28" fill="#0C142B" stroke="#F6D46F" stroke-opacity="0.72" stroke-width="2"/>
+    <path d="M32 78V43l34-18 34 18v35" stroke="#F6D46F" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M45 76V51h42v25M58 76V61h16v15" stroke="#B17CFF" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="101" cy="27" r="5" fill="#F2657A"/>
+  </g>
+
+  <g transform="translate(530 94)" filter="url(#atlas-shadow)">
+    <rect width="132" height="118" rx="28" fill="#0C142B" stroke="#56C7F5" stroke-opacity="0.72" stroke-width="2"/>
+    <circle cx="66" cy="47" r="17" stroke="#56C7F5" stroke-width="4"/>
+    <path d="M34 91c6-20 18-29 32-29s26 9 32 29" stroke="#72E3A8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M66 17v9M103 50h-9M38 50h-9" stroke="#F6D46F" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(76 376)" filter="url(#atlas-shadow)">
+    <rect width="148" height="126" rx="30" fill="#0C142B" stroke="#B17CFF" stroke-opacity="0.75" stroke-width="2"/>
+    <path d="M35 84c11-31 30-48 57-52 7 25 1 47-20 65" stroke="#B17CFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M54 74c15 1 27 7 36 18M87 44l15-11M35 96h79" stroke="#56C7F5" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="105" cy="28" r="5" fill="#F6D46F"/>
+  </g>
+
+  <g transform="translate(536 376)" filter="url(#atlas-shadow)">
+    <rect width="148" height="126" rx="30" fill="#0C142B" stroke="#72E3A8" stroke-opacity="0.72" stroke-width="2"/>
+    <path d="M34 34h80v59H34z" stroke="#72E3A8" stroke-width="4"/>
+    <path d="M34 50h80M50 34v59M80 34v59M99 34v59" stroke="#56C7F5" stroke-opacity="0.62" stroke-width="2"/>
+    <path d="m62 68 11-12 13 11 12-10" stroke="#F6D46F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="62" cy="68" r="5" fill="#F2657A" filter="url(#atlas-glow)"/>
+  </g>
+
+  <g fill="#F6D46F">
+    <circle cx="274" cy="98" r="4"/><circle cx="489" cy="81" r="3"/><circle cx="690" cy="304" r="4"/><circle cx="54" cy="289" r="3"/>
+  </g>
+  <g fill="#56C7F5">
+    <circle cx="255" cy="512" r="4"/><circle cx="487" cy="531" r="3"/><circle cx="705" cy="226" r="3"/><circle cx="64" cy="214" r="4"/>
+  </g>
+</svg>

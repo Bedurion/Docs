@@ -86,6 +86,7 @@ const navigationSections = {
       ['docs-troubleshooting.html', 'Troubleshooting', 'Administration'],
       ['systems.html', 'How Luminox Works', 'Administration'],
       ['docs-faq.html', 'FAQ', 'Administration'],
+      ['legal.html', 'Legal Centre', 'Administration'],
       ['roadmap.html', 'Roadmap', 'Administration'],
       ['changelog.html', 'Changelog', 'Administration']
     ]
@@ -207,6 +208,7 @@ const documentationCatalog = [
   ['docs-website.html', 'Website Publishing', 'Private Discord proposals, staff review and safe publication of approved media.', 'website gallery media publish review security'],
   ['docs-troubleshooting.html', 'Troubleshooting', 'Permissions, missing panels, failed interactions and sync issues.', 'errors permissions missing interaction'],
   ['docs-faq.html', 'FAQ', 'Short answers to common member and staff questions.', 'faq questions help'],
+  ['legal.html', 'Legal Centre', 'Terms, privacy, cookies, publishing and Discord-managed billing conditions.', 'legal terms privacy cookies publishing billing'],
   ['roadmap.html', 'Product Roadmap', 'The public delivery path, release principles and priorities shaping future Luminox work.', 'roadmap development future releases'],
   ['changelog.html', 'Changelog', 'A curated history of meaningful Luminox releases and documentation milestones.', 'changelog updates releases history'],
   ['use-cases.html', 'Use Cases', 'Choose the smallest Luminox setup for the problem your guild needs to solve.', 'use cases buying evaluation setup guild problems'],
@@ -287,7 +289,7 @@ const pagePresentations = {
   'guild-activities.html': { family: 'guild', variant: 'activities', accent: 'green', code: 'Guild life', icon: 'content-events.svg', label: 'Play together', summary: 'Hunts, bosses, quests, social sessions and roleplay give different members a place to participate.', tags: ['Organize', 'Join', 'Remember'] },
   'blog.html': { family: 'guild', variant: 'blog', accent: 'gold', code: 'Guild journal', icon: 'content-blog.svg', label: 'Lumina blog', summary: 'Guild news, chronicles and thoughtful updates written and reviewed through Discord.', tags: ['News', 'Stories', 'Community'] },
   'gallery.html': { family: 'guild', variant: 'gallery', accent: 'violet', code: 'Visual archive', icon: 'content-gallery.svg', label: 'Lumina gallery', summary: 'Staff-reviewed adventures, community life, roleplay and milestones preserved with their story.', tags: ['Stories', 'Collections', 'Memories'] },
-  'guild-roleplay.html': { family: 'guild', variant: 'roleplay', accent: 'violet', code: 'Chapter 03', icon: 'roleplay.svg', label: 'Roleplay sessions', summary: 'Original characters, narrated adventures and shared stories created by Lumina members.', tags: ['Characters', 'Stories', 'Sessions'] },
+  'guild-roleplay.html': { family: 'guild', variant: 'roleplay', accent: 'violet', code: 'Story archive', icon: 'roleplay.svg', label: 'Lumina chronicles', summary: 'Browse future sagas, chapters, character journals, world lore and illustrated stories created by Lumina members.', tags: ['Stories', 'Chapters', 'Lore'] },
   'guild-join.html': { family: 'guild', variant: 'journey', accent: 'blue', code: 'Tibia · Secura', icon: 'content-journey.svg', label: 'Join Lumina', summary: 'Apply to our international Tibia guild on the Secura game world and connect your character to Discord.', tags: ['Tibia', 'Secura', 'Apply'] },
   'guild-faq.html': { family: 'guild', variant: 'candidate', accent: 'green', code: 'Before applying', icon: 'content-support.svg', label: 'Candidate FAQ', summary: 'Plain answers about Secura eligibility, registration, guild life and the application path.', tags: ['Understand', 'Prepare', 'Apply'] },
   'guild-rules.html': { family: 'guild', variant: 'charter', accent: 'red', code: 'Chapter 05', icon: 'content-security.svg', label: 'Guild charter', summary: 'The principles that protect claims, communication and long-term trust.', tags: ['Respect', 'Evidence', 'Accountability'] },
@@ -435,7 +437,7 @@ const pageOpeningTitles = {
   'bot-website.html': 'Website Publishing',
   'blog.html': 'Lumina Journal',
   'gallery.html': 'Lumina Gallery',
-  'guild-roleplay.html': 'Guild Roleplay',
+  'guild-roleplay.html': 'Lumina Chronicles',
   'guild.html': 'Meet Lumina',
   'guild-history.html': 'Our Story',
   'guild-secura.html': 'Life on Secura',

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs><linearGradient id="campaign-g" x1="9" y1="10" x2="56" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#F6D46F"/><stop offset="0.52" stop-color="#B17CFF"/><stop offset="1" stop-color="#56C7F5"/></linearGradient></defs>
+  <path d="M12 49V22l20-11 20 11v27" stroke="url(#campaign-g)" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M18 49V28l14-8 14 8v21" stroke="url(#campaign-g)" stroke-opacity="0.55" stroke-width="2.4"/>
+  <path d="M9 51h46M25 51V37h14v14" stroke="url(#campaign-g)" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="48" cy="15" r="4" fill="#F2657A"/>
+</svg>

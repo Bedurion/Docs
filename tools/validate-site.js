@@ -291,6 +291,155 @@ if (!fs.existsSync(blogDataPath)) {
   }
 }
 
+const roleplayDataPath = path.join(root, 'data', 'roleplay-stories.json');
+if (!fs.existsSync(roleplayDataPath)) {
+  report('data/roleplay-stories.json', 'missing Roleplay archive data source');
+} else {
+  try {
+    const roleplayData = JSON.parse(fs.readFileSync(roleplayDataPath, 'utf8'));
+    if (!isPlainObject(roleplayData) || !hasExactKeys(roleplayData, ['version', 'stories']) || roleplayData.version !== 1 || !Array.isArray(roleplayData.stories)) {
+      report('data/roleplay-stories.json', 'invalid root schema');
+    } else {
+      const storyIds = new Set();
+      const storySlugs = new Set();
+      const storyKeys = [
+        'id', 'slug', 'title', 'subtitle', 'summary', 'category', 'status',
+        'featured', 'visible', 'author', 'publishedAt', 'updatedAt',
+        'readingMinutes', 'cover', 'chapters'
+      ];
+      const chapterKeys = ['id', 'title', 'summary', 'publishedAt', 'visible', 'content'];
+      const categories = new Set(['campaign', 'one-shot', 'character', 'lore']);
+      const statuses = new Set(['ongoing', 'complete']);
+
+      roleplayData.stories.forEach((story, storyIndex) => {
+        const storyLabel = `story ${storyIndex + 1}`;
+        if (!isPlainObject(story) || !hasExactKeys(story, storyKeys)) {
+          report('data/roleplay-stories.json', `${storyLabel} has an invalid schema`);
+          return;
+        }
+        if (!/^RP-[A-Z2-9]{8}$/.test(story.id) || storyIds.has(story.id)) report('data/roleplay-stories.json', `${storyLabel} has an invalid or duplicate ID`);
+        storyIds.add(story.id);
+        if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(story.slug) || storySlugs.has(story.slug)) report('data/roleplay-stories.json', `${storyLabel} has an invalid or duplicate slug`);
+        storySlugs.add(story.slug);
+        if (typeof story.title !== 'string' || story.title.length < 3 || story.title.length > 120) report('data/roleplay-stories.json', `${storyLabel} has an invalid title`);
+        if (typeof story.subtitle !== 'string' || story.subtitle.length > 180) report('data/roleplay-stories.json', `${storyLabel} has an invalid subtitle`);
+        if (typeof story.summary !== 'string' || story.summary.length < 20 || story.summary.length > 600) report('data/roleplay-stories.json', `${storyLabel} has an invalid summary`);
+        if (!categories.has(story.category)) report('data/roleplay-stories.json', `${storyLabel} has an invalid category`);
+        if (!statuses.has(story.status)) report('data/roleplay-stories.json', `${storyLabel} has an invalid status`);
+        if (typeof story.featured !== 'boolean' || typeof story.visible !== 'boolean') report('data/roleplay-stories.json', `${storyLabel} has invalid publication flags`);
+        if (typeof story.author !== 'string' || story.author.length < 1 || story.author.length > 100) report('data/roleplay-stories.json', `${storyLabel} has an invalid author`);
+        if (Number.isNaN(Date.parse(story.publishedAt)) || Number.isNaN(Date.parse(story.updatedAt))) report('data/roleplay-stories.json', `${storyLabel} has an invalid date`);
+        if (!Number.isSafeInteger(story.readingMinutes) || story.readingMinutes < 1 || story.readingMinutes > 600) report('data/roleplay-stories.json', `${storyLabel} has an invalid reading time`);
+
+        if (story.cover !== null) {
+          if (
+            !isPlainObject(story.cover) ||
+            !hasExactKeys(story.cover, ['src', 'alt', 'width', 'height']) ||
+            typeof story.cover.src !== 'string' ||
+            !story.cover.src.startsWith('assets/') ||
+            !fs.existsSync(path.resolve(root, story.cover.src)) ||
+            typeof story.cover.alt !== 'string' ||
+            story.cover.alt.length < 3 ||
+            story.cover.alt.length > 300 ||
+            !Number.isSafeInteger(story.cover.width) ||
+            !Number.isSafeInteger(story.cover.height) ||
+            story.cover.width < 1 ||
+            story.cover.height < 1 ||
+            story.cover.width > 3200 ||
+            story.cover.height > 3200
+          ) {
+            report('data/roleplay-stories.json', `${storyLabel} has an invalid cover`);
+          }
+        }
+
+        if (!Array.isArray(story.chapters) || story.chapters.length > 250) {
+          report('data/roleplay-stories.json', `${storyLabel} has invalid chapters`);
+          return;
+        }
+
+        const chapterIds = new Set();
+        story.chapters.forEach((chapter, chapterIndex) => {
+          const chapterLabel = `${storyLabel}, chapter ${chapterIndex + 1}`;
+          if (!isPlainObject(chapter) || !hasExactKeys(chapter, chapterKeys)) {
+            report('data/roleplay-stories.json', `${chapterLabel} has an invalid schema`);
+            return;
+          }
+          if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(chapter.id) || chapterIds.has(chapter.id)) report('data/roleplay-stories.json', `${chapterLabel} has an invalid or duplicate ID`);
+          chapterIds.add(chapter.id);
+          if (typeof chapter.title !== 'string' || chapter.title.length < 3 || chapter.title.length > 140) report('data/roleplay-stories.json', `${chapterLabel} has an invalid title`);
+          if (typeof chapter.summary !== 'string' || chapter.summary.length > 400) report('data/roleplay-stories.json', `${chapterLabel} has an invalid summary`);
+          if (Number.isNaN(Date.parse(chapter.publishedAt))) report('data/roleplay-stories.json', `${chapterLabel} has an invalid date`);
+          if (typeof chapter.visible !== 'boolean') report('data/roleplay-stories.json', `${chapterLabel} has an invalid visibility value`);
+          if (!Array.isArray(chapter.content) || chapter.content.length > 250) {
+            report('data/roleplay-stories.json', `${chapterLabel} has invalid content`);
+            return;
+          }
+
+          chapter.content.forEach((block, blockIndex) => {
+            const blockLabel = `${chapterLabel}, block ${blockIndex + 1}`;
+            if (!isPlainObject(block)) {
+              report('data/roleplay-stories.json', `${blockLabel} is invalid`);
+              return;
+            }
+            if (block.type === 'paragraph' || block.type === 'heading') {
+              const maxLength = block.type === 'heading' ? 200 : 12_000;
+              if (!hasExactKeys(block, ['type', 'text']) || typeof block.text !== 'string' || block.text.length < 1 || block.text.length > maxLength) {
+                report('data/roleplay-stories.json', `${blockLabel} contains invalid text`);
+              }
+              return;
+            }
+            if (block.type === 'quote') {
+              if (!hasExactKeys(block, ['type', 'text', 'attribution']) || typeof block.text !== 'string' || block.text.length < 1 || block.text.length > 2_000 || typeof block.attribution !== 'string' || block.attribution.length > 160) {
+                report('data/roleplay-stories.json', `${blockLabel} contains an invalid quote`);
+              }
+              return;
+            }
+            if (block.type === 'image') {
+              if (
+                !hasExactKeys(block, ['type', 'src', 'alt', 'caption', 'width', 'height']) ||
+                typeof block.src !== 'string' ||
+                !block.src.startsWith('assets/') ||
+                !fs.existsSync(path.resolve(root, block.src)) ||
+                typeof block.alt !== 'string' ||
+                block.alt.length < 3 ||
+                block.alt.length > 300 ||
+                typeof block.caption !== 'string' ||
+                block.caption.length > 300 ||
+                !Number.isSafeInteger(block.width) ||
+                !Number.isSafeInteger(block.height) ||
+                block.width < 1 ||
+                block.height < 1 ||
+                block.width > 3200 ||
+                block.height > 3200
+              ) {
+                report('data/roleplay-stories.json', `${blockLabel} contains an invalid image`);
+              }
+              return;
+            }
+            report('data/roleplay-stories.json', `${blockLabel} has an unsupported type`);
+          });
+        });
+      });
+
+      const featuredStories = roleplayData.stories.filter((story) => story?.visible !== false && story?.featured === true);
+      if (featuredStories.length > 1) report('data/roleplay-stories.json', 'contains more than one visible featured story');
+    }
+  } catch {
+    report('data/roleplay-stories.json', 'contains invalid JSON');
+  }
+}
+
+const roleplayScriptPath = path.join(root, 'roleplay.js');
+if (!fs.existsSync(roleplayScriptPath)) {
+  report('roleplay.js', 'missing Roleplay archive script');
+} else {
+  try {
+    execFileSync(process.execPath, ['--check', roleplayScriptPath], { stdio: 'pipe' });
+  } catch {
+    report('roleplay.js', 'contains invalid JavaScript');
+  }
+}
+
 const scriptSource = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 if (!docsGuideSource) {
   report('docs-guide.js', 'missing shared documentation guide');

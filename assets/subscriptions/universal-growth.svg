@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" role="img" aria-label="Luminox Universal Growth subscription artwork">
+  <defs>
+    <linearGradient id="accent" x1="28" y1="26" x2="222" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A77CFF"/>
+      <stop offset=".52" stop-color="#56C7F5"/>
+      <stop offset="1" stop-color="#F265A7"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="96" y1="65" x2="162" y2="157" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4B1"/>
+      <stop offset=".35" stop-color="#F3CC63"/>
+      <stop offset=".72" stop-color="#D59625"/>
+      <stop offset="1" stop-color="#7C4316"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="0" cy="0" r="1" gradientTransform="translate(125 94) rotate(90) scale(126)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A77CFF" stop-opacity=".3"/>
+      <stop offset=".48" stop-color="#56C7F5" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#050817" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="19" y1="15" x2="229" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1025"/>
+      <stop offset="1" stop-color="#050817"/>
+    </linearGradient>
+    <filter id="shadow" x="-35%" y="-35%" width="170%" height="185%">
+      <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#000" flood-opacity=".74"/>
+    </filter>
+    <filter id="nodeGlow" x="-180%" y="-180%" width="460%" height="460%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="250" height="250" fill="#04060D"/>
+  <rect x="6" y="6" width="238" height="238" rx="38" fill="url(#panel)"/>
+  <rect x="6.75" y="6.75" width="236.5" height="236.5" rx="37.25" fill="none" stroke="url(#accent)" stroke-width="1.5" stroke-opacity=".78"/>
+  <rect x="12" y="12" width="226" height="226" rx="32" fill="url(#aura)"/>
+  <g opacity=".16" stroke="#56C7F5" stroke-width=".65">
+    <path d="M24 61h202M24 171h202M61 24v202M189 24v202"/>
+    <circle cx="125" cy="106" r="91" fill="none" stroke-dasharray="2 8"/>
+  </g>
+
+  
+      <g transform="translate(24 22)" stroke="url(#accent)" fill="none" stroke-linecap="round">
+        <circle cx="8" cy="8" r="7" stroke-width="1.5"/>
+        <path d="M1 8h14M8 1c2.3 2.2 3.4 4.5 3.4 7S10.3 12.8 8 15M8 1C5.7 3.2 4.6 5.5 4.6 8S5.7 12.8 8 15" stroke-width="1"/>
+      </g>
+    
+  <text x="48" y="31" fill="#DDE5F8" fill-opacity=".84" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.3">UNIVERSAL EDITION</text>
+  <text x="220" y="31" fill="#A77CFF" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" text-anchor="end">II</text>
+
+  
+      <ellipse cx="125" cy="106" rx="80" ry="67" fill="none" stroke="url(#accent)" stroke-width="1.3" stroke-opacity=".34" stroke-dasharray="4 7"/>
+      <path d="M63 145 93 119l26 15 34-38 34 21" fill="none" stroke="url(#accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".88"/>
+      <g filter="url(#nodeGlow)">
+        <circle cx="63" cy="145" r="4" fill="#56C7F5"/>
+        <circle cx="93" cy="119" r="4" fill="#A77CFF"/>
+        <circle cx="119" cy="134" r="4" fill="#F265A7"/>
+        <circle cx="153" cy="96" r="4.5" fill="#A77CFF"/>
+        <circle cx="187" cy="117" r="4" fill="#56C7F5"/>
+      </g>
+      <path d="m116 48 9-9 9 9M116 59l9-9 9 9" stroke="#A77CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".78"/>
+    
+  
+    <circle cx="125" cy="106" r="51" fill="#070B1B" fill-opacity=".76" stroke="url(#accent)" stroke-width="2.2"/>
+    <ellipse cx="125" cy="106" rx="23" ry="51" stroke="#A77CFF" stroke-width="1.4" stroke-opacity=".72"/>
+    <ellipse cx="125" cy="106" rx="40" ry="17" stroke="#56C7F5" stroke-width="1.4" stroke-opacity=".58"/>
+    <path d="M74 106h102M84 82c12 7 26 10 41 10s29-3 41-10M84 130c12-7 26-10 41-10s29 3 41 10" stroke="url(#accent)" stroke-width="1.25" stroke-linecap="round" stroke-opacity=".72"/>
+  
+
+  <g filter="url(#shadow)">
+    <path d="M104 71h25v58h36v23h-61V71Z" fill="#1B0E04" stroke="#07050A" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M101 67h25v58h36v23h-61V67Z" fill="url(#gold)" stroke="#FFF0A4" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M107 74h12v56h35" fill="none" stroke="#FFF8D2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".58"/>
+  </g>
+
+  <path d="M42 184h166" stroke="url(#accent)" stroke-width="1" stroke-opacity=".38"/>
+  <text x="125" y="211" fill="#F8FAFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="2.5" text-anchor="middle">GROWTH</text>
+  <g transform="translate(104 225)">
+    <rect x="0" y="0" width="18" height="4" rx="2" fill="url(#accent)"/><rect x="21" y="0" width="18" height="4" rx="2" fill="url(#accent)"/>
+  </g>
+</svg>

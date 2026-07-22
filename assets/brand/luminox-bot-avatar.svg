@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">Luminox Discord bot avatar</title>
+  <desc id="desc">A dark circular Lumina seal with a clean gold L and a red ruby, optimized for small Discord avatar sizes.</desc>
+  <defs>
+    <radialGradient id="avatarNight" cx="39%" cy="28%" r="82%">
+      <stop offset="0" stop-color="#243452"/>
+      <stop offset="0.5" stop-color="#111c35"/>
+      <stop offset="1" stop-color="#050811"/>
+    </radialGradient>
+    <linearGradient id="avatarGold" x1="0.15" y1="0.06" x2="0.8" y2="0.96">
+      <stop offset="0" stop-color="#fff9d7"/>
+      <stop offset="0.2" stop-color="#ffe88f"/>
+      <stop offset="0.54" stop-color="#f3c255"/>
+      <stop offset="0.8" stop-color="#d58b25"/>
+      <stop offset="1" stop-color="#9c5113"/>
+    </linearGradient>
+    <linearGradient id="avatarRing" x1="0.08" y1="0.05" x2="0.92" y2="0.95">
+      <stop offset="0" stop-color="#fff2a4"/>
+      <stop offset="0.28" stop-color="#f6c653"/>
+      <stop offset="0.58" stop-color="#a96412"/>
+      <stop offset="0.82" stop-color="#f3c44d"/>
+      <stop offset="1" stop-color="#6e3408"/>
+    </linearGradient>
+    <linearGradient id="avatarRuby" x1="0.2" y1="0" x2="0.82" y2="1">
+      <stop offset="0" stop-color="#ffb085"/>
+      <stop offset="0.35" stop-color="#ff5a59"/>
+      <stop offset="0.72" stop-color="#c41432"/>
+      <stop offset="1" stop-color="#69091c"/>
+    </linearGradient>
+    <filter id="avatarShadow" x="-18%" y="-18%" width="136%" height="148%">
+      <feDropShadow dx="0" dy="16" stdDeviation="13" flood-color="#010205" flood-opacity="0.82"/>
+    </filter>
+    <filter id="avatarGlow" x="-12%" y="-12%" width="124%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffd875" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <circle cx="512" cy="512" r="504" fill="#02040a"/>
+  <circle cx="512" cy="512" r="492" fill="url(#avatarNight)" stroke="#0a0c15" stroke-width="12"/>
+  <circle cx="512" cy="512" r="477" fill="none" stroke="url(#avatarRing)" stroke-width="17"/>
+  <circle cx="512" cy="512" r="454" fill="none" stroke="#ffe58b" stroke-width="5" opacity="0.94"/>
+  <circle cx="512" cy="512" r="431" fill="#0a1123" stroke="#a86a1c" stroke-width="14"/>
+  <circle cx="512" cy="512" r="400" fill="none" stroke="#d8ac57" stroke-width="8" stroke-dasharray="11 17" stroke-linecap="round" opacity="0.78"/>
+  <circle cx="512" cy="512" r="366" fill="none" stroke="#72cfff" stroke-width="5" opacity="0.18"/>
+
+  <g fill="#f5cb67" stroke="#6f3809" stroke-width="5" stroke-linejoin="round">
+    <path d="M512 113l18 36 36 18-36 18-18 36-18-36-36-18 36-18z"/>
+    <path d="M135 512l25-13 13-25 13 25 25 13-25 13-13 25-13-25z"/>
+    <path d="M813 512l25-13 13-25 13 25 25 13-25 13-13 25-13-25z"/>
+  </g>
+
+  <path d="M296 207H563L617 260L560 316H506V611H642L747 474H831L790 735H289L226 665L299 601H342V316H293L235 260Z"
+        transform="translate(0 18)" fill="#080401" stroke="#020204" stroke-width="39" stroke-linejoin="round" opacity="0.96"/>
+  <path d="M296 207H563L617 260L560 316H506V611H642L747 474H831L790 735H289L226 665L299 601H342V316H293L235 260Z"
+        fill="url(#avatarGold)" stroke="#4f2607" stroke-width="26" stroke-linejoin="round" filter="url(#avatarShadow)"/>
+  <path d="M304 218H556L600 260L552 306H493V624H648L754 486H816L779 722H296L242 665L306 612H355V305H300L251 260Z"
+        fill="none" stroke="#fff0ad" stroke-width="8" stroke-linejoin="round" opacity="0.94" filter="url(#avatarGlow)"/>
+  <path d="M369 319V586" fill="none" stroke="#fff7cb" stroke-width="20" stroke-linecap="round" opacity="0.36"/>
+  <path d="M307 692H625c48 0 87-18 122-55" fill="none" stroke="#f8cf66" stroke-width="7" stroke-linecap="round" opacity="0.48"/>
+
+  <g filter="url(#avatarShadow)">
+    <path d="M512 706L654 835 512 1000 370 835Z" fill="#05050b" stroke="#010104" stroke-width="24" stroke-linejoin="round"/>
+    <path d="M512 731L625 835 512 972 399 835Z" fill="url(#avatarRing)" stroke="#fff0a5" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M512 759L594 835 512 936 430 835Z" fill="url(#avatarRuby)" stroke="#ffb184" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M512 759V936L430 835ZM512 759L594 835 512 820Z" fill="#ffe3ba" opacity="0.26"/>
+    <path d="M512 820L594 835 512 936 430 835Z" fill="#67091b" opacity="0.54"/>
+    <circle cx="512" cy="835" r="18" fill="#fff8dc"/>
+  </g>
+</svg>

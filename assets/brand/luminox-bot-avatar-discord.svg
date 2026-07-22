@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title description" shape-rendering="geometricPrecision">
+  <title id="title">Luminox Discord bot avatar</title>
+  <desc id="description">A compact midnight-blue Lumina seal with a refined gold L monogram and a red ruby.</desc>
+  <defs>
+    <radialGradient id="avatar-night" cx="38%" cy="28%" r="80%">
+      <stop stop-color="#263b61"/>
+      <stop offset=".43" stop-color="#101b35"/>
+      <stop offset="1" stop-color="#040711"/>
+    </radialGradient>
+    <linearGradient id="avatar-ring" x1="176" y1="118" x2="846" y2="904" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff1a8"/>
+      <stop offset=".2" stop-color="#f2bf48"/>
+      <stop offset=".46" stop-color="#995011"/>
+      <stop offset=".69" stop-color="#ffdc6b"/>
+      <stop offset="1" stop-color="#6f3007"/>
+    </linearGradient>
+    <linearGradient id="avatar-gold" x1="292" y1="196" x2="804" y2="728" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7cd"/>
+      <stop offset=".17" stop-color="#ffe27d"/>
+      <stop offset=".48" stop-color="#efb33c"/>
+      <stop offset=".78" stop-color="#bf6814"/>
+      <stop offset="1" stop-color="#7a3509"/>
+    </linearGradient>
+    <linearGradient id="avatar-ruby" x1="444" y1="760" x2="580" y2="926" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb089"/>
+      <stop offset=".3" stop-color="#ff554f"/>
+      <stop offset=".72" stop-color="#bc102f"/>
+      <stop offset="1" stop-color="#64091c"/>
+    </linearGradient>
+    <filter id="avatar-shadow" x="-24%" y="-24%" width="148%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="17" flood-color="#010205" flood-opacity=".82"/>
+    </filter>
+    <filter id="avatar-soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="avatar-field"><circle cx="512" cy="512" r="422"/></clipPath>
+  </defs>
+
+  <circle cx="512" cy="512" r="504" fill="#02040a"/>
+  <circle cx="512" cy="512" r="484" fill="url(#avatar-night)" stroke="#080b14" stroke-width="14"/>
+  <circle cx="512" cy="512" r="456" fill="none" stroke="url(#avatar-ring)" stroke-width="25"/>
+  <circle cx="512" cy="512" r="433" fill="none" stroke="#fff0a0" stroke-width="5" opacity=".9"/>
+  <circle cx="512" cy="512" r="414" fill="#081126" stroke="#62cbf8" stroke-width="6" opacity=".94"/>
+  <circle cx="512" cy="512" r="395" fill="none" stroke="#8564d7" stroke-width="3" opacity=".28"/>
+
+  <g clip-path="url(#avatar-field)" opacity=".82">
+    <path d="M166 486H858M512 150V880" fill="none" stroke="#7ecff3" stroke-width="2" opacity=".12"/>
+    <circle cx="512" cy="512" r="302" fill="none" stroke="#e8c762" stroke-width="2" stroke-dasharray="6 18" opacity=".18"/>
+    <circle cx="512" cy="512" r="248" fill="none" stroke="#6e5bb0" stroke-width="2" opacity=".16"/>
+    <path d="M222 368 230 350 238 368 256 376 238 384 230 402 222 384 204 376Z" fill="#f5cd5d"/>
+    <path d="M802 314 809 299 816 314 831 321 816 328 809 343 802 328 787 321Z" fill="#6dd0fa"/>
+    <circle cx="246" cy="598" r="7" fill="#b481ff"/>
+    <circle cx="786" cy="568" r="7" fill="#f1c85f"/>
+  </g>
+
+  <g filter="url(#avatar-shadow)">
+    <path d="M300 190H590Q610 190 622 206L650 244 620 284Q608 298 590 298H528V558Q528 601 550 623 572 644 614 644H651Q700 644 727 613 750 586 766 540L787 480 860 501 823 715Q819 738 793 738H302Q283 738 271 724L238 686 271 648Q283 634 302 634H348V298H301Q283 298 271 284L238 244 271 204Q283 190 300 190Z"
+          fill="#020204" stroke="#010204" stroke-width="36" stroke-linejoin="round"/>
+    <path d="M300 190H590Q610 190 622 206L650 244 620 284Q608 298 590 298H528V558Q528 601 550 623 572 644 614 644H651Q700 644 727 613 750 586 766 540L787 480 860 501 823 715Q819 738 793 738H302Q283 738 271 724L238 686 271 648Q283 634 302 634H348V298H301Q283 298 271 284L238 244 271 204Q283 190 300 190Z"
+          fill="url(#avatar-gold)" stroke="#633108" stroke-width="18" stroke-linejoin="round"/>
+    <path d="M302 210H578Q593 210 602 221L620 244 599 272H499V567Q499 620 531 651 563 682 617 682H660Q719 682 753 644 781 612 798 558L807 531 832 538 803 702H310L280 686 310 658H379V272H311L280 244 301 218"
+          fill="none" stroke="#fff0aa" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".94"/>
+    <path d="M494 310V561Q494 627 536 662 568 689 622 689H677Q734 689 769 655L758 699H506Z"
+          fill="#6e2b08" opacity=".2"/>
+    <path d="M381 311V593" fill="none" stroke="#fff9d4" stroke-width="18" stroke-linecap="round" opacity=".28"/>
+  </g>
+
+  <g filter="url(#avatar-soft-glow)">
+    <path d="M512 718 624 810 512 946 400 810Z" fill="#020309" stroke="#010104" stroke-width="24" stroke-linejoin="round"/>
+    <path d="M512 742 598 812 512 916 426 812Z" fill="url(#avatar-ring)" stroke="#fff0a6" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M512 768 574 816 512 892 450 816Z" fill="url(#avatar-ruby)" stroke="#ffb18a" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M512 768V892L450 816ZM512 768 574 816 512 800Z" fill="#ffe8c5" opacity=".24"/>
+    <path d="M512 800 574 816 512 892 450 816Z" fill="#63091b" opacity=".48"/>
+    <circle cx="512" cy="814" r="12" fill="#fff7d7"/>
+  </g>
+</svg>

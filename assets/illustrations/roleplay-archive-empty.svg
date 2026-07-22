@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" fill="none">
+  <defs>
+    <linearGradient id="empty-line" x1="132" y1="93" x2="585" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6D46F"/>
+      <stop offset="0.52" stop-color="#B17CFF"/>
+      <stop offset="1" stop-color="#56C7F5"/>
+    </linearGradient>
+    <linearGradient id="empty-page" x1="224" y1="195" x2="503" y2="409" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8E6AB"/>
+      <stop offset="1" stop-color="#9B7E50"/>
+    </linearGradient>
+    <radialGradient id="empty-aura" cx="0" cy="0" r="1" gradientTransform="translate(360 253) rotate(90) scale(220 290)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="empty-shadow" x="-30%" y="-30%" width="160%" height="185%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#02040E" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <ellipse cx="360" cy="253" rx="285" ry="218" fill="url(#empty-aura)"/>
+  <circle cx="360" cy="242" r="179" stroke="#B17CFF" stroke-opacity="0.14"/>
+  <circle cx="360" cy="242" r="142" stroke="#56C7F5" stroke-opacity="0.11" stroke-dasharray="7 11"/>
+  <g filter="url(#empty-shadow)">
+    <path d="M137 199c74-26 148-10 223 51 75-61 149-77 223-51v213c-75-24-149-7-223 51-74-58-148-75-223-51V199Z" fill="#0C142B" stroke="url(#empty-line)" stroke-width="3"/>
+    <path d="M157 218c63-17 126 1 188 53v158c-61-37-124-47-188-30V218ZM563 218c-63-17-126 1-188 53v158c61-37 124-47 188-30V218Z" fill="url(#empty-page)" fill-opacity="0.92"/>
+    <path d="M360 252v205" stroke="#F6D46F" stroke-opacity="0.68" stroke-width="3"/>
+  </g>
+  <path d="M220 302h82M220 337h66M418 302h82M434 337h66" stroke="#5E4928" stroke-opacity="0.42" stroke-width="6" stroke-linecap="round"/>
+  <g transform="translate(316 100)">
+    <path d="m44 0 40 23v47L44 94 4 70V23L44 0Z" fill="#101833" stroke="url(#empty-line)" stroke-width="3"/>
+    <path d="m44 17 7 18 19 1-15 12 5 18-16-10-16 10 5-18-15-12 19-1 7-18Z" fill="#F6D46F" fill-opacity="0.9"/>
+  </g>
+  <path d="M109 123c24 6 42 24 48 48M611 123c-24 6-42 24-48 48" stroke="url(#empty-line)" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#F6D46F"><circle cx="102" cy="117" r="4"/><circle cx="582" cy="78" r="3"/><circle cx="646" cy="320" r="4"/></g>
+  <g fill="#56C7F5"><circle cx="127" cy="351" r="4"/><circle cx="203" cy="82" r="3"/><circle cx="595" cy="402" r="3"/></g>
+</svg>

@@ -202,14 +202,8 @@ body[data-page="editions"] {
   display: grid;
   min-height: 310px;
   overflow: hidden;
+  padding-bottom: clamp(0.45rem, 1.4vw, 0.8rem);
   place-items: center;
-}
-
-.edition-path-visual::after {
-  position: absolute;
-  inset: 56% 0 0;
-  background: linear-gradient(to bottom, transparent, rgba(11, 16, 31, 0.98));
-  content: "";
 }
 
 .edition-path-visual img {
@@ -217,6 +211,8 @@ body[data-page="editions"] {
   height: 310px;
   object-fit: contain;
   filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.34));
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0, 0, 0, 0.9) 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0, 0, 0, 0.9) 90%, transparent 100%);
 }
 
 .edition-path-content {
@@ -225,7 +221,7 @@ body[data-page="editions"] {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 0 clamp(1.25rem, 3vw, 2rem) clamp(1.35rem, 3vw, 2rem);
+  padding: clamp(0.9rem, 2vw, 1.35rem) clamp(1.25rem, 3vw, 2rem) clamp(1.35rem, 3vw, 2rem);
 }
 
 .edition-path-title {
@@ -233,7 +229,7 @@ body[data-page="editions"] {
   grid-template-columns: 58px minmax(0, 1fr);
   gap: 0.95rem;
   align-items: center;
-  margin-top: -0.65rem;
+  margin-top: 0;
 }
 
 .edition-path-title img { width: 58px; height: 58px; filter: drop-shadow(0 12px 22px rgba(var(--edition-accent), 0.22)); }

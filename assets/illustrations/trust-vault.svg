@@ -1,41 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="title description">
+  <title id="title">Protected Luminox vault</title>
+  <desc id="description">A luminous vault door, shield and secure lock representing protected guild systems.</desc>
   <defs>
-    <linearGradient id="tv-frame" x1="122" y1="92" x2="612" y2="456" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#56C7F5"/>
-      <stop offset=".52" stop-color="#A675FF"/>
-      <stop offset="1" stop-color="#F6D46F"/>
+    <linearGradient id="vault-frame" x1="116" y1="86" x2="612" y2="458" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58d4ff"/>
+      <stop offset=".48" stop-color="#aa78ff"/>
+      <stop offset="1" stop-color="#f7d36f"/>
     </linearGradient>
-    <linearGradient id="tv-shield" x1="280" y1="150" x2="401" y2="390" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#132341"/>
-      <stop offset="1" stop-color="#091326"/>
+    <linearGradient id="vault-shell" x1="138" y1="100" x2="574" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172441"/>
+      <stop offset=".52" stop-color="#0c1730"/>
+      <stop offset="1" stop-color="#080f20"/>
     </linearGradient>
-    <filter id="tv-shadow" x="-25%" y="-25%" width="150%" height="175%">
-      <feDropShadow dx="0" dy="26" stdDeviation="24" flood-color="#000" flood-opacity=".48"/>
+    <linearGradient id="vault-door" x1="236" y1="130" x2="452" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#152744"/>
+      <stop offset=".55" stop-color="#0b1830"/>
+      <stop offset="1" stop-color="#071020"/>
+    </linearGradient>
+    <linearGradient id="vault-shield" x1="292" y1="156" x2="398" y2="394" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#182b4d"/>
+      <stop offset=".58" stop-color="#0d1932"/>
+      <stop offset="1" stop-color="#080f21"/>
+    </linearGradient>
+    <linearGradient id="vault-gold" x1="302" y1="196" x2="385" y2="342" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff0a3"/>
+      <stop offset=".42" stop-color="#f8cb57"/>
+      <stop offset="1" stop-color="#c98a23"/>
+    </linearGradient>
+    <radialGradient id="vault-aura" cx="0" cy="0" r="1" gradientTransform="translate(354 266) rotate(90) scale(244 310)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9b6cff" stop-opacity=".28"/>
+      <stop offset=".46" stop-color="#54cdf8" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#050914" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vault-core" cx="0" cy="0" r="1" gradientTransform="translate(344 265) rotate(90) scale(145)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9768ff" stop-opacity=".16"/>
+      <stop offset=".72" stop-color="#091326" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="vault-shadow" x="-25%" y="-28%" width="150%" height="175%">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#02050e" flood-opacity=".58"/>
+    </filter>
+    <filter id="vault-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <g filter="url(#tv-shadow)">
-    <rect x="126" y="96" width="468" height="356" rx="52" fill="#080F20" stroke="url(#tv-frame)" stroke-width="4"/>
-    <rect x="164" y="134" width="392" height="280" rx="36" fill="#0D1730" stroke="#56C7F5" stroke-opacity=".42" stroke-width="3"/>
+  <ellipse cx="356" cy="270" rx="316" ry="246" fill="url(#vault-aura)"/>
+  <ellipse cx="356" cy="270" rx="278" ry="210" fill="none" stroke="url(#vault-frame)" stroke-opacity=".14" stroke-width="2"/>
+  <path d="M62 270h588M356 42v456" stroke="#6ed9ff" stroke-opacity=".055" stroke-width="2"/>
 
-    <circle cx="342" cy="274" r="104" fill="#081121" stroke="url(#tv-frame)" stroke-width="4"/>
-    <circle cx="342" cy="274" r="72" stroke="#A675FF" stroke-opacity=".62" stroke-width="4"/>
-    <circle cx="342" cy="274" r="44" fill="#0C1830" stroke="#56C7F5" stroke-opacity=".45" stroke-width="3"/>
+  <g filter="url(#vault-shadow)">
+    <rect x="106" y="78" width="506" height="384" rx="70" fill="url(#vault-shell)" stroke="url(#vault-frame)" stroke-width="4"/>
+    <rect x="139" y="111" width="440" height="318" rx="52" fill="#091326" fill-opacity=".66" stroke="#72d8ff" stroke-opacity=".28" stroke-width="3"/>
+    <path d="M588 192h27c12 0 21 9 21 21v114c0 12-9 21-21 21h-27" fill="#0a1428" stroke="url(#vault-gold)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M608 223h14M608 317h14" stroke="#fff0a3" stroke-opacity=".58" stroke-width="4" stroke-linecap="round"/>
 
-    <path d="M342 170v38M342 340v38M238 274h38M408 274h38M268 200l27 27M389 321l27 27M416 200l-27 27M295 321l-27 27" stroke="#A675FF" stroke-opacity=".52" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="342" cy="274" r="12" fill="#F6D46F"/>
+    <circle cx="344" cy="270" r="151" fill="url(#vault-door)" stroke="url(#vault-frame)" stroke-width="5"/>
+    <circle cx="344" cy="270" r="126" fill="url(#vault-core)" stroke="#9e72ff" stroke-opacity=".42" stroke-width="3"/>
+    <circle cx="344" cy="270" r="101" fill="none" stroke="#66d8ff" stroke-opacity=".2" stroke-width="2" stroke-dasharray="5 10"/>
 
-    <path d="M594 206h30v136h-30" stroke="#F6D46F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="178" cy="148" r="6" fill="#56C7F5" fill-opacity=".55"/>
-    <circle cx="542" cy="400" r="6" fill="#A675FF" fill-opacity=".55"/>
+    <g fill="#0b1730" stroke="url(#vault-frame)" stroke-width="3">
+      <circle cx="344" cy="136" r="9"/>
+      <circle cx="439" cy="175" r="9"/>
+      <circle cx="478" cy="270" r="9"/>
+      <circle cx="439" cy="365" r="9"/>
+      <circle cx="344" cy="404" r="9"/>
+      <circle cx="249" cy="365" r="9"/>
+      <circle cx="210" cy="270" r="9"/>
+      <circle cx="249" cy="175" r="9"/>
+    </g>
+
+    <g fill="none" stroke-linecap="round">
+      <path d="M344 180v35M344 325v35M254 270h35M399 270h35" stroke="#68d7ff" stroke-opacity=".34" stroke-width="7"/>
+      <path d="M281 207l25 25M382 308l25 25M407 207l-25 25M306 308l-25 25" stroke="#ac7aff" stroke-opacity=".38" stroke-width="6"/>
+    </g>
   </g>
 
-  <g>
-    <path d="M342 142 411 181v78c0 61-36 104-69 127-33-23-69-66-69-127v-78l69-39Z" fill="url(#tv-shield)" stroke="url(#tv-frame)" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M342 161 391 189v68c0 45-24 79-49 99-25-20-49-54-49-99v-68l49-28Z" stroke="#56C7F5" stroke-opacity=".25" stroke-width="3"/>
-    <rect x="308" y="241" width="68" height="60" rx="14" fill="#0A1429" stroke="#F6D46F" stroke-width="6"/>
-    <path d="M320 241v-20c0-20 10-37 22-37s22 17 22 37v20" stroke="#F6D46F" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="342" cy="270" r="5" fill="#F6D46F"/>
-    <path d="M342 275v10" stroke="#F6D46F" stroke-width="5" stroke-linecap="round"/>
+  <g filter="url(#vault-glow)">
+    <path d="M344 156 424 198v70c0 65-34 109-80 137-46-28-80-72-80-137v-70l80-42Z" fill="url(#vault-shield)" stroke="url(#vault-frame)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M344 177 404 208v58c0 49-24 86-60 111-36-25-60-62-60-111v-58l60-31Z" fill="none" stroke="#76dcff" stroke-opacity=".22" stroke-width="3"/>
+
+    <path d="M308 254v-22c0-25 16-46 36-46s36 21 36 46v22" fill="none" stroke="#071020" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"/>
+    <path d="M308 254v-22c0-25 16-46 36-46s36 21 36 46v22" fill="none" stroke="url(#vault-gold)" stroke-width="8" stroke-linecap="round"/>
+    <rect x="296" y="247" width="96" height="82" rx="20" fill="#09152c" stroke="#071020" stroke-width="13"/>
+    <rect x="296" y="247" width="96" height="82" rx="20" fill="#0d1b35" stroke="url(#vault-gold)" stroke-width="7"/>
+    <path d="M310 263h68" stroke="#fff5bd" stroke-opacity=".32" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="344" cy="282" r="9" fill="url(#vault-gold)"/>
+    <path d="M344 291v18" stroke="url(#vault-gold)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g opacity=".78">
+    <circle cx="150" cy="131" r="5" fill="#5bd5ff"/>
+    <circle cx="556" cy="409" r="5" fill="#a977ff"/>
+    <path d="M150 146v22M139 157h22M556 373v22M545 384h22" stroke="url(#vault-frame)" stroke-width="3" stroke-linecap="round"/>
   </g>
 </svg>

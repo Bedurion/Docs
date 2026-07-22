@@ -13,17 +13,17 @@
     <ellipse cx="380" cy="281" rx="269" ry="172" stroke-dasharray="7 10"/>
     <path d="M55 281h650M380 54v454" stroke-opacity=".24"/>
   </g>
-  <path d="M306 278c-57-14-91-20-136-8M454 278c57-14 91-20 136-8" stroke="url(#eg-core)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M300 308c-55 31-91 57-123 93M460 308c55 31 91 57 123 93" stroke="url(#eg-core)" stroke-width="2" stroke-opacity=".48" stroke-dasharray="7 9"/>
+  <path d="M306 278c-63-14-101-20-158-8M454 278c63-14 101-20 158-8" stroke="url(#eg-core)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M300 308c-63 31-103 57-145 93M460 308c63 31 103 57 145 93" stroke="url(#eg-core)" stroke-width="2" stroke-opacity=".48" stroke-dasharray="7 9"/>
   <g filter="url(#eg-shadow)">
-    <g>
+    <g transform="translate(-22)">
       <circle cx="165" cy="270" r="111" fill="#0A1125" stroke="url(#eg-universal)" stroke-width="3"/>
       <circle cx="165" cy="270" r="78" stroke="#A675FF" stroke-opacity=".55" stroke-width="2"/>
       <path d="M87 270h156M165 192c24 22 38 48 38 78s-14 56-38 78c-24-22-38-48-38-78s14-56 38-78Z" stroke="url(#eg-universal)" stroke-width="2.5"/>
       <path d="M105 218c18 13 38 19 60 19s42-6 60-19M105 322c18-13 38-19 60-19s42 6 60 19" stroke="#56C7F5" stroke-opacity=".62" stroke-width="2"/>
       <circle cx="90" cy="219" r="8" fill="#F6D46F"/><circle cx="232" cy="323" r="8" fill="#56C7F5"/><circle cx="111" cy="337" r="5" fill="#A675FF"/>
     </g>
-    <g>
+    <g transform="translate(22)">
       <path d="m595 153 104 38v82c0 69-42 123-104 155-62-32-104-86-104-155v-82l104-38Z" fill="#091422" stroke="url(#eg-community)" stroke-width="3"/>
       <circle cx="595" cy="249" r="31" stroke="url(#eg-community)" stroke-width="3"/>
       <circle cx="539" cy="283" r="23" stroke="#F6D46F" stroke-width="2.5"/>

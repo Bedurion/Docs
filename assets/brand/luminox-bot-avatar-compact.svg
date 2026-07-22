@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title description" shape-rendering="geometricPrecision">
+  <title id="title">Compact Luminox Discord bot avatar</title>
+  <desc id="description">A simplified dark Lumina seal with a large gold L and red ruby, designed for small Discord avatar sizes.</desc>
+  <defs>
+    <radialGradient id="compact-night" cx="38%" cy="26%" r="82%">
+      <stop stop-color="#263858"/>
+      <stop offset=".5" stop-color="#111c35"/>
+      <stop offset="1" stop-color="#050811"/>
+    </radialGradient>
+    <linearGradient id="compact-ring" x1="132" y1="110" x2="888" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff0a5"/>
+      <stop offset=".25" stop-color="#f6c34d"/>
+      <stop offset=".5" stop-color="#a95e10"/>
+      <stop offset=".76" stop-color="#ffd967"/>
+      <stop offset="1" stop-color="#733407"/>
+    </linearGradient>
+    <linearGradient id="compact-gold" x1="244" y1="170" x2="758" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff8d1"/>
+      <stop offset=".2" stop-color="#ffe686"/>
+      <stop offset=".53" stop-color="#f2bd48"/>
+      <stop offset=".8" stop-color="#ce7e1b"/>
+      <stop offset="1" stop-color="#8d430d"/>
+    </linearGradient>
+    <linearGradient id="compact-ruby" x1="438" y1="738" x2="586" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffba86"/>
+      <stop offset=".3" stop-color="#ff5a54"/>
+      <stop offset=".7" stop-color="#c31232"/>
+      <stop offset="1" stop-color="#69091d"/>
+    </linearGradient>
+    <filter id="compact-shadow" x="-24%" y="-24%" width="148%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#010205" flood-opacity=".82"/>
+    </filter>
+    <filter id="compact-glow" x="-28%" y="-28%" width="156%" height="156%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="512" cy="512" r="504" fill="#02040a"/>
+  <circle cx="512" cy="512" r="486" fill="url(#compact-night)" stroke="#080b14" stroke-width="14"/>
+  <circle cx="512" cy="512" r="462" fill="none" stroke="url(#compact-ring)" stroke-width="28"/>
+  <circle cx="512" cy="512" r="438" fill="#091126" stroke="#ffe896" stroke-width="7"/>
+  <circle cx="512" cy="512" r="407" fill="none" stroke="#66d2ff" stroke-width="7" opacity=".18"/>
+
+  <g filter="url(#compact-shadow)">
+    <path d="M272 174H590L650 242 590 310H525V604H651L748 484H850L807 752H269L202 679 282 606H330V310H272L208 242Z"
+          fill="#020204" stroke="#020204" stroke-width="46" stroke-linejoin="round"/>
+    <path d="M272 174H590L650 242 590 310H525V604H651L748 484H850L807 752H269L202 679 282 606H330V310H272L208 242Z"
+          fill="url(#compact-gold)" stroke="#542706" stroke-width="28" stroke-linejoin="round"/>
+    <path d="M282 189H581L628 242 580 295H508V620H659L756 501H830L794 735H278L225 679 292 620H347V295H281L230 242Z"
+          fill="none" stroke="#fff0ae" stroke-width="9" stroke-linejoin="round" opacity=".95"/>
+    <path d="M370 315V575" fill="none" stroke="#fff9d5" stroke-width="24" stroke-linecap="round" opacity=".34"/>
+  </g>
+
+  <g filter="url(#compact-glow)">
+    <path d="M512 694 650 812 512 960 374 812Z" fill="#020309" stroke="#010104" stroke-width="30" stroke-linejoin="round"/>
+    <path d="M512 718 621 812 512 934 403 812Z" fill="url(#compact-ring)" stroke="#fff1aa" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M512 746 589 812 512 902 435 812Z" fill="url(#compact-ruby)" stroke="#ffb287" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M512 746V902L435 812ZM512 746 589 812 512 796Z" fill="#ffe7bd" opacity=".26"/>
+    <path d="M512 796 589 812 512 902 435 812Z" fill="#65091b" opacity=".5"/>
+    <circle cx="512" cy="812" r="16" fill="#fff8db"/>
+  </g>
+</svg>

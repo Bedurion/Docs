@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" fill="none">
+  <defs><linearGradient id="chapter-g" x1="10" y1="11" x2="63" y2="62" gradientUnits="userSpaceOnUse"><stop stop-color="#F6D46F"/><stop offset="0.5" stop-color="#B17CFF"/><stop offset="1" stop-color="#56C7F5"/></linearGradient></defs>
+  <path d="M10 20c9-4 18-1 26 7 8-8 17-11 26-7v38c-9-4-18-1-26 7-8-8-17-11-26-7V20Z" fill="#0D142B" stroke="url(#chapter-g)" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M36 27v38M18 34c5-1 10 1 14 5M18 43c5-1 10 1 14 5M54 34c-5-1-10 1-14 5M54 43c-5-1-10 1-14 5" stroke="url(#chapter-g)" stroke-opacity="0.68" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="m36 7 4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1 4-8Z" fill="url(#chapter-g)"/>
+</svg>

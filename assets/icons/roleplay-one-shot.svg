@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs><linearGradient id="oneshot-g" x1="10" y1="8" x2="55" y2="57" gradientUnits="userSpaceOnUse"><stop stop-color="#56C7F5"/><stop offset="0.5" stop-color="#B17CFF"/><stop offset="1" stop-color="#F6D46F"/></linearGradient></defs>
+  <circle cx="32" cy="32" r="22" stroke="url(#oneshot-g)" stroke-width="3"/>
+  <circle cx="32" cy="32" r="13" stroke="url(#oneshot-g)" stroke-opacity="0.52" stroke-width="2.5" stroke-dasharray="4 5"/>
+  <path d="m32 19 4 9 10 1-8 7 3 10-9-5-9 5 3-10-8-7 10-1 4-9Z" fill="url(#oneshot-g)"/>
+  <circle cx="51" cy="14" r="4" fill="#F2657A"/>
+</svg>
