@@ -108,6 +108,14 @@
   grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
 }
 
+.discord-screenshot-grid--overview.discord-screenshot-grid--single {
+  grid-template-columns: minmax(0, 1040px);
+}
+
+.discord-screenshot-grid--docs-overview {
+  grid-template-columns: minmax(245px, 0.62fr) minmax(0, 1.38fr);
+}
+
 .discord-screenshot-card {
   --shot-accent: var(--showcase-accent);
   position: relative;
@@ -243,6 +251,14 @@
 
 .discord-screenshot-card--portrait .discord-screenshot-card__image {
   width: min(100%, 680px);
+}
+
+.discord-screenshot-card--tall .discord-screenshot-card__media {
+  padding: clamp(0.55rem, 1.5vw, 1rem);
+}
+
+.discord-screenshot-card--tall .discord-screenshot-card__image {
+  width: min(100%, 400px);
 }
 
 .discord-screenshot-card--compact .discord-screenshot-card__media {
@@ -572,11 +588,13 @@
   }
 
   .discord-screenshot-grid,
-  .discord-screenshot-grid--home {
+  .discord-screenshot-grid--home,
+  .discord-screenshot-grid--docs-overview {
     grid-template-columns: 1fr;
   }
 
-  .discord-screenshot-grid--home .discord-screenshot-gallery {
+  .discord-screenshot-grid--home .discord-screenshot-gallery,
+  .discord-screenshot-grid--docs-overview .discord-screenshot-gallery {
     order: -1;
   }
 
