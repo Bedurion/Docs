@@ -12751,3 +12751,25 @@ body.page-interior .opening-title-row h1 {
     align-self: center;
   }
 }
+
+/* Preserve true vector rendering on high-density and pinch-zoom displays.
+   CSS filters, transforms and masks applied directly to external SVG images
+   make WebKit rasterize the complete illustration into a temporary bitmap. */
+img[src*="assets/illustrations/"][src$=".svg"],
+img[src*="assets/illustrations/"][src*=".svg?"] {
+  filter: none !important;
+  transform: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  image-rendering: auto;
+}
+
+/* These containers already provide their fades with gradients and overlays.
+   Keeping the SVG itself outside the masked layer preserves line sharpness. */
+.gallery-placeholder-art,
+.roleplay-featured-empty-art,
+.roleplay-featured-media.is-placeholder,
+.roleplay-story-card-media.is-placeholder {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
