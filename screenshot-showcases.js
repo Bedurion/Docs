@@ -730,6 +730,7 @@
       items: [
         {
           file: "bot-support-01.png", width: 604, height: 465, tone: "cyan",
+          cropTop: 10,
           kicker: "Private Support", title: "Open and recover tickets from one permanent entry point.",
           lead: "The panel explains what remains private and what Discord preserves.",
           caption: "The guide below covers categories, required questions, media, staff access, claims, invited participants, closure and satisfaction rewards.",
@@ -1634,6 +1635,7 @@
           file: "bot-support-01.png",
           width: 604,
           height: 465,
+          cropTop: 10,
           tone: "cyan",
           kicker: "Private Support",
           title: "Members understand the process before opening a ticket.",
@@ -1814,15 +1816,33 @@
 
   const allItems = config.items || [];
   const allGallerySlides = config.gallery?.slides || [];
+  const getScreenshotGeometry = (item) => {
+    const cropTop = Math.max(0, Math.min(Number(item.cropTop) || 0, item.height - 1));
+    const visibleHeight = Math.max(1, item.height - cropTop);
+    const aspect = item.width / visibleHeight;
+    const maxDisplayHeight = item.variant === "channel"
+      ? 680
+      : aspect < 0.72
+        ? 640
+        : aspect < 1
+          ? 600
+          : 520;
+    const frameWidth = aspect < 1.05
+      ? Math.min(900, Math.max(260, Math.round(aspect * maxDisplayHeight)))
+      : 900;
+
+    return { aspect, cropTop, frameWidth };
+  };
   const renderScreenshotCard = (item, index, { intro = false } = {}) => {
+    const geometry = getScreenshotGeometry(item);
     const classes = ["discord-screenshot-card", `discord-screenshot-card--${item.tone || config.tone || "violet"}`];
     if (item.variant) classes.push(`discord-screenshot-card--${item.variant}`);
     if (item.wide && !intro) classes.push("discord-screenshot-card--wide");
     if (intro) classes.push("discord-screenshot-card--intro");
-    if (intro && item.height / item.width > 1.45) classes.push("discord-screenshot-card--intro-cropped");
+    if (geometry.cropTop) classes.push("discord-screenshot-card--crop-top");
 
     return `
-      <figure class="${classes.join(" ")}"${intro ? ` data-screenshot-preview="${item.file}"` : ""}>
+      <figure class="${classes.join(" ")}" style="--shot-aspect: ${geometry.aspect}; --shot-frame-width: ${geometry.frameWidth}px;"${intro ? ` data-screenshot-preview="${item.file}"` : ""}>
         <header class="discord-screenshot-card__header">
           <div>
             <span class="discord-screenshot-card__kicker">${item.kicker}</span>

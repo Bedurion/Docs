@@ -206,8 +206,11 @@
   position: relative;
   z-index: 1;
   display: grid;
+  width: min(calc(100% - clamp(1.1rem, 3.2vw, 2rem)), var(--shot-frame-width, 100%));
+  height: auto;
+  aspect-ratio: var(--shot-aspect, auto);
   min-width: 0;
-  margin: 0 clamp(0.55rem, 1.6vw, 1rem);
+  margin-inline: auto;
   place-items: center;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.065);
@@ -245,33 +248,34 @@
   z-index: 1;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .discord-screenshot-card--portrait .discord-screenshot-card__image {
-  width: min(100%, 680px);
+  width: 100%;
 }
 
 .discord-screenshot-card--tall .discord-screenshot-card__media {
-  padding: clamp(0.55rem, 1.5vw, 1rem);
+  padding: 0;
 }
 
 .discord-screenshot-card--tall .discord-screenshot-card__image {
-  width: min(100%, 400px);
+  width: 100%;
 }
 
 .discord-screenshot-card--compact .discord-screenshot-card__media {
-  padding: clamp(0.35rem, 1vw, 0.7rem);
+  padding: 0;
 }
 
 .discord-screenshot-card--channel .discord-screenshot-card__media {
-  align-items: start;
-  max-height: 620px;
+  align-items: center;
 }
 
 .discord-screenshot-card--channel .discord-screenshot-card__image {
-  width: min(100%, 360px);
+  width: 100%;
 }
 
 .discord-screenshot-card__caption {
@@ -349,42 +353,37 @@
 }
 
 .discord-screenshot-card--intro .discord-screenshot-card__media {
-  min-height: 180px;
-  max-height: 520px;
-  padding: clamp(0.35rem, 1vw, 0.75rem);
+  min-height: 0;
+  max-height: none;
+  padding: 0;
 }
 
 .discord-screenshot-card--intro.discord-screenshot-card--compact .discord-screenshot-card__media {
-  min-height: 150px;
-  max-height: 360px;
+  min-height: 0;
+  max-height: none;
 }
 
 .discord-screenshot-card--intro .discord-screenshot-card__image {
-  width: auto;
-  max-width: 100%;
-  max-height: 500px;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
   object-fit: contain;
 }
 
 .discord-screenshot-card--intro.discord-screenshot-card--compact .discord-screenshot-card__image {
-  max-height: 340px;
-}
-
-.discord-screenshot-card--intro-cropped .discord-screenshot-card__media {
-  align-items: start;
-  padding: 0;
-}
-
-.discord-screenshot-card--intro-cropped .discord-screenshot-card__media::after {
-  box-shadow:
-    inset 0 0 18px rgba(8, 12, 23, 0.2),
-    inset 0 0 56px rgba(var(--shot-accent), 0.025);
-  background: linear-gradient(to bottom, transparent 72%, rgba(10, 15, 29, 0.96));
-}
-
-.discord-screenshot-card--intro-cropped .discord-screenshot-card__image {
   width: 100%;
   max-height: none;
+}
+
+.discord-screenshot-card--crop-top .discord-screenshot-card__image,
+.discord-screenshot-card--intro.discord-screenshot-card--crop-top .discord-screenshot-card__image {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: initial;
 }
 
 .discord-screenshot-card--intro .discord-screenshot-card__caption {
@@ -690,10 +689,6 @@
     grid-column: auto;
   }
 
-  .discord-screenshot-card--channel .discord-screenshot-card__media {
-    max-height: 560px;
-  }
-
 }
 
 @media (max-width: 760px) {
@@ -711,22 +706,6 @@
 
   .discord-screenshot-card--intro {
     width: 100%;
-  }
-
-  .discord-screenshot-card--intro .discord-screenshot-card__media {
-    max-height: 600px;
-  }
-
-  .discord-screenshot-card--intro .discord-screenshot-card__image {
-    max-height: 580px;
-  }
-
-  .discord-screenshot-card--intro.discord-screenshot-card--compact .discord-screenshot-card__media {
-    max-height: 420px;
-  }
-
-  .discord-screenshot-card--intro.discord-screenshot-card--compact .discord-screenshot-card__image {
-    max-height: 400px;
   }
 
   .product-screenshot-showcase {
@@ -776,12 +755,8 @@
   }
 
   .discord-screenshot-card__media {
-    margin-inline: 0.45rem;
+    width: min(calc(100% - 0.9rem), var(--shot-frame-width, 100%));
     border-radius: 18px;
-  }
-
-  .discord-screenshot-card--channel .discord-screenshot-card__media {
-    max-height: 480px;
   }
 
   .discord-screenshot-card__caption {
