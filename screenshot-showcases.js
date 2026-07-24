@@ -204,6 +204,44 @@
         ]
       }
     },
+    "bot-installation.html": {
+      eyebrow: "The result inside Discord",
+      title: "See the structure before you install.",
+      summary: "The template-first route gives a new server a clear channel map, while Luminox turns those destinations into permanent guided panels. Existing servers can reach the same result without replacing their current structure.",
+      tone: "violet",
+      layout: "overview",
+      anchor: ".installation-outcome-intro",
+      position: "after",
+      items: [
+        {
+          file: "docs-panels-01.png",
+          width: 294,
+          height: 1107,
+          tone: "gold",
+          variant: "channel",
+          motion: "vertical-tour",
+          kicker: "Template-ready structure",
+          title: "Members always know where a workflow belongs.",
+          lead: "Public entry points, live information and guild services remain separated.",
+          caption: "A Discord template can prepare this kind of channel organization in seconds. Luminox then connects each selected function to the destination chosen by the administrator.",
+          alt: "Lumina Discord channel list organized into Home, Support, Online, Team and Services categories."
+        },
+        {
+          file: "bot-events-active-hunt-01.png",
+          width: 781,
+          height: 813,
+          tone: "green",
+          variant: "portrait",
+          kicker: "Published Luminox system",
+          title: "One configured channel becomes a complete live workflow.",
+          lead: "Buttons, participants, timing and the linked discussion thread stay together.",
+          caption: "After installation, administrators configure and publish the panel once. Members then use the visible controls instead of memorizing setup commands.",
+          alt: "Luminox active hunt panel with timing, participant roles, controls and a linked Discord thread.",
+          href: "bot-events.html",
+          linkLabel: "Explore Event panels"
+        }
+      ]
+    },
     "editions.html": {
       eyebrow: "Real panels, different context",
       title: "The shared interface stays familiar.",

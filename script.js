@@ -12,14 +12,18 @@ const navigationSections = {
       ['guild.html', 'Overview', 'Discover Lumina'],
       ['guild-history.html', 'Our Story', 'Discover Lumina'],
       ['guild-secura.html', 'Life on Secura', 'Discover Lumina'],
+      ['guild-other-games.html', 'Other Games', 'Discover Lumina'],
       ['guild-members.html', 'Members', 'Discover Lumina'],
       ['guild-leadership.html', 'Leadership', 'Discover Lumina'],
+      ['guild-journal.html', 'Journal', 'Guild Life'],
       ['blog.html', 'Blog', 'Guild Life'],
       ['guild-activities.html', 'Activities', 'Guild Life'],
       ['guild-community.html', 'Community', 'Guild Life'],
       ['gallery.html', 'Gallery', 'Guild Life'],
+      ['guild-art.html', 'Art', 'Guild Life'],
       ['guild-roleplay.html', 'Roleplay', 'Guild Life'],
       ['guild-join.html', 'Join Lumina', 'Become a Member'],
+      ['guild-loyalty.html', 'Loyalty', 'Become a Member'],
       ['guild-faq.html', 'Candidate FAQ', 'Become a Member'],
       ['guild-rules.html', 'Rules', 'Become a Member']
     ]
@@ -29,7 +33,9 @@ const navigationSections = {
     icon: 'nav-bot.svg',
     pages: [
       ['features.html', 'Bot Overview', 'Start'],
+      ['bot-installation.html', 'Installation', 'Start'],
       ['editions.html', 'Editions', 'Start'],
+      ['founder.html', 'Founder Edition', 'Start'],
       ['systems.html', 'How It Works', 'Start'],
       ['use-cases.html', 'Use Cases', 'Start'],
       ['security.html', 'Trust & Safety', 'Start'],
@@ -231,8 +237,10 @@ const documentationCatalog = [
   ['legal.html', 'Legal Centre', 'Terms, privacy, cookies, publishing and Discord-managed billing conditions.', 'legal terms privacy cookies publishing billing'],
   ['roadmap.html', 'Product Roadmap', 'The public delivery path, release principles and priorities shaping future Luminox work.', 'roadmap development future releases'],
   ['changelog.html', 'Changelog', 'A curated history of meaningful Luminox releases and documentation milestones.', 'changelog updates releases history'],
+  ['bot-installation.html', 'Install Luminox', 'Compare the template-first, guided existing-server and modular installation routes before adding Luminox through Discord.', 'install bot Discord template wizard existing server modular setup panels'],
   ['use-cases.html', 'Use Cases', 'Choose the smallest Luminox setup for the problem your guild needs to solve.', 'use cases buying evaluation setup guild problems'],
-  ['editions.html', 'Luminox Editions', 'Compare the game-independent Universal Edition with the Tibia-focused Community Edition.', 'editions universal community Tibia game guild compare'],
+  ['editions.html', 'Luminox Editions', 'Compare the public Universal and Community editions and understand Lumina’s private Founder Edition.', 'editions universal community founder Tibia game guild compare private'],
+  ['founder.html', 'Founder Edition', 'Explore the complete private Luminox environment reserved for accepted Lumina members.', 'founder private edition Lumina members complete Luminox Secura'],
   ['security.html', 'Trust & Safety', 'Permissions, data boundaries, retention and honest platform limits.', 'security trust privacy permissions retention']
 ];
 
@@ -276,7 +284,9 @@ const pagePresentations = {
   'systems.html': { family: 'reference', variant: 'architecture', accent: 'violet', code: 'Guide 25', icon: 'content-systems.svg', label: 'How it works', summary: 'Luminox reuses current information, refreshes panels by need and cleans temporary detail.', tags: ['Collect once', 'Reuse', 'Clean'] },
   'docs-faq.html': { family: 'reference', variant: 'questions', accent: 'blue', code: 'Guide 26', icon: 'content-support.svg', label: 'FAQ', summary: 'Fast answers with direct routes to the complete setup guides.', tags: ['Ask', 'Answer', 'Continue'] },
   'features.html': { family: 'product', variant: 'constellation', accent: 'violet', code: 'Discord guild bot', icon: 'content-systems.svg', label: 'Choose a function', summary: 'Administrators configure and publish each function; members use guided controls while Luminox keeps current information and history organized.', tags: ['Configure', 'Publish', 'Operate'] },
-  'editions.html': { family: 'product', variant: 'editions', accent: 'violet', code: 'Two public editions', icon: 'edition-universal.svg', label: 'Choose your context', summary: 'Universal works for any game or community. Community adds purpose-built Tibia identity, intelligence and guild operations.', tags: ['Universal', 'Community', 'Your choice'] },
+  'bot-installation.html': { family: 'product', variant: 'installation', accent: 'violet', code: 'Start in Discord', icon: 'content-setup.svg', label: 'Install Luminox', summary: 'Choose a template-first, guided existing-server or modular route and publish the first useful panel without rebuilding your community.', tags: ['Template', 'Wizard', 'Panels'] },
+  'editions.html': { family: 'product', variant: 'editions', accent: 'violet', code: 'Two public · one private', icon: 'edition-universal.svg', label: 'Choose your context', summary: 'Universal and Community are public choices. Founder is Lumina’s complete private edition for accepted members.', tags: ['Universal', 'Community', 'Founder'] },
+  'founder.html': { family: 'product', variant: 'founder', accent: 'gold', code: 'Lumina exclusive', icon: 'edition-founder.svg', label: 'Founder Edition', summary: 'The complete private Luminox environment built, used and refined inside Lumina.', tags: ['Complete', 'Private', 'Lumina'] },
   'use-cases.html': { family: 'product', variant: 'usecases', accent: 'gold', code: 'Problem → outcome', icon: 'content-usecases.svg', label: 'Use cases', summary: 'Start with one repeated guild problem and enable only the features that remove it.', tags: ['Identify', 'Implement', 'Measure'] },
   'features-identity.html': { family: 'product', variant: 'identity', accent: 'blue', code: '01', icon: 'content-identity.svg', label: 'Verified identity', summary: 'Make the person, Discord account, characters, main and guild rank agree.', tags: ['Account', 'Character', 'Role'] },
   'features-economy.html': { family: 'product', variant: 'economy', accent: 'gold', code: '02', icon: 'content-economy.svg', label: 'Guild economy', summary: 'Turn loot and contributions into reviewed records instead of private assumptions.', tags: ['Split', 'Accumulate', 'Approve'] },
@@ -315,14 +325,18 @@ const pagePresentations = {
   'guild.html': { family: 'guild', variant: 'manifesto', accent: 'gold', code: 'Secura', icon: 'content-guild.svg', label: 'The guild', summary: 'An international Tibia community where structure protects the social experience.', tags: ['Trust', 'Respect', 'Together'] },
   'guild-history.html': { family: 'guild', variant: 'legacy', accent: 'gold', code: 'Our story', icon: 'content-blog.svg', label: 'Built together', summary: 'The needs, principles and people that shaped Lumina from a guild roster into a lasting community.', tags: ['Belong', 'Build', 'Preserve'] },
   'guild-secura.html': { family: 'guild', variant: 'world', accent: 'blue', code: 'Our world', icon: 'content-journey.svg', label: 'Life on Secura', summary: 'One shared Tibia world gives an international community a clear in-game identity and reputation.', tags: ['Tibia', 'Secura', 'Respect'] },
+  'guild-other-games.html': { family: 'guild', variant: 'world', accent: 'violet', code: 'Beyond Tibia', icon: 'content-events.svg', label: 'Other games', summary: 'Lumina remains one organized Tibia guild while its members enjoy many other games together without creating parallel guild structures.', tags: ['Explore', 'Play', 'Return'] },
   'guild-community.html': { family: 'guild', variant: 'community', accent: 'green', code: 'Chapter 02', icon: 'content-guild.svg', label: 'Community', summary: 'Organization creates more room for helping, playing and staying connected.', tags: ['Hunts', 'Voice', 'Support'] },
   'guild-members.html': { family: 'guild', variant: 'members', accent: 'gold', code: 'Member life', icon: 'content-members.svg', label: 'Membership', summary: 'Verified access, shared activities and the responsibilities that turn a roster entry into real guild membership.', tags: ['Tibia', 'Secura', 'Together'] },
   'guild-leadership.html': { family: 'guild', variant: 'leadership', accent: 'violet', code: 'Responsibility', icon: 'content-guild.svg', label: 'Clear leadership', summary: 'Broad leadership and specialist responsibilities give members a clear route to the right person.', tags: ['Listen', 'Decide', 'Support'] },
   'guild-activities.html': { family: 'guild', variant: 'activities', accent: 'green', code: 'Guild life', icon: 'content-events.svg', label: 'Play together', summary: 'Hunts, bosses, quests, social sessions and roleplay give different members a place to participate.', tags: ['Organize', 'Join', 'Remember'] },
+  'guild-journal.html': { family: 'guild', variant: 'blog', accent: 'gold', code: 'Daily guild life', icon: 'content-blog.svg', label: 'Guild journal', summary: 'A living view of the routines, milestones and small moments that make Lumina more than a roster.', tags: ['Today', 'Together', 'Remember'] },
   'blog.html': { family: 'guild', variant: 'blog', accent: 'gold', code: 'Guild journal', icon: 'content-blog.svg', label: 'Lumina blog', summary: 'Guild news, chronicles and thoughtful updates written and reviewed through Discord.', tags: ['News', 'Stories', 'Community'] },
   'gallery.html': { family: 'guild', variant: 'gallery', accent: 'violet', code: 'Visual archive', icon: 'content-gallery.svg', label: 'Lumina gallery', summary: 'Staff-reviewed adventures, community life, roleplay and milestones preserved with their story.', tags: ['Stories', 'Collections', 'Memories'] },
+  'guild-art.html': { family: 'guild', variant: 'gallery', accent: 'violet', code: 'Illustration archive', icon: 'content-gallery.svg', label: 'Lumina art', summary: 'Original high-fantasy illustrations exploring the places, people, creatures and shared imagination around Lumina.', tags: ['Browse', 'Filter', 'Open'] },
   'guild-roleplay.html': { family: 'guild', variant: 'roleplay', accent: 'violet', code: 'Story archive', icon: 'roleplay.svg', label: 'Lumina chronicles', summary: 'Browse future sagas, chapters, character journals, world lore and illustrated stories created by Lumina members.', tags: ['Stories', 'Chapters', 'Lore'] },
   'guild-join.html': { family: 'guild', variant: 'journey', accent: 'blue', code: 'Tibia · Secura', icon: 'content-journey.svg', label: 'Join Lumina', summary: 'Apply to our international Tibia guild on the Secura game world and connect your character to Discord.', tags: ['Tibia', 'Secura', 'Apply'] },
+  'guild-loyalty.html': { family: 'guild', variant: 'progress', accent: 'gold', code: 'Member recognition', icon: 'content-loyalty.svg', label: 'Guild Loyalty', summary: 'Participation becomes lasting account-wide recognition through transparent Loyalty Levels and reward history.', tags: ['Contribute', 'Progress', 'Belong'] },
   'guild-faq.html': { family: 'guild', variant: 'candidate', accent: 'green', code: 'Before applying', icon: 'content-support.svg', label: 'Candidate FAQ', summary: 'Plain answers about Secura eligibility, registration, guild life and the application path.', tags: ['Understand', 'Prepare', 'Apply'] },
   'guild-rules.html': { family: 'guild', variant: 'charter', accent: 'red', code: 'Chapter 05', icon: 'content-security.svg', label: 'Guild charter', summary: 'The principles that protect claims, communication and long-term trust.', tags: ['Respect', 'Evidence', 'Accountability'] },
   'pricing.html': { family: 'commercial', variant: 'editions', accent: 'gold', code: 'Free + 3 Premium', icon: 'content-pricing.svg', label: 'Plans and editions', summary: 'Start free, then choose Core, Growth or Scale when your guild needs more capacity.', tags: ['Free', 'Core', 'Growth', 'Scale'] },
@@ -408,11 +422,15 @@ const pageArtworkByPage = Object.freeze({
   'guild-members.html': 'guild-fellowship.svg',
   'guild-history.html': 'guild-story-characters.png',
   'guild-secura.html': 'guild-secura-character.png',
+  'guild-other-games.html': '../art/ancient-bridge.webp',
   'guild-leadership.html': 'guild-leadership.svg',
   'guild-activities.html': 'guild-adventures.svg',
+  'guild-journal.html': '../art/guild-campfire.webp',
   'guild-faq.html': 'guild-candidacy.svg',
   'blog.html': 'blog-journal.svg',
+  'guild-art.html': '../art/moonlit-citadel.webp',
   'guild-join.html': 'guild-join-characters.png',
+  'guild-loyalty.html': '../art/map-council.webp',
   'guild-rules.html': 'guild-charter.svg',
   'pricing-faq.html': 'docs-library.svg',
   'guarantee.html': 'trust-vault.svg',
@@ -471,7 +489,9 @@ const pageOpeningTitles = {
   'docs-watchlists.html': 'Live Watchlists',
   'docs-website.html': 'Website Publishing',
   'features.html': 'Meet Luminox',
+  'bot-installation.html': 'Install Luminox',
   'editions.html': 'Choose Your Edition',
+  'founder.html': 'Founder Edition',
   'features-economy.html': 'Guild Economy',
   'features-events.html': 'Better Events',
   'features-finder.html': 'Find Your Team',
@@ -510,11 +530,15 @@ const pageOpeningTitles = {
   'guild.html': 'Meet Lumina',
   'guild-history.html': 'Our Story',
   'guild-secura.html': 'Life on Secura',
+  'guild-other-games.html': 'Other Games',
   'guild-community.html': 'Better Together',
   'guild-members.html': 'Lumina Members',
   'guild-leadership.html': 'Clear Leadership',
   'guild-activities.html': 'Guild Activities',
+  'guild-journal.html': 'Guild Journal',
+  'guild-art.html': 'Lumina Art',
   'guild-join.html': 'Join Lumina',
+  'guild-loyalty.html': 'Guild Loyalty',
   'guild-faq.html': 'Candidate FAQ',
   'guild-rules.html': 'Lumina Standards',
   'pricing.html': 'Plans That Scale',
@@ -542,7 +566,7 @@ const editionBadgeDefinitions = Object.freeze({
   founder: {
     label: 'Founder',
     icon: 'edition-founder.svg',
-    href: 'pricing.html#founder-edition',
+    href: 'founder.html',
     exclusive: true
   }
 });
@@ -568,6 +592,7 @@ const bothEditionPages = [
   'docs-timezones.html',
   'docs-troubleshooting.html',
   'features.html',
+  'bot-installation.html',
   'editions.html',
   'features-events.html',
   'features-support.html',
@@ -625,6 +650,7 @@ const communityEditionPages = [
 ];
 
 const founderEditionPages = [
+  'founder.html',
   'docs-website.html',
   'bot-website.html'
 ];
@@ -634,6 +660,7 @@ const editionAvailabilityByPage = new Map([
   ...communityEditionPages.map((page) => [page, ['community']]),
   ...founderEditionPages.map((page) => [page, ['founder']])
 ]);
+editionAvailabilityByPage.set('editions.html', ['universal', 'community', 'founder']);
 
 const openingLayoutGroups = {
   minimal: [
@@ -714,6 +741,10 @@ const openingLayoutGroups = {
     'guild-members.html',
     'guild-history.html',
     'guild-leadership.html',
+    'guild-journal.html',
+    'guild-art.html',
+    'guild-loyalty.html',
+    'guild-other-games.html',
     'blog.html',
     'bot-finder.html',
     'bot-tracker.html',
@@ -741,6 +772,7 @@ const openingLayoutGroups = {
   'roleplay-cover': ['guild-roleplay.html'],
   'feature-map': ['features.html'],
   'edition-choice': ['editions.html'],
+  'founder-cover': ['founder.html'],
   'pricing-tiers': ['pricing.html'],
   'contact-paths': ['contact.html']
 };
@@ -884,12 +916,28 @@ const renderBotOverviewCharacter = () => {
 const renderEditionChoice = () => {
   const visual = document.createElement('aside');
   visual.className = 'opening-edition-choice';
-  visual.setAttribute('aria-label', 'Universal and Community edition paths');
+  visual.setAttribute('aria-label', 'Universal, Community and Founder edition paths');
   visual.innerHTML = `
     <figure class="opening-edition-art" aria-hidden="true"><img src="assets/illustrations/editions-gateway.svg?v=20260724-4" alt=""></figure>
     <div class="opening-edition-options">
-      <a href="#universal-edition"><img src="assets/icons/edition-universal.svg?v=20260723-4" alt="" aria-hidden="true"><span><small>Any game or community</small><strong>Universal Edition</strong></span><b aria-hidden="true">↘</b></a>
-      <a href="#community-edition"><img src="assets/icons/edition-community.svg?v=20260723-4" alt="" aria-hidden="true"><span><small>Purpose-built for Tibia</small><strong>Community Edition</strong></span><b aria-hidden="true">↙</b></a>
+      <a class="opening-edition-universal" href="#universal-edition"><img src="assets/icons/edition-universal.svg?v=20260723-4" alt="" aria-hidden="true"><span><small>Any game or community</small><strong>Universal Edition</strong></span><b aria-hidden="true">↘</b></a>
+      <a class="opening-edition-community" href="#community-edition"><img src="assets/icons/edition-community.svg?v=20260723-4" alt="" aria-hidden="true"><span><small>Purpose-built for Tibia</small><strong>Community Edition</strong></span><b aria-hidden="true">↙</b></a>
+      <a class="opening-edition-founder" href="founder.html"><img src="assets/icons/edition-founder.svg?v=20260723-4" alt="" aria-hidden="true"><span><small>Private to accepted Lumina members</small><strong>Founder Edition</strong></span><b aria-hidden="true">→</b></a>
+    </div>`;
+  return visual;
+};
+
+const renderFounderCover = () => {
+  const visual = document.createElement('aside');
+  visual.className = 'opening-founder-cover';
+  visual.setAttribute('aria-label', 'Founder Edition inside Lumina');
+  visual.innerHTML = `
+    <figure><img src="assets/founder/founder-command-hall.webp" alt="Lumina members and Luminox operating Founder Edition from the guild command hall" loading="eager" decoding="async"></figure>
+    <span class="opening-founder-seal"><img src="assets/icons/edition-founder.svg?v=20260723-4" alt="" aria-hidden="true">Lumina exclusive</span>
+    <div class="opening-founder-facts">
+      <span><small>Access</small><strong>Accepted members</strong></span>
+      <span><small>Environment</small><strong>Complete Luminox</strong></span>
+      <span><small>Home</small><strong>Lumina Discord</strong></span>
     </div>`;
   return visual;
 };
@@ -900,9 +948,9 @@ const renderPricingTiers = () => {
   visual.setAttribute('aria-label', 'Luminox plan paths');
   visual.innerHTML = `
     <div class="opening-tier-stack">
-      <a class="opening-tier opening-tier-free" href="#free-plan"><span><img src="assets/icons/plan-free.svg?v=20260723-4" alt=""><b>Start</b></span><strong>Free</strong><em>€0</em><small>Build the first reliable setup.</small></a>
-      <a class="opening-tier opening-tier-premium" href="#premium-tiers"><span><img src="assets/icons/plan-premium.svg?v=20260723-4" alt=""><b>Scale</b></span><strong>Premium</strong><em>From €4,99</em><small>Core, Growth and Scale.</small></a>
-      <a class="opening-tier opening-tier-exclusive" href="#founder-edition"><span><img src="assets/icons/plan-exclusive.svg?v=20260723-4" alt=""><b>Private</b></span><strong>Exclusive</strong><em>Lumina only</em><small>Discover access to Founder Edition.</small></a>
+      <a class="opening-tier opening-tier-free" href="#free-plan"><span><img src="assets/icons/plan-free.svg?v=20260723-4" alt=""><b>Start</b></span><strong>Free</strong><em>$0</em><small>Build the first reliable setup.</small></a>
+      <a class="opening-tier opening-tier-premium" href="#premium-tiers"><span><img src="assets/icons/plan-premium.svg?v=20260723-4" alt=""><b>Scale</b></span><strong>Premium</strong><em>From $4,99</em><small>Core, Growth and Scale.</small></a>
+      <a class="opening-tier opening-tier-exclusive" href="founder.html"><span><img src="assets/icons/plan-exclusive.svg?v=20260723-4" alt=""><b>Private</b></span><strong>Exclusive</strong><em>Lumina only</em><small>Discover access to Founder Edition.</small></a>
     </div>
     <p><img src="assets/icons/discord.svg?v=20260723-4" alt="" aria-hidden="true"><span>Monthly subscriptions handled inside <strong>Discord</strong>.</span></p>`;
   return visual;
@@ -926,6 +974,7 @@ const customOpeningRenderers = {
   'roleplay-cover': renderRoleplayCover,
   'feature-map': renderBotOverviewCharacter,
   'edition-choice': renderEditionChoice,
+  'founder-cover': renderFounderCover,
   'pricing-tiers': renderPricingTiers,
   'contact-paths': renderContactPaths
 };
@@ -1227,7 +1276,7 @@ const conversionCopyByPage = {
     title: 'Operate Lumina’s reviewed publishing workflow safely.',
     text: 'This technical guide documents the Founder-only Website panel, its permissions, review states and isolated publication boundary.',
     primary: ['security.html', 'Review the security model'],
-    secondary: ['pricing.html#founder-edition', 'Understand Founder access']
+    secondary: ['founder.html', 'Understand Founder access']
   }
 };
 
@@ -1254,6 +1303,91 @@ const appendContextualConversion = () => {
 };
 
 appendContextualConversion();
+
+const illustratedConversionByPage = Object.freeze({
+  'features.html': {
+    asset: 'lumina-guild-table.webp',
+    layout: 'panorama',
+    position: 'center 48%'
+  },
+  'editions.html': {
+    asset: 'lumina-adventure-party.webp',
+    layout: 'split',
+    position: '46% center'
+  },
+  'use-cases.html': {
+    asset: 'lumina-guild-overview.webp',
+    layout: 'reverse',
+    position: '52% center'
+  },
+  'pricing.html': {
+    asset: 'lumina-welcome-gate.webp',
+    layout: 'panorama-reverse',
+    position: 'center 44%'
+  },
+  'security.html': {
+    asset: 'lumina-leadership-council.webp',
+    layout: 'split',
+    position: '44% center'
+  },
+  'guild.html': {
+    asset: 'lumina-community-campfire.webp',
+    layout: 'panorama',
+    position: 'center 47%'
+  },
+  'guild-members.html': {
+    asset: 'lumina-adventure-party.webp',
+    layout: 'reverse',
+    position: '50% center'
+  },
+  'guild-join.html': {
+    asset: 'lumina-membership.webp',
+    layout: 'split',
+    position: '48% center'
+  },
+  'bot-events.html': {
+    asset: 'lumina-guild-table.webp',
+    layout: 'panorama-reverse',
+    position: 'center 52%'
+  },
+  'bot-support.html': {
+    asset: 'lumina-candidate-guidance.webp',
+    layout: 'reverse',
+    position: '52% center'
+  },
+  'bot-website.html': {
+    asset: 'lumina-legacy-chronicle.webp',
+    layout: 'split',
+    position: '47% center'
+  }
+});
+
+const enhanceIllustratedConversion = () => {
+  const config = illustratedConversionByPage[currentPage];
+  const cta = mainContent?.querySelector('.conversion-cta');
+  if (!config || !cta || cta.classList.contains('conversion-cta--illustrated')) return;
+
+  const copyBody = [...cta.children].find((child) => !child.classList.contains('hero-actions'));
+  const actions = cta.querySelector('.hero-actions');
+  if (!copyBody || !actions) return;
+
+  const content = document.createElement('div');
+  content.className = 'illustrated-conversion-copy';
+  copyBody.classList.add('illustrated-conversion-body');
+  content.append(copyBody, actions);
+
+  const figure = document.createElement('figure');
+  figure.className = 'illustrated-conversion-art';
+  figure.setAttribute('aria-hidden', 'true');
+  figure.style.setProperty('--conversion-art-position', config.position || 'center');
+  figure.innerHTML = `<img src="${vectorAssetUrl(`assets/illustrations/${config.asset}`)}" alt="" loading="lazy" decoding="async">`;
+
+  cta.classList.add('conversion-cta--illustrated', `conversion-cta--${config.layout}`);
+  cta.closest('.section')?.classList.add('illustrated-conversion-section');
+  cta.replaceChildren(figure, content);
+};
+
+enhanceIllustratedConversion();
 
 const enhanceContentRhythm = () => {
   document.querySelectorAll('.doc-article > .doc-section').forEach((section, index) => {
@@ -1916,12 +2050,16 @@ const buttonActionIconByPage = Object.freeze({
   'gallery.html': 'content-gallery.svg',
   'guarantee.html': 'action-security.svg',
   'guild-activities.html': 'content-events.svg',
+  'guild-art.html': 'content-gallery.svg',
   'guild-community.html': 'content-guild.svg',
   'guild-faq.html': 'action-support.svg',
   'guild-history.html': 'action-history.svg',
   'guild-join.html': 'content-journey.svg',
+  'guild-journal.html': 'content-blog.svg',
   'guild-leadership.html': 'content-members.svg',
+  'guild-loyalty.html': 'content-loyalty.svg',
   'guild-members.html': 'content-members.svg',
+  'guild-other-games.html': 'content-events.svg',
   'guild-roleplay.html': 'roleplay.svg',
   'guild-rules.html': 'action-security.svg',
   'guild-secura.html': 'content-guild.svg',
@@ -2223,7 +2361,7 @@ const pricingEditionContent = {
   community: {
     heading: 'Community Edition Plans',
     summary: 'Purpose-built for Tibia guilds using characters, vocations, worlds, guild ranks and live game monitoring.',
-    prices: ['€0', '€7,99', '€14,99', '€29,99'],
+    prices: ['$0', '$7,99', '$14,99', '$29,99'],
     plans: {
       free: {
         fit: 'For smaller Tibia guilds starting with verified identity, core guild visibility and guided operations.',
@@ -2270,7 +2408,7 @@ const pricingEditionContent = {
   universal: {
     heading: 'Universal Edition Plans',
     summary: 'Game-independent operations for gaming guilds and communities that do not need Tibia-specific systems.',
-    prices: ['€0', '€4,99', '€9,99', '€19,99'],
+    prices: ['$0', '$4,99', '$9,99', '$19,99'],
     plans: {
       free: {
         fit: 'For gaming communities starting with private Support, general Events or channel automation.',
@@ -2356,7 +2494,7 @@ if (pricingEditionSelector) {
       const planIndex = ['free', 'core', 'growth', 'scale'].indexOf(planName);
       if (fit) fit.textContent = planContent.fit;
       if (list) list.innerHTML = planContent.features.map((feature) => `<li>${feature}</li>`).join('');
-      if (amount && planIndex >= 0) amount.textContent = content.prices[planIndex].replace(/^€/, '');
+      if (amount && planIndex >= 0) amount.textContent = content.prices[planIndex].replace(/^\$/, '');
     });
 
     document.querySelectorAll('[data-pricing-comparison="price"]').forEach((cell, index) => {

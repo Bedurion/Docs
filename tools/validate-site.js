@@ -91,7 +91,7 @@ for (const file of htmlFiles) {
           const softwareApplication = graph.find((entry) => entry['@type'] === 'SoftwareApplication');
           if (!softwareApplication) report(file, 'missing SoftwareApplication structured data');
           if (softwareApplication && softwareApplication.offers?.price !== '0') report(file, 'SoftwareApplication must expose its free offer');
-          if (softwareApplication && softwareApplication.offers?.priceCurrency !== 'EUR') report(file, 'SoftwareApplication offer must declare EUR');
+          if (softwareApplication && softwareApplication.offers?.priceCurrency !== 'USD') report(file, 'SoftwareApplication offer must declare USD');
           if (softwareApplication && !softwareApplication.installUrl) report(file, 'SoftwareApplication must expose its install URL');
           if (softwareApplication && softwareApplication.runtimePlatform !== 'Discord') report(file, 'SoftwareApplication must declare Discord as its runtime platform');
         }
